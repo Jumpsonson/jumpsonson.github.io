@@ -1,0 +1,1890 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="张博思远（Jumpson）的职业作品集框架。">
+  <meta name="theme-color" content="#F7F8FA">
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="张博思远（Jumpson）｜个人职业作品集">
+  <meta property="og:description" content="销售运营、快闪项目与渠道运营职业作品集。">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:locale:alternate" content="ko_KR">
+  <meta property="og:image" content="https://jumpsonson.github.io/assets/img/popup/popup-2506-lotte-jamsil-01.webp">
+  <meta property="og:image:width" content="1600">
+  <meta property="og:image:height" content="1067">
+  <meta property="og:image:alt" content="Shokz pop-up retail project in Korea">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://jumpsonson.github.io/assets/img/popup/popup-2506-lotte-jamsil-01.webp">
+  <meta property="og:url" content="https://jumpsonson.github.io/">
+  <link rel="canonical" href="https://jumpsonson.github.io/">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%233457D5'/%3E%3Cpath d='M39 14v24c0 8-5 12-12 12-5 0-9-2-12-6l6-6c2 2 3 3 6 3s4-2 4-5V14z' fill='white'/%3E%3C/svg%3E">
+  <title>张博思远（Jumpson）｜个人职业作品集</title>
+  <style>
+    :root {
+      --bg: #F5F5F7;
+      --surface: #FFFFFF;
+      --surface-2: #EEEFF2;
+      --text: #1D1D1F;
+      --text-2: #6E6E73;
+      --primary: #0066CC;
+      --primary-rgb: 0, 102, 204;
+      --accent: #187A64;
+      --accent-rgb: 24, 122, 100;
+      --primary-strong: var(--primary);
+      --primary-soft: rgba(var(--primary-rgb), .08);
+      --accent-soft: rgba(var(--accent-rgb), .10);
+      --accent-strong: var(--accent);
+      --line: rgba(29, 29, 31, .11);
+      --shadow: 0 8px 28px rgba(0, 0, 0, .045);
+      --shadow-h: 0 18px 46px rgba(0, 0, 0, .09);
+      --radius-card: 22px;
+      --radius-btn: 999px;
+      --radius-pill: 999px;
+      --section-pad: 64px;
+      --gap-card: 28px;
+      --ease-out: cubic-bezier(.22, .61, .36, 1);
+      --ease-inout: cubic-bezier(.65, 0, .35, 1);
+      --dur-fast: 160ms;
+      --dur-base: 260ms;
+      --dur-slow: 420ms;
+      --view-out: var(--dur-fast);
+      --view-in: var(--dur-base);
+      --view-total: var(--dur-slow);
+      --nav-h: 60px;
+      --reveal-distance: 18px;
+      --trait-cell: 44px;
+      --trait-gap: 8px;
+      --font-latin: -apple-system, "Segoe UI", system-ui, sans-serif;
+      --font-zh: "PingFang SC", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+      --font-ko: "Pretendard", "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", sans-serif;
+      --font-num: "SF Pro Display", "SF Pro Text", "Segoe UI Variable Display", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      --fw-regular: 400;
+      --fw-medium: 500;
+      --fw-semibold: 600;
+      --fw-bold: 700;
+      --fw-heavy: 800;
+      --lh-tight: 1.45;
+      --lh-base: 1.7;
+      --lh-loose: 1.8;
+      --sp-1: 4px;
+      --sp-2: 8px;
+      --sp-3: 12px;
+      --sp-4: 16px;
+      --sp-5: 24px;
+      --sp-6: 32px;
+      --sp-7: 48px;
+      --sp-8: 64px;
+      --num-size: clamp(1.75rem, 3.2vw, 2.5rem);
+      --num-weight: var(--fw-bold);
+      --num-track: -.02em;
+      --num-leading: 1.12;
+      --num-mark-size: .45em;
+      --num-mark-weight: var(--fw-semibold);
+      --num-mark-track: .02em;
+      --num-mark-gap: .08em;
+      --num-size-meta: .78rem;
+      --num-meta-feat: "tnum" 1, "lnum" 1;
+      --card-pad: clamp(20px, 3vw, 28px);
+      --media-mat: var(--surface-2);
+      --media-pad: 12px;
+      --media-stage: #D9DCE3;
+      --media-frame: clamp(12px, 1.6vw, 24px);
+      --on-media: var(--text-2);
+      --on-media-line: var(--line);
+      color-scheme: light;
+    }
+
+    [data-theme="dark"] {
+      --bg: #000000;
+      --surface: #1D1D1F;
+      --surface-2: #2C2C2E;
+      --text: #F5F5F7;
+      --text-2: #A1A1A6;
+      --primary: #2997FF;
+      --primary-rgb: 41, 151, 255;
+      --accent: #66C2A5;
+      --accent-rgb: 102, 194, 165;
+      --line: rgba(245, 245, 247, .14);
+      --media-mat: #111113;
+      --media-stage: #0B0B0D;
+      --on-media: #A1A1A6;
+      --shadow: 0 10px 30px rgba(0, 0, 0, .28);
+      --shadow-h: 0 22px 54px rgba(0, 0, 0, .44);
+      color-scheme: dark;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      overflow-x: hidden;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 16px;
+      line-height: var(--lh-base);
+      transition: background-color var(--dur-base) var(--ease-out), color var(--dur-base) var(--ease-out);
+    }
+    html[lang="zh-CN"] body { font-family: var(--font-latin), var(--font-zh); }
+    html[lang="ko"] body { font-family: var(--font-latin), var(--font-ko); line-height: var(--lh-loose); word-break: keep-all; overflow-wrap: break-word; }
+    html[lang="en"] body { font-family: var(--font-latin); overflow-wrap: break-word; }
+    body.drawer-open { overflow: hidden; }
+    body.lang-enter .view.is-active { animation: lang-in var(--dur-fast) var(--ease-out) both; }
+    button, a { font: inherit; }
+    button { color: inherit; }
+    a { color: inherit; text-decoration: none; }
+    svg { display: block; }
+    [hidden] { display: none !important; }
+
+    .skip-link {
+      position: fixed;
+      z-index: 500;
+      top: 10px;
+      left: 10px;
+      transform: translateY(-150%);
+      padding: 10px 14px;
+      border-radius: var(--radius-btn);
+      background: var(--primary);
+      color: #fff;
+    }
+    .skip-link:focus { transform: translateY(0); }
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      padding: 0;
+      overflow: hidden;
+      border: 0;
+      clip-path: inset(50%);
+      white-space: nowrap;
+    }
+    :focus-visible { outline: 3px solid rgba(var(--primary-rgb), .38); outline-offset: 3px; }
+
+    .container { width: min(100% - 56px, 1180px); margin-inline: auto; }
+    .section { padding-block: var(--section-pad); scroll-margin-top: 80px; }
+    .section-heading { max-width: 16ch; margin: 0 0 var(--sp-8); font-size: clamp(2.15rem, 5vw, 3.35rem); font-weight: var(--fw-bold); letter-spacing: -.035em; line-height: 1.06; text-wrap: balance; }
+    .eyebrow { margin: 0 0 12px; color: var(--text-2); font-size: .875rem; font-weight: var(--fw-bold); letter-spacing: .02em; }
+    html[lang="en"] .eyebrow { letter-spacing: .08em; text-transform: uppercase; }
+    .muted { color: var(--text-2); }
+
+    .nav-shell {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 100;
+      height: var(--nav-h);
+      border-bottom: 1px solid transparent;
+      transition: background-color var(--dur-base) var(--ease-out), border-color var(--dur-base) var(--ease-out), box-shadow var(--dur-base) var(--ease-out), transform var(--dur-base) var(--ease-out);
+    }
+    .nav-shell.is-scrolled { border-color: var(--line); background: color-mix(in srgb, var(--surface) 82%, transparent); box-shadow: 0 1px 0 rgba(0, 0, 0, .02); -webkit-backdrop-filter: saturate(180%) blur(22px); backdrop-filter: saturate(180%) blur(22px); }
+    .nav-inner { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 28px; height: 100%; }
+    .brand { display: inline-flex; flex-direction: column; justify-content: center; line-height: 1.12; }
+    .brand strong { font-size: 1rem; }
+    .brand span { color: var(--text-2); font-size: .75rem; letter-spacing: .08em; }
+    .nav-links { display: flex; justify-content: center; gap: 24px; }
+    .nav-link { position: relative; min-height: 44px; display: inline-flex; align-items: center; color: var(--text-2); font-size: .875rem; font-weight: 600; transition: color var(--dur-fast) var(--ease-out); }
+    .nav-link::after { position: absolute; right: 0; bottom: 3px; left: 0; height: 2px; transform: scaleX(0); border-radius: var(--radius-pill); background: var(--primary); content: ""; transition: transform var(--dur-fast) var(--ease-out); }
+    .nav-link.is-active { color: var(--primary); }
+    .nav-link.is-active::after { transform: scaleX(1); }
+    .nav-shell.is-switching { pointer-events: none; }
+    .nav-actions, .language-switch { display: flex; align-items: center; }
+    .nav-actions { gap: 8px; }
+    .language-switch { padding: 3px; border: 1px solid var(--line); border-radius: var(--radius-pill); background: var(--surface); }
+    .language-button { min-width: 42px; min-height: 38px; padding: 4px 9px; border: 0; border-radius: var(--radius-pill); background: transparent; color: var(--text-2); font-size: .75rem; font-weight: var(--fw-bold); cursor: pointer; }
+    .language-button[aria-pressed="true"] { background: var(--primary-soft); color: var(--primary); }
+    .icon-button, .menu-button, .back-to-top { display: inline-grid; width: 44px; height: 44px; place-items: center; border: 1px solid var(--line); border-radius: var(--radius-btn); background: var(--surface); cursor: pointer; transition: transform var(--dur-fast) var(--ease-out), background-color var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out); }
+    .button { min-height: 44px; display: inline-flex; align-items: center; justify-content: center; gap: 9px; padding: 10px 20px; border: 1px solid transparent; border-radius: var(--radius-btn); font-weight: 700; cursor: pointer; transition: transform var(--dur-fast) var(--ease-out), box-shadow var(--dur-fast) var(--ease-out), background-color var(--dur-fast) var(--ease-out); }
+    .button--primary { background: var(--primary); color: #fff; box-shadow: 0 1px 3px rgba(0, 0, 0, .08); }
+    .button--secondary { border-color: var(--line); background: var(--surface); color: var(--text); }
+    .menu-button { display: none; }
+
+    main, footer { transition: opacity 120ms var(--ease-out), transform 120ms var(--ease-out); }
+    .view-stack { min-height: calc(100vh - var(--nav-h)); }
+    .view { min-height: calc(100vh - var(--nav-h)); padding-top: var(--nav-h); }
+    .view-home { min-height: 100vh; min-height: 100dvh; display: grid; grid-template-rows: minmax(0, 1fr) auto; }
+    .view.is-active { display: block; }
+    .view-home.is-active { display: grid; }
+    .hero { display: grid; align-items: center; padding-top: 0; padding-bottom: 0; }
+    .hero-grid { display: grid; grid-template-columns: minmax(0, 1.12fr) minmax(360px, .88fr); align-items: center; gap: clamp(48px, 7vw, 96px); padding-block: clamp(48px, 8vh, 96px) var(--sp-7); }
+    .avatar { width: 128px; aspect-ratio: 1; display: grid; place-items: center; margin-bottom: 24px; overflow: hidden; border: 1px solid var(--line); border-radius: 50%; background: var(--surface-2); color: var(--text-2); }
+    .avatar svg { width: 56%; height: 56%; opacity: .7; }
+    .hero h1 { max-width: 11ch; margin: 0; font-size: clamp(3rem, 7vw, 5.4rem); font-weight: var(--fw-bold); line-height: .98; text-wrap: balance; }
+    html[lang="zh-CN"] .hero h1 { letter-spacing: -.02em; }
+    html[lang="ko"] .hero h1, html[lang="en"] .hero h1 { letter-spacing: -.01em; }
+    .hero-name-en { margin: 12px 0 20px; color: var(--text-2); font-size: 1rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+    .hero-role { margin: 0; max-width: 620px; font-size: clamp(1.2rem, 2vw, 1.55rem); font-weight: 600; letter-spacing: -.01em; }
+    .hero-org { margin: 8px 0 0; color: var(--text); font-size: .95rem; font-weight: var(--fw-semibold); }
+    .hero-copy { max-width: 56ch; margin: 20px 0 0; color: var(--text-2); font-size: 1.02rem; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+    .trait-panel { display: grid; gap: 30px; padding: clamp(28px, 4vw, 42px); border-radius: calc(var(--radius-card) + 6px); background: var(--surface); box-shadow: var(--shadow); }
+    .trait-block { display: grid; gap: 14px; }
+    .trait-block + .trait-block { padding-top: 4px; }
+    @media (prefers-reduced-motion: no-preference) {
+      .view-home.play-intro .trait-block { animation: hero-in var(--dur-slow) var(--ease-out) both; }
+    }
+    .view-home.play-intro .trait-block[data-trait-block="2"] { animation-delay: 120ms; }
+    .view-home.play-intro .trait-block[data-trait-block="3"] { animation-delay: 180ms; }
+    .trait-label { margin: 0; color: var(--text-2); font-size: .875rem; font-weight: 700; letter-spacing: .06em; }
+    .trait-badge { margin: 0; color: var(--text); font-size: clamp(1.75rem, 3vw, 2rem); font-weight: var(--fw-bold); letter-spacing: var(--num-track); line-height: 1; }
+    .mbti-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--trait-gap); margin: 0; padding: 0; list-style: none; }
+    .mbti-cell { min-height: var(--trait-cell); display: flex; align-items: center; justify-content: center; gap: 10px; padding: 8px 12px; border-radius: 10px; font-size: .9rem; }
+    .mbti-cell.is-neutral { border: 1px dashed var(--line); color: var(--text-2); }
+    .mbti-cell.is-neutral span { opacity: .4; }
+    .mbti-cell.is-set { background: rgba(var(--primary-rgb), .12); color: var(--text-2); font-weight: 700; }
+    .mbti-cell.is-set strong { color: var(--primary); font-weight: 800; }
+    .hobby-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(96px, 1fr)); gap: 12px; margin: 0; padding: 0; list-style: none; }
+    .hobby-card { display: grid; justify-items: center; gap: 10px; padding: 14px 8px; border-radius: 12px; background: var(--surface-2); text-align: center; }
+    .hobby-icon { width: var(--trait-cell); height: var(--trait-cell); display: grid; place-items: center; flex: 0 0 auto; border-radius: 12px; background: rgba(var(--accent-rgb), .1); color: var(--accent); }
+    .hobby-card > span:last-child { color: var(--text-2); font-size: .8125rem; }
+    .trait-inline { position: relative; display: flex; align-items: center; gap: 12px; margin: 0; color: var(--text); font-size: .875rem; font-weight: 600; }
+    .trait-inline::after { position: absolute; z-index: 0; right: 0; bottom: 7px; left: 58px; height: 1px; background: var(--line); content: ""; }
+    .trait-inline > * { position: relative; z-index: 1; }
+    .trait-inline > span:last-child { padding-right: 8px; background: var(--surface); }
+
+    .highlights { padding-block: var(--section-pad); scroll-margin-top: 80px; }
+    .view-home .highlights { padding-block: var(--sp-6) var(--sp-7); }
+    .highlight-strip { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); margin: 0; overflow: hidden; border-block: 1px solid var(--line); }
+    .highlight-item { min-width: 0; min-height: 112px; display: grid; grid-template-rows: auto auto; align-content: center; gap: var(--sp-3); padding: var(--sp-5); }
+    .highlight-value { min-height: calc(var(--num-size) * var(--num-leading)); display: inline-flex; align-items: baseline; color: var(--text); font-family: var(--font-num); font-size: var(--num-size); font-weight: var(--num-weight); font-variant-numeric: lining-nums proportional-nums; font-feature-settings: "lnum" 1; letter-spacing: var(--num-track); line-height: var(--num-leading); }
+    .hl-mark { color: var(--text-2); font-size: var(--num-mark-size); font-weight: var(--num-mark-weight); letter-spacing: var(--num-mark-track); line-height: 1; }
+    .hl-mark:not(.hl-mark--sign) { margin-left: var(--num-mark-gap); }
+    .hl-mark--sign { margin-right: calc(var(--num-mark-gap) / 2); }
+    .highlight-label { min-height: 3em; margin: 0; color: var(--text-2); font-size: .875rem; letter-spacing: .01em; line-height: 1.5; }
+    html[lang="ko"] .highlight-label { letter-spacing: .02em; }
+
+    .panel-card { padding: var(--card-pad); border: 1px solid transparent; border-radius: var(--radius-card); background: var(--surface); box-shadow: var(--shadow); }
+    .experience-head { display: grid; grid-template-columns: 1fr auto; gap: 20px; padding-bottom: 28px; border-bottom: 1px solid var(--line); }
+    .experience-head h3 { margin: 0; font-size: 1.35rem; }
+    .experience-head p { margin: 4px 0 0; color: var(--text-2); }
+    .experience-meta { display: grid; justify-items: end; gap: 8px; }
+    .experience-date { color: var(--text-2); font-size: .875rem; }
+    .status-chip { display: inline-flex; min-height: 27px; align-items: center; padding: 3px 10px; border: 1px solid rgba(var(--accent-rgb), .28); border-radius: var(--radius-pill); background: var(--accent-soft); color: var(--accent); font-size: .78rem; font-weight: var(--fw-bold); }
+    .timeline { counter-reset: responsibility; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px 48px; margin-top: 32px; }
+    .timeline-item { counter-increment: responsibility; display: grid; grid-template-columns: 48px 1fr; align-content: start; column-gap: 16px; }
+    .timeline-item::before { grid-row: 1 / span 2; color: var(--text-2); font-size: .78rem; font-weight: var(--fw-bold); font-variant-numeric: tabular-nums; letter-spacing: .08em; content: counter(responsibility, decimal-leading-zero); }
+    .timeline-item h3 { margin: 0; color: var(--text); font-size: 1.15rem; }
+    .experience-points { grid-column: 2; counter-reset: experience-point; display: grid; gap: 10px; margin: 12px 0 0; padding: 0; list-style: none; }
+    .experience-points li { counter-increment: experience-point; display: grid; grid-template-columns: 26px minmax(0, 1fr); gap: 10px; align-items: start; color: var(--text-2); line-height: 1.65; }
+    .experience-points li::before { min-width: 26px; padding-top: 2px; color: var(--primary); font-family: var(--font-num); font-size: .72rem; font-weight: var(--fw-bold); font-variant-numeric: tabular-nums; letter-spacing: .04em; line-height: 1.65; content: counter(experience-point, decimal-leading-zero); }
+
+    .tabs-wrap { margin-bottom: 28px; overflow-x: auto; scrollbar-width: none; }
+    .tabs-wrap::-webkit-scrollbar { display: none; }
+    .tabs { position: relative; min-width: max-content; display: flex; gap: 30px; border-bottom: 1px solid var(--line); }
+    .tab { min-height: 48px; padding: 0; border: 0; background: transparent; color: var(--text-2); font-weight: var(--fw-semibold); cursor: pointer; transition: color var(--dur-fast) var(--ease-out); }
+    .tab[aria-selected="true"] { color: var(--primary); }
+    .tabs-indicator { position: absolute; bottom: -1px; left: 0; width: 1px; height: 2px; transform-origin: left center; border-radius: var(--radius-pill); background: var(--primary); transition: transform var(--dur-base) var(--ease-inout); }
+    .tab-panels { position: relative; }
+    .panel { animation: panel-in var(--dur-base) var(--ease-out) both; }
+    .tab-summary { display: grid; gap: 18px; margin-bottom: 36px; padding: clamp(28px, 4vw, 44px); border: 1px solid transparent; border-radius: var(--radius-card); background: var(--surface); box-shadow: var(--shadow); }
+    .tab-summary h3 { margin: 0; font-size: clamp(1.2rem, 2vw, 1.45rem); }
+    .tab-summary__lead { max-width: 76ch; margin: 0; color: var(--text-2); font-size: .96rem; }
+    .tab-summary__note { max-width: 82ch; margin: -4px 0 0; padding-left: 12px; border-left: 2px solid var(--line); color: var(--text-2); font-size: .8rem; line-height: 1.6; }
+    .tab-summary__stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 20px; margin: 0; padding-top: 20px; border-top: 1px solid var(--line); }
+    .tab-summary__stats div { display: grid; gap: 6px; }
+    .tab-summary__stats dt { color: var(--text-2); font-size: .78rem; font-weight: var(--fw-medium); }
+    .tab-summary__stats dd { margin: 0; font-family: var(--font-num); font-size: clamp(1.4rem, 2.4vw, 1.85rem); font-weight: var(--num-weight); font-variant-numeric: lining-nums proportional-nums; letter-spacing: var(--num-track); line-height: 1.1; }
+    .result-row .chip, .chip--date, .pd-counter, .compare-nav span, .project-media-count { font-family: var(--font-num); font-feature-settings: var(--num-meta-feat); }
+    .project-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; gap: var(--gap-card); }
+    .panel#panel-airline .project-grid { grid-template-columns: minmax(0, 760px); justify-content: center; }
+    .project-card { position: relative; min-width: 0; overflow: hidden; border: 1px solid transparent; border-radius: var(--radius-card); background: var(--surface); box-shadow: var(--shadow); cursor: pointer; transition: border-color var(--dur-fast) var(--ease-out), transform var(--dur-fast) var(--ease-out), box-shadow var(--dur-base) var(--ease-out); }
+    .project-cover { position: relative; aspect-ratio: 16 / 10; display: grid; place-items: center; overflow: hidden; background: var(--surface-2); color: var(--text-2); }
+    .project-cover::before { position: absolute; width: 62%; aspect-ratio: 1; border: 1px solid rgba(var(--primary-rgb), .22); border-radius: 50%; content: ""; }
+    .project-cover.has-media::before { display: none; }
+    .project-cover svg { position: relative; }
+    .project-body { display: flex; min-height: 0; flex-direction: column; padding: var(--card-pad); }
+    .project-meta { display: flex; flex-wrap: wrap; gap: 8px; }
+    .chip { display: inline-flex; align-items: center; min-height: 27px; padding: 3px 10px; border-radius: var(--radius-pill); background: var(--surface-2); color: var(--text-2); font-size: .78rem; font-weight: var(--fw-bold); }
+    .chip--date { min-height: 27px; padding-inline: 0; border-radius: 0; background: transparent; color: var(--text-2); font-variant-numeric: tabular-nums; }
+    .chip--accent { border-left: 2px solid var(--accent); border-radius: 4px; background: var(--surface-2); color: var(--text); }
+    .project-badge { position: absolute; z-index: 1; top: 12px; left: 12px; padding: 4px 10px; border: 1px solid rgba(var(--accent-rgb), .32); border-radius: var(--radius-pill); background: var(--accent-soft); color: var(--accent); font-size: .75rem; font-weight: var(--fw-bold); }
+    .project-placeholder { position: relative; z-index: 1; display: grid; justify-items: center; gap: 8px; text-align: center; }
+    .project-placeholder span { font-size: .8rem; font-weight: var(--fw-semibold); }
+    .project-body h3 { margin: 14px 0 8px; font-size: 1.18rem; }
+    .project-body > p { margin: 0; color: var(--text-2); font-size: .94rem; }
+    .project-action { position: static; min-height: 44px; display: inline-flex; align-items: center; align-self: flex-start; gap: 7px; margin-top: 20px; padding: 8px 0 0; border: 0; background: transparent; color: var(--primary); font-weight: var(--fw-bold); cursor: pointer; }
+    .project-action::after { position: absolute; z-index: 2; inset: 0; content: ""; }
+    .project-action svg { transition: transform var(--dur-base) var(--ease-inout); }
+    .project-detail { display: none; }
+    .project-detail-inner { display: grid; gap: 24px; padding: 24px var(--card-pad); }
+    .detail-section h4 { margin: 0 0 12px; color: var(--text-2); font-size: .95rem; letter-spacing: .04em; }
+    .fact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; margin: 0; }
+    .fact { min-width: 0; padding: 12px; border-radius: 10px; background: var(--surface-2); }
+    .fact dt { color: var(--text-2); font-size: .75rem; font-weight: var(--fw-medium); }
+    .fact dd { margin: 4px 0 0; font-size: .85rem; font-variant-numeric: tabular-nums; line-height: var(--lh-tight); }
+    .project-detail-copy { margin: 0; color: var(--text-2); font-size: .9rem; }
+    .result-row { display: flex; flex-wrap: wrap; gap: 8px; }
+    .result-note { margin: 10px 0 0; color: var(--text-2); font-size: .75rem; line-height: 1.55; }
+    .project-card--featured { display: block; }
+    .project-card--featured .project-cover { aspect-ratio: 16 / 10; }
+    .project-card--featured .project-body > p { font-size: .94rem; }
+    .project-media-stage { position: relative; width: 100%; height: 100%; overflow: hidden; border-bottom: 1px solid var(--on-media-line); background: var(--media-mat); isolation: isolate; }
+    .project-media-track { position: absolute; inset: 0; }
+    .project-media-slide { position: absolute; inset: 0; display: grid; place-items: center; margin: 0; padding: var(--media-pad); opacity: 1; transform: translateX(0); transition: opacity var(--dur-slow) var(--ease-inout), transform var(--dur-slow) var(--ease-inout); }
+    .project-media-slide img { width: 100%; height: 100%; display: block; object-fit: contain; object-position: center; transform: scale(1); transition: transform var(--dur-slow) var(--ease-out); }
+    .project-media-count { display: inline-flex; align-items: center; min-height: 27px; margin-left: auto; color: var(--text-2); font-size: .76rem; font-weight: var(--fw-semibold); font-variant-numeric: tabular-nums; }
+    body.dialog-open { overflow: hidden; }
+    .project-dialog { width: min(1160px, 94vw); max-width: none; height: min(880px, 90dvh); max-height: min(880px, 90dvh); padding: 0; overflow: hidden; border: 1px solid var(--line); border-radius: calc(var(--radius-card) + 6px); background: var(--surface); color: var(--text); box-shadow: 0 32px 90px rgba(0, 0, 0, .24); opacity: 0; transform: translateY(16px) scale(.98); transition: opacity var(--dur-fast) var(--ease-out), transform var(--dur-base) var(--ease-out); }
+    .project-dialog[open] { opacity: 1; transform: none; }
+    .project-dialog.is-closing { opacity: 0; transform: translateY(8px) scale(.99); pointer-events: none; transition: opacity var(--dur-fast) var(--ease-out), transform var(--dur-fast) var(--ease-out); }
+    .project-dialog::backdrop { background: rgba(0, 0, 0, .48); -webkit-backdrop-filter: saturate(120%) blur(8px); backdrop-filter: saturate(120%) blur(8px); }
+    .pd-shell { display: grid; grid-template-columns: minmax(0, 1.75fr) minmax(320px, 1fr); height: 100%; }
+    .pd-media { position: relative; min-width: 0; min-height: 0; display: grid; grid-template-rows: minmax(0, 1fr) auto; background: var(--media-stage); }
+    .pd-gallery { min-height: 0; display: grid; grid-template-rows: minmax(0, 1fr) auto; }
+    .pd-media-main { position: relative; min-height: 0; display: grid; place-items: center; padding: var(--media-frame); overflow: hidden; }
+    .pd-media-main img { position: absolute; inset: var(--media-frame); width: calc(100% - var(--media-frame) * 2); height: calc(100% - var(--media-frame) * 2); display: block; object-fit: contain; object-position: center center; }
+    .pd-placeholder { display: grid; place-items: center; gap: 10px; color: var(--text-2); text-align: center; }
+    .pd-nav, .pd-close, .compare-nav button { width: 44px; height: 44px; display: grid; place-items: center; border: 1px solid var(--line); background: var(--surface); color: var(--text); cursor: pointer; }
+    .pd-nav { position: absolute; z-index: 2; top: 50%; transform: translateY(-50%); border-radius: 50%; }
+    .pd-nav--prev { left: 12px; }
+    .pd-nav--next { right: 12px; }
+    .pd-nav[disabled], .compare-nav button[disabled] { opacity: .38; cursor: default; }
+    .pd-gallery-footer { min-width: 0; display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; border-top: 1px solid var(--line); background: var(--surface); }
+    .pd-counter { min-width: 58px; padding: 3px 12px; color: var(--text-2); font-size: .76rem; font-variant-numeric: tabular-nums; text-align: center; }
+    .pd-autoplay { position: absolute; z-index: 6; top: 14px; right: 14px; width: 44px; height: 44px; display: grid; place-items: center; border: 1px solid var(--line); border-radius: 50%; background: color-mix(in srgb, var(--surface) 88%, transparent); color: var(--text); cursor: pointer; -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); transition: transform var(--dur-fast) var(--ease-out), background-color var(--dur-fast) var(--ease-out); }
+    .pd-autoplay svg { width: 17px; height: 17px; }
+    .pd-thumbs { display: flex; gap: 8px; margin: 0; padding: 12px; overflow-x: auto; list-style: none; scrollbar-width: none; }
+    .pd-thumbs::-webkit-scrollbar { display: none; }
+    .pd-thumbs button { width: 72px; height: 54px; flex: 0 0 auto; padding: 0; overflow: hidden; border: 2px solid transparent; border-radius: 6px; background: var(--surface); opacity: .48; cursor: pointer; transition: opacity var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out), transform var(--dur-fast) var(--ease-out); }
+    .pd-thumbs button[aria-current="true"] { border-color: var(--primary); opacity: 1; transform: translateY(-2px); }
+    .pd-thumbs img { width: 100%; height: 100%; display: block; object-fit: cover; }
+    .pd-info { min-width: 0; min-height: 0; display: grid; grid-template-rows: auto minmax(0, 1fr); }
+    .pd-head { position: relative; display: grid; gap: 10px; padding: 24px var(--card-pad) 18px; border-bottom: 1px solid var(--line); }
+    .pd-head__meta { display: flex; flex-wrap: wrap; gap: 8px; padding-right: 52px; }
+    .pd-title { margin: 0; padding-right: 48px; font-size: 1.32rem; line-height: 1.3; }
+    .pd-close { position: absolute; top: 18px; right: 18px; border-radius: var(--radius-btn); }
+    .pd-body { display: grid; align-content: start; gap: 26px; padding: 22px var(--card-pad) 28px; overflow-y: auto; }
+    .pd-section h4 { margin: 0 0 12px; color: var(--text-2); font-size: .95rem; letter-spacing: .04em; }
+    .pd-copy { margin: 0; color: var(--text-2); font-size: .92rem; }
+    .pd-body .fact-grid { grid-template-columns: 1fr; }
+    .compare-view { min-height: 0; display: grid; align-content: start; gap: 16px; padding: 20px; overflow-y: auto; }
+    .compare-view.is-switch-only { position: absolute; z-index: 4; top: 12px; left: 12px; min-height: 0; padding: 0; overflow: visible; }
+    .compare-switch { width: max-content; display: inline-flex; gap: 4px; padding: 3px; border: 1px solid var(--line); border-radius: var(--radius-pill); background: var(--surface); }
+    .compare-switch__btn { min-height: 44px; padding: 4px 14px; border: 0; border-radius: var(--radius-pill); background: transparent; color: var(--text-2); font-size: .8rem; font-weight: var(--fw-semibold); cursor: pointer; }
+    .compare-switch__btn[aria-pressed="true"] { background: var(--primary-soft); color: var(--primary); }
+    .compare-pane { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    .compare-side { min-width: 0; display: grid; align-content: start; gap: 8px; margin: 0; }
+    .compare-frame { position: relative; display: grid; place-items: center; aspect-ratio: 4 / 3; padding: var(--media-pad); overflow: hidden; border-radius: 10px; background: var(--surface-2); }
+    .compare-frame img { width: 100%; height: 100%; object-fit: contain; }
+    .compare-tag { width: max-content; padding: 3px 10px; border-radius: var(--radius-pill); background: var(--surface); color: var(--text-2); font-size: .75rem; font-weight: var(--fw-bold); }
+    .compare-tag--after { border: 1px solid rgba(var(--accent-rgb), .32); background: var(--accent-soft); color: var(--text); }
+    .compare-side figcaption, .compare-note { margin: 0; color: var(--text-2); font-size: .78rem; }
+    .compare-nav { position: absolute; right: 8px; bottom: 8px; display: flex; align-items: center; gap: 6px; padding: 4px; border-radius: var(--radius-pill); background: var(--surface); box-shadow: var(--shadow); }
+    .compare-nav button { width: 44px; height: 44px; border: 0; border-radius: 50%; }
+    .compare-nav span { min-width: 44px; color: var(--text-2); font-size: .75rem; text-align: center; }
+    .compare-process { display: grid; gap: 8px; }
+    .compare-process__label { color: var(--text-2); font-size: .78rem; font-weight: var(--fw-semibold); }
+    .compare-process__list { display: flex; gap: 8px; margin: 0; padding: 0; overflow-x: auto; list-style: none; }
+    .compare-process__list button { width: 64px; height: 48px; padding: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); cursor: pointer; }
+    .compare-process__list img { width: 100%; height: 100%; object-fit: cover; }
+
+    .skills-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--gap-card); }
+    .skill-card { padding: clamp(24px, 3vw, 34px); border: 1px solid transparent; border-radius: var(--radius-card); background: var(--surface); box-shadow: var(--shadow); }
+    .skill-head { display: flex; align-items: center; gap: 12px; }
+    .skill-icon { width: 42px; height: 42px; display: grid; place-items: center; border-radius: 12px; background: var(--surface-2); color: var(--text); }
+    .skill-head h3 { margin: 0; font-size: 1.16rem; }
+    .tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+    .skill-tag { display: inline-flex; min-height: 30px; align-items: center; padding: 4px 11px; border: 1px solid var(--line); border-radius: var(--radius-pill); color: var(--text-2); font-size: .82rem; }
+    .language-list { display: flex; flex-wrap: wrap; gap: 12px; }
+    .language-chip { min-height: 48px; display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px; border: 1px solid var(--line); border-radius: var(--radius-pill); background: var(--surface); }
+    .language-chip strong { color: var(--primary); }
+
+    .contact-panel { position: relative; }
+    .contact-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+    .contact-item { display: flex; align-items: center; gap: 12px; min-width: 0; color: var(--text-2); }
+    .contact-item span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .contact-icon { flex: 0 0 auto; width: 40px; height: 40px; display: grid; place-items: center; border-radius: 12px; background: var(--surface-2); color: var(--text); }
+    .contact-copy { display: grid; min-width: 0; }
+    .contact-copy small { color: var(--text-2); font-size: .75rem; }
+    .contact-copy a, .contact-copy strong { overflow-wrap: anywhere; color: var(--text); font-size: .88rem; font-weight: var(--fw-semibold); }
+    .contact-travel { grid-column: 1 / -1; padding-top: 18px; border-top: 1px solid var(--line); }
+
+    .site-footer { padding: 0 0 38px; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 20px; padding-top: 28px; border-top: 1px solid var(--line); color: var(--text-2); font-size: .85rem; }
+    .print-header { display: none; }
+    .back-to-top { position: fixed; z-index: 90; right: 24px; bottom: 24px; transform: translateY(12px); border-radius: 50%; background: var(--primary); color: #fff; box-shadow: var(--shadow); opacity: 0; pointer-events: none; }
+    .back-to-top.is-visible { transform: translateY(0); opacity: 1; pointer-events: auto; }
+
+    .drawer-backdrop { position: fixed; z-index: 150; inset: 0; background: rgba(0, 0, 0, .5); opacity: 0; pointer-events: none; transition: opacity var(--dur-base) var(--ease-out); }
+    .drawer { position: fixed; z-index: 160; top: 0; right: 0; bottom: 0; width: min(320px, 84vw); display: flex; flex-direction: column; gap: 22px; padding: 20px; background: var(--surface); box-shadow: -18px 0 50px rgba(0, 0, 0, .22); transform: translateX(100%); transition: transform var(--dur-base) var(--ease-inout); }
+    .drawer-backdrop.is-open { opacity: 1; pointer-events: auto; }
+    .drawer.is-open { transform: translateX(0); }
+    .drawer-head { display: flex; align-items: center; justify-content: space-between; }
+    .drawer-nav { display: grid; }
+    .drawer-nav a { min-height: 56px; display: flex; align-items: center; border-bottom: 1px solid var(--line); font-size: 1.05rem; font-weight: var(--fw-semibold); }
+    .drawer-nav a.is-active { color: var(--primary); }
+    .drawer-actions { display: grid; gap: 14px; margin-top: auto; }
+    .drawer-actions .language-switch { justify-content: center; }
+    .drawer-actions .language-button { min-height: 44px; }
+
+    @media (hover: hover) and (pointer: fine) {
+      .button:hover { transform: translateY(-2px); }
+      .project-card:hover { transform: translateY(-2px); border-color: rgba(var(--primary-rgb), .24); box-shadow: var(--shadow-h); }
+      .language-button:hover, .nav-link:hover, .tab:hover { color: var(--primary); }
+      .icon-button:hover, .menu-button:hover { border-color: rgba(var(--primary-rgb), .28); background: var(--primary-soft); }
+      .pd-autoplay:hover { transform: scale(1.04); background: var(--surface); }
+    }
+
+    @keyframes panel-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes lang-in { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes hero-in { from { opacity: 0; transform: translateY(16px) scale(.995); } to { opacity: 1; transform: translateY(0) scale(1); } }
+    @keyframes pd-media-in { from { opacity: 0; transform: scale(.985); } to { opacity: 1; transform: none; } }
+    @keyframes pd-content-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .motion-ready .view-home.play-intro .hero-copy-area > * { animation: hero-in var(--dur-slow) var(--ease-out) both; }
+      .motion-ready .view-home.play-intro .avatar { animation-delay: 0ms; }
+      .motion-ready .view-home.play-intro .eyebrow { animation-delay: 50ms; }
+      .motion-ready .view-home.play-intro h1 { animation-delay: 90ms; }
+      .motion-ready .view-home.play-intro .hero-name-en { animation-delay: 130ms; }
+      .motion-ready .view-home.play-intro .hero-role { animation-delay: 170ms; }
+      .motion-ready .view-home.play-intro .hero-org { animation-delay: 210ms; }
+      .motion-ready .view-home.play-intro .hero-copy { animation-delay: 250ms; }
+      .motion-ready .view-home.play-intro .hero-actions { animation-delay: 290ms; }
+      .motion-ready .reveal { opacity: 0; translate: 0 var(--reveal-distance); transition: opacity var(--dur-slow) var(--ease-out) var(--reveal-delay, 0ms), translate var(--dur-slow) var(--ease-out) var(--reveal-delay, 0ms); }
+      .motion-ready .project-card.reveal { transition: opacity var(--dur-slow) var(--ease-out) var(--reveal-delay, 0ms), translate var(--dur-slow) var(--ease-out) var(--reveal-delay, 0ms), border-color var(--dur-fast) var(--ease-out), transform var(--dur-fast) var(--ease-out), box-shadow var(--dur-base) var(--ease-out); }
+      .motion-ready .reveal.is-revealed { opacity: 1; translate: 0 0; transition-delay: 0ms; }
+      .project-dialog[open] .pd-media { animation: pd-media-in var(--dur-base) var(--ease-out) both; }
+      .project-dialog[open] .pd-head { animation: pd-content-in var(--dur-base) var(--ease-out) 70ms both; }
+      .project-dialog[open] .pd-body { animation: pd-content-in var(--dur-base) var(--ease-out) 130ms both; }
+    }
+
+    @media (min-width: 768px) {
+      .pd-media-main.is-portrait img { inset-inline: 0; width: auto; max-width: 62%; margin-inline: auto; }
+    }
+
+    @media (max-width: 1148px) {
+      .nav-links, .nav-actions > .language-switch, .nav-actions > .button { display: none; }
+      .nav-inner { grid-template-columns: auto 1fr auto; }
+      .nav-actions { justify-self: end; }
+      .menu-button { display: inline-grid; }
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-copy-area { order: 1; }
+      .trait-panel { order: 2; width: min(100%, 680px); margin-inline: auto; }
+      .avatar { margin-inline: auto; }
+      .hero-copy-area { text-align: center; }
+      .hero-copy, .hero-actions { margin-inline: auto; }
+      .highlight-strip { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .highlight-item:nth-child(-n+3) { border-bottom: 1px solid var(--line); }
+      .skills-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .project-dialog { width: 94vw; }
+      .pd-shell { grid-template-columns: minmax(0, 1.4fr) minmax(300px, 1fr); }
+    }
+
+    @media (max-width: 767px) {
+      :root { --section-pad: 40px; --nav-h: 56px; --reveal-distance: 12px; }
+      .container { width: min(100% - 32px, 1100px); }
+      .nav-shell { height: var(--nav-h); }
+      .view { min-height: calc(100vh - var(--nav-h)); padding-top: var(--nav-h); }
+      .view-home { min-height: 100vh; min-height: 100dvh; }
+      .hero { min-height: auto; padding-top: 0; }
+      .hero-grid { gap: 32px; padding-block: 40px var(--sp-6); }
+      .trait-panel { padding: 20px 0; border-left: 0; border-top: 1px solid var(--line); }
+      .hobby-grid { grid-template-columns: repeat(auto-fit, minmax(88px, 1fr)); }
+      .avatar { width: 104px; margin-bottom: 22px; }
+      .hero h1 { margin-inline: auto; font-size: clamp(2.65rem, 13vw, 3.6rem); }
+      .hero-actions { flex-direction: column; }
+      .hero-actions .button { width: 100%; }
+      .highlight-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .highlight-item { min-height: 112px; padding: var(--sp-4); }
+      .highlight-value { font-size: clamp(1.6rem, 7vw, 2rem); }
+      .highlight-item:nth-child(-n+4) { border-bottom: 1px solid var(--line); }
+      .experience-head { grid-template-columns: 1fr; }
+      .timeline-item { grid-template-columns: 32px minmax(0, 1fr); column-gap: 10px; }
+      .experience-points li { grid-template-columns: 24px minmax(0, 1fr); gap: 8px; }
+      .project-grid, .skills-grid, .contact-list, .fact-grid { grid-template-columns: 1fr; }
+      .timeline { grid-template-columns: 1fr; }
+      .project-card--compact .fact-grid { grid-template-columns: 1fr; }
+      .tabs { gap: 24px; }
+      .tab-summary { margin-bottom: 24px; }
+      .project-dialog { inset: 0; width: 100%; height: 100dvh; max-height: none; margin: 0; overflow-y: auto; border: 0; border-radius: 0; }
+      .pd-shell { display: block; height: auto; min-height: 100%; }
+      .pd-media { display: block; }
+      .pd-gallery { display: block; }
+      .pd-media-main { aspect-ratio: 16 / 10; }
+      .pd-media-main.is-portrait { width: 100%; height: min(72dvh, 720px); min-height: 0; aspect-ratio: auto; }
+      .pd-thumbs button { width: 60px; height: 45px; }
+      .pd-info { display: block; border-top: 1px solid var(--line); border-left: 0; }
+      .pd-body { overflow: visible; }
+      .compare-view { overflow: visible; }
+      .compare-pane { grid-template-columns: 1fr; }
+      .footer-inner { flex-direction: column; }
+      .back-to-top { right: 16px; bottom: 16px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+      .project-card:hover, .button:hover { transform: none; }
+      .reveal { opacity: 1 !important; translate: none !important; }
+    }
+
+    @media print {
+      :root, [data-theme="dark"] { --bg: #fff; --surface: #fff; --surface-2: #f4f4f4; --text: #111; --text-2: #444; --line: #ddd; }
+      body { padding-top: 24px; background: #fff; color: #111; }
+      .nav-shell, .hero-actions, .back-to-top, .drawer, .drawer-backdrop, .tabs-wrap, .project-action, .project-dialog { display: none !important; }
+      .view, .view[hidden] { display: block !important; min-height: auto !important; padding-top: 0 !important; break-before: page; }
+      .view:first-child { break-before: auto; }
+      .hero { min-height: auto; padding-top: 0; }
+      .section, .highlights { padding-block: 24px; }
+      .highlight-strip { border: 1px solid #999 !important; }
+      .highlight-item { break-inside: avoid; }
+      .print-header { position: fixed; z-index: 1000; top: 0; right: 0; left: 0; display: flex !important; justify-content: space-between; gap: 12px; padding: 0 0 6px; border-bottom: 1px solid #ccc; background: #fff; color: #333; font-size: 9pt; }
+      .tab-panels, .panel { height: auto !important; display: block !important; }
+      .panel { margin-bottom: 28px; }
+      .project-grid, .skills-grid { grid-template-columns: repeat(2, 1fr); }
+      .project-card, .skill-card, .timeline-item { break-inside: avoid; page-break-inside: avoid; }
+      .reveal { opacity: 1 !important; transform: none !important; translate: none !important; }
+      .project-detail { display: block !important; border-top: 1px solid var(--line) !important; }
+      a[href^="mailto"] { color: #111; text-decoration: none; }
+      @page { size: A4; margin: 14mm; }
+    }
+  </style>
+</head>
+<body>
+  <div class="print-header" aria-hidden="true"><strong data-print-name></strong><span data-print-contact></span></div>
+  <a class="skip-link" href="#view-home" data-i18n="a11y.skip"></a>
+  <header class="nav-shell" id="top">
+    <nav class="nav-inner container" aria-label="Primary navigation" data-i18n-aria="a11y.primaryNav">
+      <a class="brand" href="#hero" aria-label="Home" data-i18n-aria="a11y.home">
+        <strong data-i18n="brand.name"></strong>
+        <span data-i18n="brand.enName"></span>
+      </a>
+      <div class="nav-links" data-nav-links></div>
+      <div class="nav-actions">
+        <div class="language-switch" role="group" aria-label="Language" data-i18n-aria="a11y.language">
+          <button class="language-button" type="button" data-lang="zh" aria-pressed="true">中文</button>
+          <button class="language-button" type="button" data-lang="en" aria-pressed="false">EN</button>
+          <button class="language-button" type="button" data-lang="ko" aria-pressed="false">한국어</button>
+        </div>
+        <button class="icon-button theme-toggle" type="button" data-i18n-aria="actions.theme"></button>
+        <button class="button button--primary print-button" type="button">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 20h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span data-i18n="actions.pdf"></span>
+        </button>
+        <button class="menu-button" type="button" aria-expanded="false" aria-controls="mobile-drawer" data-i18n-aria="actions.menu">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <div class="drawer-backdrop" data-drawer-backdrop></div>
+  <aside class="drawer" id="mobile-drawer" role="dialog" aria-modal="true" aria-hidden="true" data-i18n-aria="actions.menu" inert>
+    <div class="drawer-head">
+      <a class="brand" href="#hero"><strong data-i18n="brand.name"></strong><span data-i18n="brand.enName"></span></a>
+      <button class="icon-button drawer-close" type="button" data-i18n-aria="actions.close">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <nav class="drawer-nav" data-drawer-nav data-i18n-aria="a11y.primaryNav"></nav>
+    <div class="drawer-actions">
+      <div class="language-switch" role="group" data-i18n-aria="a11y.language">
+        <button class="language-button" type="button" data-lang="zh" aria-pressed="true">中文</button>
+        <button class="language-button" type="button" data-lang="en" aria-pressed="false">EN</button>
+        <button class="language-button" type="button" data-lang="ko" aria-pressed="false">한국어</button>
+      </div>
+      <button class="button button--secondary theme-toggle" type="button" data-i18n-aria="actions.theme"><span data-i18n="actions.theme"></span></button>
+      <button class="button button--primary print-button" type="button"><span data-i18n="actions.pdf"></span></button>
+    </div>
+  </aside>
+
+  <main class="view-stack" id="main">
+    <section class="view view-home is-active" id="view-home" data-view="home" aria-labelledby="home-title" tabindex="-1">
+      <div class="hero" id="hero">
+        <div class="hero-grid container">
+          <div class="hero-copy-area">
+            <div class="avatar" aria-hidden="true">
+              <!-- 替换为真实职业照时，须改用带三语 alt 的 img。 -->
+              <svg viewBox="0 0 64 64" fill="none" aria-hidden="true"><circle cx="32" cy="23" r="12" fill="currentColor"/><path d="M12 56c2-13 10-20 20-20s18 7 20 20" fill="currentColor"/></svg>
+            </div>
+            <p class="eyebrow" data-i18n="hero.eyebrow"></p>
+            <h1 id="home-title" tabindex="-1" data-i18n="hero.name"></h1>
+            <p class="hero-name-en" data-i18n="hero.enName"></p>
+            <p class="hero-role" data-i18n="hero.role"></p>
+            <p class="hero-org"><span data-i18n="hero.org"></span> · <span data-i18n="hero.period"></span></p>
+            <p class="hero-copy" data-i18n="hero.summary"></p>
+            <div class="hero-actions">
+              <a class="button button--primary" href="#projects"><span data-i18n="actions.projects"></span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m9 18 6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+              <button class="button button--secondary print-button" type="button"><span data-i18n="actions.pdf"></span></button>
+              <a class="button button--secondary" href="#contact"><span data-i18n="actions.contact"></span></a>
+            </div>
+          </div>
+          <aside class="trait-panel" aria-labelledby="trait-title">
+            <h2 class="sr-only" id="trait-title" data-i18n="trait.title"></h2>
+            <section class="trait-block" data-trait-block="1">
+              <h3 class="trait-label" data-i18n="trait.mbti"></h3>
+              <p class="trait-badge">TJ</p>
+              <ul class="mbti-grid" data-i18n-aria="trait.mbtiAria">
+                <li class="mbti-cell is-neutral"><span>E</span><span>I</span></li>
+                <li class="mbti-cell is-neutral"><span>S</span><span>N</span></li>
+                <li class="mbti-cell is-set"><strong>T</strong><span>F</span></li>
+                <li class="mbti-cell is-set"><strong>J</strong><span>P</span></li>
+              </ul>
+            </section>
+            <section class="trait-block" data-trait-block="2">
+              <h3 class="trait-label" data-i18n="trait.interests"></h3>
+              <ul class="hobby-grid">
+                <li class="hobby-card"><span class="hobby-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 9v6m3-8v10m10-10v10m3-8v6M7 12h10M2.5 10v4M21.5 10v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span><span data-i18n="trait.gym"></span></li>
+                <li class="hobby-card"><span class="hobby-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="14" cy="4.5" r="2" stroke="currentColor" stroke-width="1.8"/><path d="m12 8-3 4 3 2 2-3 2 2 3-1M11 14l-2 6m5-7 3 6M5 11l4 1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="trait.running"></span></li>
+                <li class="hobby-card"><span class="hobby-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.8"/><path d="M4 10c5 1 9 5 10 10M20 14c-5-1-9-5-10-10M12 3.5c0 7-3 12-7 15M19 5c-4 3-7 8-7 15.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span><span data-i18n="trait.basketball"></span></li>
+              </ul>
+            </section>
+            <section class="trait-block" data-trait-block="3">
+              <h3 class="trait-label" data-i18n="trait.thinking"></h3>
+              <p class="trait-inline"><span class="hobby-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 4v15h15M7 16l4-5 3 2 5-7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="11" cy="11" r="1" fill="currentColor"/><circle cx="14" cy="13" r="1" fill="currentColor"/><circle cx="19" cy="6" r="1" fill="currentColor"/></svg></span><span data-i18n="trait.logic"></span></p>
+            </section>
+          </aside>
+        </div>
+      </div>
+      <div class="highlights" id="highlights" aria-labelledby="highlights-title">
+        <div class="container">
+          <h2 class="section-heading" id="highlights-title" data-i18n="sections.highlights"></h2>
+          <dl class="highlight-strip" data-highlights></dl>
+        </div>
+      </div>
+    </section>
+
+    <section class="view view-experience" id="view-experience" data-view="experience" aria-labelledby="experience-title" tabindex="-1" hidden>
+      <div class="section" id="experience">
+        <div class="container">
+          <h2 class="section-heading" id="experience-title" tabindex="-1" data-i18n="sections.experience"></h2>
+          <div class="panel-card"><div class="experience-head"><div><h3 data-i18n="experience.company"></h3><p data-i18n="experience.role"></p></div><div class="experience-meta"><span class="experience-date" data-i18n="experience.period"></span><span class="status-chip" data-i18n="experience.status"></span></div></div><div class="timeline" data-timeline></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="view view-projects" id="view-projects" data-view="projects" aria-labelledby="projects-title" tabindex="-1" hidden>
+      <div class="section" id="projects">
+        <div class="container">
+          <h2 class="section-heading" id="projects-title" tabindex="-1" data-i18n="sections.projects"></h2>
+          <div class="tabs-wrap"><div class="tabs" role="tablist" data-tabs></div></div>
+          <div class="tab-panels" data-tab-panels></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="view view-skills" id="view-skills" data-view="skills" aria-labelledby="skills-title" tabindex="-1" hidden>
+      <div class="section" id="skills">
+        <div class="container"><h2 class="section-heading" id="skills-title" tabindex="-1" data-i18n="sections.skills"></h2><div class="skills-grid" data-skills></div></div>
+      </div>
+      <div class="section" id="languages" aria-labelledby="languages-title">
+        <div class="container"><h2 class="section-heading" id="languages-title" data-i18n="sections.languages"></h2><div class="language-list" data-language-list></div></div>
+      </div>
+    </section>
+
+    <section class="view view-contact" id="view-contact" data-view="contact" aria-labelledby="contact-title" tabindex="-1" hidden>
+      <div class="section" id="contact">
+        <div class="container"><h2 class="section-heading" id="contact-title" tabindex="-1" data-i18n="sections.contact"></h2><div class="panel-card contact-panel"><div class="contact-list" data-contact-list></div></div></div>
+      </div>
+    </section>
+
+  </main>
+
+  <dialog class="project-dialog" id="project-dialog" aria-labelledby="pd-title" data-project-dialog tabindex="-1">
+    <div class="pd-shell">
+      <div class="pd-media">
+        <div class="pd-gallery" data-pd-gallery>
+          <div class="pd-media-main" data-pd-main>
+            <button class="pd-nav pd-nav--prev" type="button" data-pd-prev data-i18n-aria="projects.prev" aria-label="Previous image">‹</button>
+            <img data-pd-image alt="" decoding="async">
+            <div class="pd-placeholder" data-pd-placeholder hidden></div>
+            <button class="pd-nav pd-nav--next" type="button" data-pd-next data-i18n-aria="projects.next" aria-label="Next image">›</button>
+          </div>
+          <div class="pd-gallery-footer">
+            <ol class="pd-thumbs" data-pd-thumbs></ol>
+            <span class="pd-counter" data-pd-counter aria-live="polite"></span>
+          </div>
+        </div>
+        <div class="compare-view" data-pd-compare hidden>
+          <div class="compare-switch" role="group" data-i18n-aria="projects.compareSwitch">
+            <button class="compare-switch__btn" type="button" aria-pressed="true" data-compare-mode="compare"></button>
+            <button class="compare-switch__btn" type="button" aria-pressed="false" data-compare-mode="all"></button>
+          </div>
+          <div class="compare-pane">
+            <figure class="compare-side">
+              <span class="compare-tag" data-compare-before-label></span>
+              <div class="compare-frame">
+                <img data-compare-before alt="" decoding="async">
+                <div class="compare-nav" data-compare-before-nav>
+                  <button type="button" data-compare-before-prev data-i18n-aria="projects.prev" aria-label="Previous before image">‹</button>
+                  <span data-compare-before-counter></span>
+                  <button type="button" data-compare-before-next data-i18n-aria="projects.next" aria-label="Next before image">›</button>
+                </div>
+              </div>
+              <figcaption data-compare-before-caption></figcaption>
+            </figure>
+            <figure class="compare-side">
+              <span class="compare-tag compare-tag--after" data-compare-after-label></span>
+              <div class="compare-frame">
+                <img data-compare-after alt="" decoding="async">
+                <div class="compare-nav" data-compare-after-nav>
+                  <button type="button" data-compare-prev data-i18n-aria="projects.prev" aria-label="Previous after image">‹</button>
+                  <span data-compare-counter></span>
+                  <button type="button" data-compare-next data-i18n-aria="projects.next" aria-label="Next after image">›</button>
+                </div>
+              </div>
+              <figcaption data-compare-after-caption></figcaption>
+            </figure>
+          </div>
+          <div class="compare-process" data-compare-process>
+            <span class="compare-process__label" data-compare-process-label></span>
+            <ol class="compare-process__list" data-compare-process-list></ol>
+          </div>
+          <p class="compare-note" data-compare-note></p>
+        </div>
+        <button class="pd-autoplay" type="button" data-pd-autoplay hidden aria-pressed="false"><span data-pd-autoplay-icon aria-hidden="true"></span></button>
+      </div>
+      <div class="pd-info">
+        <header class="pd-head">
+          <div class="pd-head__meta"><span class="chip chip--date" data-pd-date></span><span class="chip" data-pd-type></span></div>
+          <h3 class="pd-title" id="pd-title" data-pd-title></h3>
+          <button class="pd-close" type="button" data-pd-close data-i18n-aria="projects.close" aria-label="Close">×</button>
+        </header>
+        <div class="pd-body">
+          <section class="pd-section"><h4 data-pd-context></h4><dl class="fact-grid" data-pd-facts></dl></section>
+          <section class="pd-section"><h4 data-pd-narrative-label></h4><p class="pd-copy" data-pd-narrative></p></section>
+          <section class="pd-section" data-pd-results-section><h4 data-pd-outcomes-label></h4><div class="result-row" data-pd-results></div><p class="result-note" data-pd-result-note></p></section>
+        </div>
+      </div>
+    </div>
+  </dialog>
+  <p class="sr-only" aria-live="polite" data-view-announcer></p>
+
+  <footer class="site-footer">
+    <div class="footer-inner container"><span data-i18n="footer.copyright"></span><span data-i18n="footer.updated"></span></div>
+  </footer>
+
+  <button class="back-to-top" type="button" data-i18n-aria="actions.top">
+    <svg width="21" height="21" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m6 14 6-6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+
+  <script>
+    (() => {
+      'use strict';
+
+      const I18N = {
+        zh: {
+          meta: { title: '张博思远（Jumpson）｜销售运营与零售项目作品集', description: '张博思远的销售运营、快闪项目、KA 渠道与终端陈列职业作品集。' },
+          a11y: { skip: '跳至主要内容', primaryNav: '主导航', language: '切换语言', home: '返回首页' },
+          brand: { name: '张博思远', enName: 'Jumpson' },
+          nav: { home: '首页', experience: '工作经历', projects: '项目经历', skills: '技能', contact: '联系' },
+          views: { home: '首页', experience: '工作经历', projects: '项目经历', skills: '专业技能', contact: '联系方式' },
+          actions: { theme: '切换至深色或浅色模式', menu: '打开菜单', close: '关闭菜单', pdf: '下载简历 PDF', projects: '查看项目经历', contact: '联系我', top: '返回顶部' },
+          hero: { eyebrow: '职业作品集', name: '张博思远', enName: 'Jumpson', role: '销售运营 · 快闪项目负责人', org: 'Shokz（韶音科技）· 韩国市场', period: '2024.07–至今', summary: '2 年韩国消费电子零售一线经验，主导 15+ 场快闪/体验店操盘，覆盖 KA 渠道进店、终端陈列、数据分析、品牌营销全链路。' },
+          trait: { title: '个人特质', mbti: '性格类型', mbtiAria: '性格维度，已确定为 T 思考与 J 判断', interests: '兴趣与运动', gym: '健身', running: '跑步', basketball: '篮球', thinking: '思维偏好', logic: '数据与逻辑型偏好者' },
+          sections: { highlights: '数据亮点', experience: '工作经历', projects: '项目经历', skills: '专业技能', languages: '语言能力', contact: '联系方式' },
+          highlights: [
+            { num: '15', suffix: '+ 场', label: '快闪项目操盘', alt: '快闪操盘 15 场以上' }, { num: '12', label: '主导快闪项目', alt: '快闪主导 12 场', suffix: ' 场' }, { num: '22', suffix: '+ 家', label: '门店展陈升级', alt: '门店展陈升级 22 家以上' },
+            { num: '2', label: 'KA 渠道运营', alt: '运营 2 个 KA 渠道', suffix: ' 个' }, { num: '100', suffix: '+ 家', label: '广告覆盖门店', alt: '广告投放门店 100 家以上' }, { num: '2', suffix: ' 年', label: '韩国市场一线经验', alt: '韩国市场一线经验 2 年' }
+          ],
+          experience: { company: 'Shokz（韶音科技）· 韩国市场', role: '销售运营 · 快闪项目负责人', period: '2024.07–至今', status: '在职中', items: [
+            { title: '多场地快闪项目统筹', points: ['累计操盘韩国市场 15+ 场线下快闪项目（其中主导 12 场），覆盖乐天、现代、新世界、新世界 Starfield 等主流零售渠道及首尔、釜山等核心城市；2026 年超预期推进 10+ 场。', '完成现场实地选址调研、展陈与平面设计对接、定制物料制作对接，从项目前期准备与评审，到现场运营与数据复盘，形成完整闭环；对销售目标、项目预算与费用负责。'] },
+            { title: 'KA 渠道进店', points: ['负责 Costco 项目的定价区间及渠道利润结构规划、线下物料设计、产品 listing 整理和分销商新品培训，参考日本 Costco、美国 Sam’s Club 的进店案例对现有渠道展陈进行优化。', '获取新品上市期 himart 渠道资源，推动门内广告位更新、户外广告及渠道线上推广资源落地，串联品牌曝光与销售转化触点。'] },
+            { title: '终端陈列运营', points: ['累计推进 22+ 家门店展陈与品牌专区升级，升级后 3 个月月均销量环比提升 74%。', '新品期争取 himart 户外广告并落地 Costco 门店内广告，累计覆盖 100+ 家门店，在多品牌竞争环境下占据新品上市的核心曝光窗口。'] },
+            { title: '门店数据与经营分析', points: ['规范门店运营数据，重点跟踪 SO、监测 SI，并分析各渠道销量占比，统一渠道数据口径。', '参与月度经营分析报告编写，持续跟踪门店销量与重点异常门店，建立门店级月度监测机制，为渠道经营判断提供依据。'] },
+            { title: '渠道门店店员激励', points: ['制定并定期迭代门店店员激励政策，与分销商协商激励费用分摊机制。', '通过优化激励条件，促使店员熟悉并主动推荐品牌产品，提升渠道门店销售团队的参与度。'] },
+            { title: '活动与内容运营', points: ['统筹韩国代言人素材，主导品牌快闪官方账号（INS）从 0 到 1 运营，并参与大韩航空机内广告。', '策划并落地中秋、家庭月、12 月、黑五等多档促销活动。'] }
+          ] },
+          projects: { tabs: { popup: '快闪项目', ka: 'KA 渠道维护', display: '展陈升级项目', airline: '大韩航空机内广告' }, view: '查看详情', image: '暂无公开图片', imagePlanned: '项目尚未运营 · 实拍待更新', imageUnit: '张图片', planned: '已规划 · 待运营', strategic: '战略级', context: '项目信息', narrative: '项目文案', outcomes: '结果数据', resultNote: '结果按现有项目记录的运营期口径呈现；达成率表示对应项目销售目标的完成情况。', close: '关闭项目详情', prev: '上一张图片', next: '下一张图片', autoplayStart: '播放图片', autoplayStop: '暂停图片', compare: '前后对比', allImages: '全部图片', before: '升级前', after: '升级后', process: '过程记录', compareSwitch: '切换前后对比与全部图片', compareNote: '升级前为原始陈列状态，升级后为完成态实拍。', factLabels: { popup: ['百货店', '年度销售额地位', '商圈定位', '交通便利度', '快闪承接频率', '本人在该店场次'], ka: ['渠道覆盖', '项目周期', '对标', '交付范围'], display: ['渠道', '门店', '记录范围', '展示方式'], airline: ['合作方', '投放形式', '投放周期与覆盖范围'] } },
+          skills: { items: [
+            { title: '快闪项目全流程管理', tags: ['快闪与专卖店全流程', '选址调研', '现场执行', '多门店并行操盘', '数据复盘'] },
+            { title: '渠道管理', tags: ['KA 进店全链路', '定价区间策划', '渠道结构规划', '分销商新品培训', '门店广告位获取'] },
+            { title: '成本与费用', tags: ['制作成本与交期决策', '激励费用分摊', '物料制作与打样管理', '渠道利润结构规划'] },
+            { title: '展陈升级', tags: ['多业态零售终端陈列', '展桌 / 灯片 / 品牌专区标准', '门店分级推进策略', '展陈设计', '升级前后效果验证'] },
+            { title: '数据分析', tags: ['Excel 数据看板', '透视表', '多表合并', '经营分析汇报 PPT', 'SO / SI 追踪'] },
+            { title: '促销与内容运营', tags: ['多档促销活动策划与落地', '店员激励政策设计', '以旧机抵扣换购', '礼盒与赠品配置', '社媒账号运营（0→1）', '代言人 / 红人素材统筹'] }
+          ] },
+          languages: { items: ['中文 · 母语', '韩语 · 工作语言，2 年韩国市场一线', '英语 · 读写流畅，口语可工作交流'] },
+          contact: { items: [{ key: 'email', label: '邮箱', value: 'zhangbosiyuan@gmail.com' }, { key: 'location', label: '现居', value: '广东-深圳' }, { key: 'phone', label: '电话', value: '面试后提供' }], travel: '可接受异地到岗 / 高频出差（2 年 12 次赴韩）' },
+          footer: { copyright: '© 2026 张博思远（Jumpson）', updated: '最后更新 2026.09' }
+        },
+        en: {
+          meta: { title: 'Zhang Bosiyuan (Jumpson) | Sales Operations Portfolio', description: 'Sales operations, pop-up retail, key account, and in-store merchandising portfolio.' },
+          a11y: { skip: 'Skip to main content', primaryNav: 'Main navigation', language: 'Change language', home: 'Back to home' },
+          brand: { name: 'Zhang Bosiyuan', enName: 'Jumpson' },
+          nav: { home: 'Home', experience: 'Experience', projects: 'Projects', skills: 'Skills', contact: 'Contact' },
+          views: { home: 'Home', experience: 'Experience', projects: 'Projects', skills: 'Skills', contact: 'Contact' },
+          actions: { theme: 'Switch between dark and light mode', menu: 'Open menu', close: 'Close menu', pdf: 'Download Resume (PDF)', projects: 'View Projects', contact: 'Contact me', top: 'Back to top' },
+          hero: { eyebrow: 'Professional Portfolio', name: 'Zhang Bosiyuan', enName: 'Jumpson', role: 'Sales Operations · Pop-up Project Lead', org: 'Shokz · Korea Market', period: 'Jul 2024–Present', summary: 'Two years in consumer electronics retail in Korea, leading 15+ pop-up and experiential retail projects across key account onboarding, in-store display, data analysis, and brand marketing.' },
+          trait: { title: 'Personal traits', mbti: 'Personality type', mbtiAria: 'Personality axes — T Thinking and J Judging confirmed', interests: 'Interests & Sports', gym: 'Fitness', running: 'Running', basketball: 'Basketball', thinking: 'Thinking style', logic: 'Data- and logic-driven' },
+          sections: { highlights: 'Highlights', experience: 'Experience', projects: 'Projects', skills: 'Skills', languages: 'Languages', contact: 'Contact' },
+          highlights: [
+            { num: '15', suffix: '+', label: 'Pop-ups managed', alt: '15+ pop-ups managed' }, { num: '12', label: 'Pop-ups led', alt: 'Led 12 pop-ups', suffix: '' }, { num: '22', suffix: '+', label: 'Store display upgrades', alt: '22+ store display upgrades' },
+            { num: '2', label: 'Key accounts managed', alt: 'Managed 2 key accounts', suffix: '' }, { num: '100', suffix: '+', label: 'Stores reached by advertising', alt: '100+ stores with ad placements' }, { num: '2', suffix: ' yrs', label: 'Korea retail experience', alt: '2 years of frontline retail experience in Korea' }
+          ],
+          experience: { company: 'Shokz · Korea Market', role: 'Sales Operations · Pop-up Project Lead', period: 'Jul 2024–Present', status: 'Current', items: [
+            { title: 'Multi-site Pop-up Project Leadership', points: ['Managed 15+ offline pop-ups in Korea and led 12, spanning Lotte, Hyundai, Shinsegae, and Starfield across key cities including Seoul and Busan. Advanced 10+ projects in 2026, exceeding expectations.', 'Managed on-site location research, display and graphic design coordination, and custom-material production from preparation and review through on-site operations and performance analysis. Owned sales targets, project budgets, and expenses.'] },
+            { title: 'Key Account Product Launches', points: ['For Costco, planned pricing bands and channel economics, designed in-store materials, organized product listings, and trained distributors. Used Costco Japan and Sam’s Club US as benchmarks to improve existing in-channel merchandising.', 'Secured himart channel resources for new-product launches, updating in-store ad placements and activating outdoor advertising and online promotion to connect brand visibility with sales conversion.'] },
+            { title: 'Retail Display Operations', points: ['Upgraded displays and brand zones in 22+ stores. Average monthly unit sales rose 74% month on month over the three months after the upgrades.', 'Secured himart outdoor advertising and Costco in-store placements during product launches, reaching 100+ stores and gaining prominent visibility alongside competing brands.'] },
+            { title: 'Store Data and Business Analysis', points: ['Standardized store operations data by tracking SO, monitoring SI, and reviewing unit sales share by channel.', 'Contributed to monthly business reviews and established store-level monitoring to track unit sales and flag outlier stores, supporting channel decisions.'] },
+            { title: 'Retail Staff Incentives', points: ['Designed and regularly updated retail staff incentive policies and negotiated cost sharing with distributors.', 'Refined incentive terms to help staff understand and actively recommend the products, improving engagement among in-store sales teams.'] },
+            { title: 'Campaign and Content Operations', points: ['Coordinated Korean ambassador assets, launched and ran the brand pop-up Instagram account, and contributed to Korean Air in-flight advertising.', 'Planned and executed campaigns for Chuseok, Family Month, December, and Black Friday.'] }
+          ] },
+          projects: { tabs: { popup: 'Pop-up Projects', ka: 'Key Account Management', display: 'Retail Display Upgrades', airline: 'Korean Air In-flight Advertising' }, view: 'View details', image: 'No public image available', imagePlanned: 'Not yet launched · On-site photos to follow', imageUnit: 'photos', planned: 'Planned · Not yet launched', strategic: 'Strategic Project', context: 'Project context', narrative: 'Project narrative', outcomes: 'Results', resultNote: 'Results follow the operating-period definitions in the available project records; attainment indicates performance against the project sales target.', close: 'Close project details', prev: 'Previous image', next: 'Next image', autoplayStart: 'Play images', autoplayStop: 'Pause images', compare: 'Before & after', allImages: 'All images', before: 'Before upgrade', after: 'After upgrade', process: 'Process record', compareSwitch: 'Switch between comparison and all images', compareNote: 'Before shows the original display; after shows the completed upgrade.', factLabels: { popup: ['Department store', 'Annual Sales Ranking', 'Trade Area Profile', 'Accessibility', 'Pop-up Frequency', 'Projects at This Venue'], ka: ['Channel coverage', 'Project period', 'Benchmark', 'Scope of Work'], display: ['Channel', 'Store', 'Record', 'Presentation'], airline: ['Partner', 'Placement format', 'Placement period and coverage'] } },
+          skills: { items: [
+            { title: 'End-to-end Pop-up Project Management', tags: ['End-to-end Pop-up and Brand Store Operations', 'Site and Trade Area Research', 'On-site execution', 'Concurrent Multi-site Operations', 'Performance Review'] },
+            { title: 'Channel Management', tags: ['End-to-end Key Account Onboarding', 'Pricing bands', 'Channel structure planning', 'Distributor product training', 'In-store ad placement acquisition'] },
+            { title: 'Cost & Expense Management', tags: ['Production cost and lead-time decisions', 'Incentive cost sharing', 'POSM production and proofing management', 'Channel profit-structure design'] },
+            { title: 'Retail Display Upgrades', tags: ['Retail Display Across Store Formats', 'Display table / light box / brand zone standards', 'Store-tiered Rollout Strategy', 'Display design', 'Before-and-after validation'] },
+            { title: 'Data Analysis', tags: ['Excel dashboards', 'Pivot tables', 'Multi-sheet consolidation', 'Business review decks', 'SO / SI tracking'] },
+            { title: 'Promotion & Content Operations', tags: ['Multi-campaign planning and execution', 'Retail staff incentive program design', 'Trade-in promotions', 'Gift-box and giveaway planning', 'Social media account launch and operations', 'Ambassador & influencer asset coordination'] }
+          ] },
+          languages: { items: ['Chinese · Native', 'Korean · Working proficiency; 2 years in Korea’s retail market', 'English · Fluent in reading and writing; comfortable in work conversations'] },
+          contact: { items: [{ key: 'email', label: 'Email', value: 'zhangbosiyuan@gmail.com' }, { key: 'location', label: 'Based in', value: 'Shenzhen, Guangdong' }, { key: 'phone', label: 'Phone', value: 'Available after interview' }], travel: 'Open to relocation and frequent travel (12 trips to Korea in 2 years)' },
+          footer: { copyright: '© 2026 Zhang Bosiyuan (Jumpson)', updated: 'Last updated Sep 2026' }
+        },
+        ko: {
+          meta: { title: '장박사원 (Jumpson) | 영업 운영 포트폴리오', description: '영업 운영, 팝업 프로젝트, 주요 거래처 및 매장 진열 중심의 커리어 포트폴리오입니다.' },
+          a11y: { skip: '본문으로 바로가기', primaryNav: '주요 메뉴', language: '언어 변경', home: '홈으로 돌아가기' },
+          brand: { name: '장박사원', enName: 'Jumpson' },
+          nav: { home: '홈', experience: '경력', projects: '프로젝트', skills: '역량', contact: '연락처' },
+          views: { home: '홈', experience: '경력', projects: '프로젝트', skills: '역량', contact: '연락처' },
+          actions: { theme: '어두운 화면 또는 밝은 화면으로 전환', menu: '메뉴 열기', close: '메뉴 닫기', pdf: '이력서 PDF 다운로드', projects: '프로젝트 보기', contact: '연락하기', top: '맨 위로' },
+          hero: { eyebrow: '커리어 포트폴리오', name: '장박사원', enName: 'Jumpson', role: '영업 운영 · 팝업 프로젝트 총괄', org: 'Shokz · 한국 시장', period: '2024.07–현재', summary: '한국 소비자 전자제품 리테일 현장에서 2년간 일하며 팝업·체험형 매장 프로젝트 15건 이상을 운영했습니다. KA 채널 입점부터 매장 진열, 데이터 분석, 브랜드 마케팅까지 전 과정을 맡았습니다.' },
+          trait: { title: '개인 특성', mbti: '성격 유형', mbtiAria: '성격 지표, T 사고와 J 판단으로 확인됨', interests: '관심사 및 스포츠', gym: '피트니스', running: '러닝', basketball: '농구', thinking: '사고 방식', logic: '데이터·논리 중심 성향' },
+          sections: { highlights: '주요 성과', experience: '경력', projects: '프로젝트', skills: '역량', languages: '언어', contact: '연락처' },
+          highlights: [
+            { num: '15', suffix: '+건', label: '팝업 운영', alt: '팝업 15건 이상 운영' }, { num: '12', suffix: '건', label: '팝업 주도', alt: '팝업 12건 주도' }, { num: '22', suffix: '+곳', label: '매장 진열 개선', alt: '매장 진열 개선 22곳 이상' },
+            { num: '2', suffix: '개사', label: '주요 거래처 운영', alt: '주요 거래처 2개사 운영' }, { num: '100', suffix: '+곳', label: '광고 집행 매장', alt: '광고 집행 매장 100곳 이상' }, { num: '2', suffix: '년', label: '한국 리테일 현장 경험', alt: '한국 리테일 현장 경험 2년' }
+          ],
+          experience: { company: 'Shokz · 한국 시장', role: '영업 운영 · 팝업 프로젝트 총괄', period: '2024.07–현재', status: '재직 중', items: [
+            { title: '다수 매장 팝업 프로젝트 총괄', points: ['한국에서 오프라인 팝업 15건 이상을 운영하고 그중 12건을 주도했습니다. 서울·부산 등 핵심 도시의 롯데·현대·신세계백화점과 스타필드 등 주요 리테일 공간을 담당했으며, 2026년에는 예상을 웃도는 10건 이상을 추진했습니다.', '현장 입지 조사, 진열·그래픽 디자인 협업, 맞춤 제작물 제작 조율부터 사전 준비와 검토, 현장 운영, 성과 분석까지 전 과정을 관리하고 판매 목표와 프로젝트 예산·비용을 책임졌습니다.'] },
+            { title: '주요 거래처 신제품 입점', points: ['Costco 프로젝트의 가격대 및 채널 수익 구조 기획, 매장 홍보물 디자인, 제품 리스팅 정리, 유통사 신제품 교육을 담당하고 일본 Costco와 미국 Sam’s Club의 입점 사례를 참고해 기존 채널 진열을 개선했습니다.', '신제품 출시 기간에 하이마트 채널 자원을 확보하고 매장 내 광고 지면 업데이트, 옥외 광고, 채널 온라인 프로모션을 추진해 브랜드 노출과 구매 전환을 연결했습니다.'] },
+            { title: '매장 진열 및 브랜드 존 운영', points: ['22곳 이상 매장의 진열과 브랜드 존 개선을 추진했습니다. 개선 후 3개월간 월평균 판매량이 전월 대비 74% 증가했습니다.', '신제품 출시 기간에는 하이마트 옥외 광고와 Costco 매장 내 광고를 집행해 총 100곳 이상 매장에 노출했으며, 경쟁 브랜드가 많은 환경에서 주요 출시 노출 지면을 선점했습니다.'] },
+            { title: '매장 데이터 및 사업 실적 분석', points: ['매장 운영 데이터를 정리하고 SO를 중심으로 추적하며 SI와 채널별 판매량 비중을 점검해 채널 간 데이터 기준을 통일했습니다.', '월간 사업 실적 분석 보고서 작성에 참여하고, 매장별 판매량과 이상 매장을 지속적으로 확인하는 월별 모니터링 체계를 마련해 채널 운영 판단을 지원했습니다.'] },
+            { title: '유통 채널 매장 직원 인센티브', points: ['매장 직원 인센티브 정책을 수립하고 정기적으로 개선했으며 유통사와 비용 분담 방식을 협의했습니다.', '인센티브 조건을 조정해 직원들이 브랜드 제품을 이해하고 적극적으로 추천하도록 유도하고, 매장 판매팀의 참여도를 높였습니다.'] },
+            { title: '프로모션 및 콘텐츠 운영', points: ['한국 앰버서더 콘텐츠를 총괄하고 브랜드 팝업 공식 인스타그램 계정을 처음부터 구축·운영했으며 대한항공 기내 광고에 참여했습니다.', '추석, 가정의 달, 12월, 블랙프라이데이 프로모션을 기획·실행했습니다.'] }
+          ] },
+          projects: { tabs: { popup: '팝업 프로젝트', ka: 'KA 채널 관리', display: '매장 진열 업그레이드 프로젝트', airline: '대한항공 기내 광고 프로젝트' }, view: '자세히 보기', image: '공개 이미지 없음', imagePlanned: '운영 예정 · 현장 실사 추후 업데이트', imageUnit: '장', planned: '기획 완료 · 운영 예정', strategic: '전략 프로젝트', context: '프로젝트 정보', narrative: '프로젝트 내용', outcomes: '성과', resultNote: '성과는 현재 프로젝트 기록의 운영 기간 기준으로 표시했으며, 달성률은 해당 프로젝트 판매 목표 대비 실적을 뜻합니다.', close: '프로젝트 상세 닫기', prev: '이전 이미지', next: '다음 이미지', autoplayStart: '이미지 재생', autoplayStop: '이미지 일시 정지', compare: '개선 전후 비교', allImages: '전체 이미지', before: '개선 전', after: '개선 후', process: '진행 과정', compareSwitch: '전후 비교와 전체 이미지 전환', compareNote: '개선 전은 기존 진열 상태이며, 개선 후는 완료 후 실사입니다.', factLabels: { popup: ['백화점', '연간 매출 순위', '상권 특성', '교통 접근성', '팝업 진행 빈도', '해당 매장에서 진행한 프로젝트'], ka: ['채널 범위', '프로젝트 기간', '벤치마크', '담당 업무'], display: ['채널', '매장', '기록 범위', '표시 방식'], airline: ['협업 대상', '게재 형태', '게재 기간 및 노출 범위'] } },
+          skills: { items: [
+            { title: '팝업 프로젝트 전 과정 관리', tags: ['팝업·브랜드 단독 매장 전 과정 운영', '입지 및 상권 조사', '현장 실행', '여러 매장 동시 운영', '운영 성과 분석'] },
+            { title: '채널 관리', tags: ['주요 거래처 신제품 입점 전 과정', '가격대 기획', '유통 채널 구조 기획', '유통사 대상 신제품 교육', '매장 광고 지면 확보'] },
+            { title: '원가·비용 관리', tags: ['제작 비용·납기 비교 및 결정', '인센티브 비용 분담', '판촉물 제작·시안 관리', '유통 채널 수익 구조 설계'] },
+            { title: '진열 업그레이드', tags: ['다양한 리테일 업태의 매장 진열', '진열대·라이트박스·브랜드 존 표준', '매장 등급별 개선 전략', '진열 디자인', '개선 전후 효과 검증'] },
+            { title: '데이터 분석', tags: ['Excel 대시보드', '피벗 테이블', '다중 시트 통합', '경영 분석 보고 자료', 'SO·SI 추적'] },
+            { title: '프로모션 및 콘텐츠 운영', tags: ['다양한 프로모션 기획 및 실행', '매장 직원 인센티브 정책 설계', '보상판매 프로모션', '기프트 박스·사은품 구성', '소셜 미디어 계정 구축·운영', '앰버서더·인플루언서 소재 총괄'] }
+          ] },
+          languages: { items: ['중국어 · 모국어', '한국어 · 업무에 사용, 한국 리테일 현장 경력 2년', '영어 · 읽기·쓰기 유창, 업무상 회화 가능'] },
+          contact: { items: [{ key: 'email', label: '이메일', value: 'zhangbosiyuan@gmail.com' }, { key: 'location', label: '거주지', value: '선전, 광둥' }, { key: 'phone', label: '연락처', value: '면접 후 제공' }], travel: '타 지역 근무·잦은 출장 가능(2년간 한국 출장 12회)' },
+          footer: { copyright: '© 2026 장박사원 (Jumpson)', updated: '최종 업데이트 2026.09' }
+        }
+      };
+
+      const imageSeries = (folder, stem, count) => Array.from({ length: count }, (_, index) => ({ src: `assets/img/${folder}/${stem}-${String(index + 1).padStart(2, '0')}.webp` }));
+      const imageList = (folder, names) => names.map(name => ({ src: `assets/img/${folder}/${name}.webp` }));
+
+      const PROJECT_META = {
+        popup: [
+          { id: 'F-01', date: '2025.06.05–06.22 · 18', venue: 0, strategic: true, images: imageSeries('popup', 'popup-2506-lotte-jamsil', 2), results: [['80%', 'attainment'], ['97%', 'sku'], ['588', 'walkin'], ['93,468', 'ig']] },
+          { id: 'F-02', date: '2025.08.01–08.21 · 20', venue: 1, strategic: true, images: imageSeries('popup', 'popup-2508-lotte-jamsil-avenuel', 3), results: [['134%', 'attainment'], ['237', 'purchase'], ['1,005', 'walkin'], ['243,132', 'ig']] },
+          { id: 'F-03', date: '2025.09.08–09.17 · 9', venue: 2, strategic: true, images: imageSeries('popup', 'popup-2509-thehyundai-seoul', 4), results: [['94%', 'attainment'], ['341', 'purchase'], ['937', 'walkin'], ['183,162', 'ig'], ['25%', 'pr']] },
+          { id: 'F-04', date: '2026.02.09–03.15 · 35', venue: 3, images: imageSeries('popup', 'popup-2602-hyundai-pangyo', 1) },
+          { id: 'F-05', date: '2026.03.27–04.09 · 14', venue: 4, images: imageSeries('popup', 'popup-2603-hyundai-trade-center', 5) },
+          { id: 'F-06', date: '2026.04.03–04.16 · 14', venue: 3, images: imageSeries('popup', 'popup-2604-hyundai-pangyo', 1) },
+          { id: 'F-07', date: '2026.04.06–04.19 · 14', venue: 5, images: imageSeries('popup', 'popup-2604-shinsegae-gangnam', 2) },
+          { id: 'F-08', date: '2026.04.10–04.19 · 10', venue: 6, images: imageSeries('popup', 'popup-2604-lotte-worldmall', 3) },
+          { id: 'F-09', date: '2026.04.30–06.11 · 43', venue: 2, coverIndex: 1, images: imageSeries('popup', 'popup-2604-thehyundai-seoul', 5), results: [['92%', 'category']] },
+          { id: 'F-10', date: '2026.05.08–05.21 · 14', venue: 7, coverIndex: 2, images: imageSeries('popup', 'popup-2605-lotte-dongtan', 5) },
+          { id: 'F-11', date: '2026.06.30–07.12 · 13', venue: 8, images: imageSeries('popup', 'popup-2606-hanam-starfield', 4) },
+          { id: 'F-12', date: '2026.07.16–07.29 · 14', venue: 9, images: imageSeries('popup', 'popup-2607-shinsegae-centumcity', 3) },
+          { id: 'F-13', date: '2026.07.23–08.12 · 21', venue: 6, images: imageSeries('popup', 'popup-2607-lotte-worldmall', 3) },
+          { id: 'F-14', date: '2026.10.01', venue: 10, planned: true },
+          { id: 'F-15', date: '2026.10.15–11.11 · 28', venue: 2, planned: true },
+          { id: 'F-16', date: '2026.10.23–11.06 · 15', venue: 11, planned: true }
+        ],
+        ka: [
+          { id: 'K-01', date: '2025–2026', coverIndex: 1, images: imageList('ka', ['ka-costco-ads-01', 'ka-costco-ads-02', 'ka-costco-display-01', 'ka-costco-display-02']) },
+          { id: 'K-02', date: '2025–2026', images: imageList('display', ['display-himart-ad-2025-01', 'display-himart-ad-spec-01', 'display-himart-ad-spec-02', 'display-himart-ad-spec-03', 'display-himart-ad-2026-01', 'display-himart-ad-2026-02', 'display-himart-ad-2026-03']), results: [['90+', 'exposure']] }
+        ],
+        display: [
+          { id: 'D-01', date: '2024.11–', coverIndex: 4, images: imageSeries('display', 'display-yeongdeungpo-kyobo-stage', 5), compare: { before: [0, 1], after: [2, 3, 4] } },
+          { id: 'D-02', date: '2024.11–', coverIndex: 2, images: imageList('display', ['display-himart-worldtower-before-01', 'display-himart-worldtower-after-01', 'display-himart-worldtower-after-02']), compare: { before: [0], after: [1, 2] } }
+        ],
+        airline: [{ id: 'A-01', date: '2026', images: imageList('airline', ['airline-koreanair-ad-2026h1-01', 'airline-koreanair-ad-2026h1-02', 'airline-koreanair-ad-2026h2-01']) }]
+      };
+
+      const MEDIA_ALTS = {
+        zh: { popup: '快闪项目现场实拍', ka: 'KA 渠道项目实拍与物料', display: '门店展陈升级记录', airline: '机内杂志广告落地使用实拍' },
+        en: { popup: 'On-site pop-up installation', ka: 'Key account project and campaign materials', display: 'Retail display upgrade record', airline: 'In-flight magazine advertisement as published' },
+        ko: { popup: '팝업 현장 실사', ka: 'KA 채널 프로젝트 현장 및 소재', display: '매장 진열 업그레이드 기록', airline: '기내 잡지 광고 실제 게재 이미지' }
+      };
+
+      const RESULT_LABELS = {
+        zh: { attainment: '达成率', sku: '核心 SKU 占比', purchase: '购后问卷 · 份', walkin: 'walk-in 问卷 · 份', ig: 'IG 曝光', pr: 'PR 头部媒体占比', category: '主力耳机品类销量占比', stores: '家 · 门店展陈升级', growth: '月均销量环比', exposure: '家 · 户外广告定向曝光门店' },
+        en: { attainment: 'Target Attainment', sku: 'Core SKU share', purchase: 'Post-purchase survey responses', walkin: 'Walk-in survey responses', ig: 'Instagram impressions', pr: 'Share of Top-tier PR Coverage', category: 'Share of Unit Sales in Core Earphone Category', stores: 'Store display upgrades', growth: 'Month-on-Month Average Unit Sales', exposure: 'Stores Reached Through Outdoor Ads' },
+        ko: { attainment: '목표 달성률', sku: '핵심 SKU 비중', purchase: '구매 후 설문 · 건', walkin: '워크인 설문 · 건', ig: '인스타그램 노출', pr: 'PR 주요 매체 비중', category: '주력 이어폰 카테고리 판매량 비중', stores: '매장 진열 업그레이드', growth: '월평균 판매량 전월 대비 증가', exposure: '옥외 광고로 노출된 매장' }
+      };
+
+      const POPUP_COPY = {
+        zh: [
+          ['2506 · 롯데 잠실월드몰（乐天蚕室 World Mall）', '战略快闪 · 标杆', '2025 上半年最高规格快闪，借新品上市打「新品首发 × 专卖店联动 × 跑团营销」整合战，销量远超渠道预期，撬动后续多场项目机会。', '选址销售额 TOP2 的乐天蚕室 Mall 主中庭，定位 2025 上半年最高规格快闪；借 6 月新品上市节点，打「新品首发 × 专卖店联动 × 跑团营销」三合一整合战；销量远超渠道预期，引发现代、乐天两家百货主动抛来后续快闪提案，撬动 8 月、9 月项目机会。'],
+          ['2508 · 롯데 잠실 월드몰 에비뉴엘（乐天蚕室 Avenuel）', '战略快闪 · 效率', '因 6 月表现获乐天主动提案，20 天极速筹备以 KPI 模型提效率，达成率 134%。', '背景为乐天百货因 6 月表现主动提案，20 天内完成筹备落地；采用 KPI 模型追求效率——明确销量目标、拆分各 SKU 目标值，制定「3 次有效沟通回合内完成终版物料」的 KPI，最终提前 2 天完成筹备；验证「高客流地段 + 强销售执行」的高效复制模型，并直接促成后续乐天蚕室品牌专卖店机会。'],
+          ['2509 · 더현대 서울（现代百货首尔）', '战略快闪 · 创新', '以 OKR 拆解「人货场」，首次落地以旧换新、BD 营销号合作与礼盒 AB test，沉淀方法论与 SOP 为 2026 规模化铺路。', '面向更年轻客群 + 结合中秋整合营销，定位现代百货首档「线上线下一体化」案例；以 OKR 模型做「人货场」拆解，TNK 粉色新品 × 礼盒 × 跑团三合一，叠加中秋促销；首次落地「以旧换新」政策（以旧机抵扣换购）、首次与 2 个营销账号开展 BD 付费合作、赠品分级搭赠与礼盒 AB test；沉淀丰富数据与方法论，为 2026 年 13 场规模化快闪提供基础。'],
+          ['2602 · 현대백화점 판교점（现代百货板桥店）', '新年长场 · 跨月运营', '依托板桥科技园高端 IT/金融人群的 35 天跨月长场，验证「快闪品牌拉新」在 IT 园区的可行性。', '利用 35 天超长窗口精准触达板桥科技园高端 IT/金融人群，验证「短期快闪品牌拉新」在 IT 园区的可行性与长场节奏的运营能力。'],
+          ['2603 · 현대백화점 무역센터점（现代百货贸易中心店）', '新品先发快闪', '江南核心商圈覆盖，为 4 月三场并行筹备积累资源与 SOP。', '覆盖江南核心商圈客流，同步为 4 月 3 场并行筹备积累资源、验证多场并行下的执行 SOP。'],
+          ['2604 · 현대백화점 판교점（现代百货板桥店）', '三场并行 · 4 月', '4 月三场并行之一；现代板桥二次落地，验证头部场地「年度复用」模式。', '4 月三场并行之一；现代板桥年内二次落地，验证头部场地的「年度复用」模式与多场并行统筹能力。'],
+          ['2604 · 신세계백화점 강남점（新世界百货江南店）', '三场并行 · 4 月', '韩国百货 #1 首次落地，与板桥同月并行，覆盖新世界 + 现代两大体系。', '全国销售额第一的百货店首次落地快闪；与同期板桥快闪形成「双江南」组合，同时覆盖新世界 + 现代两大百货体系，验证头部商场的高规格承接。'],
+          ['2604 · 롯데 잠실월드몰（乐天蚕室 World Mall）', '体育主题 · 展位快闪', '展位式快闪，配合 4 月同期主快闪进行品类补充曝光。', '展位式快闪，配合 4 月板桥 / 新世界江南 同期主快闪进行品类补充曝光，验证低成本、高机动性的「booth 补充模型」。'],
+          ['2604 · 더현대 서울（现代百货首尔）', '长期快闪门店', '现代百货首尔旗舰长期快闪门店 43 天，从短期快闪向「门店化深度运营」模型升级。', '在现代百货运动楼层开设长期快闪门店，结合楼层调性匹配目标人群产品，联动新品开展线下跑团活动，围绕社群运营提升用户活跃度；以展陈设计强化高端产品露出，验证「长期快闪门店 = 迷你授权体验店」的可行性——从短期快闪向「门店化深度运营」模型升级。'],
+          ['2605 · 롯데백화점 동탄점（乐天百货东滩店）', '常规快闪', '首都圈新城家庭客群精准触达，14 天快闪。', '首都圈新城家庭客群精准触达，验证新城型商圈的快闪适配与家庭向内容打法。'],
+          ['2606 · 하남 스타필드（河南 Starfield）', '新品快闪 · 战略项目', '以新品 OpenDots 2 为核心的复合购物中心快闪，验证非传统百货场景适配。', '以新品 OpenDots 2 为核心，选址京畿道河南市 Starfield 百货一层，落地新品体验与现场转化；依托综合业态优势与家庭客群，验证非传统百货场景的快闪适配。'],
+          ['2607 · 신세계백화점 센텀시티점（新世界百货 Centum City）', '新品快闪 · 非首都圈', '韩国百货 #3 首次落地釜山，拓展釜山都市圈市场。', '在全国销售额 #3 的新世界 Centum City 落地快闪，首次拓展釜山都市圈市场，验证头部区域市场的下沉复制能力。'],
+          ['2607 · 롯데 잠실월드몰（乐天蚕室 World Mall）', '新品快闪 · 战略项目', '瑞草核心商圈 21 天快闪，覆盖家庭 + 职场双人群。', '21 天快闪覆盖瑞草核心商圈家庭 + 职场人群；与 4 月booth 形成「轻量补充 + 重量承接」的双形态复用。'],
+          ['2610 · 롯데백화점 인천점（乐天百货仁川店）', '专卖店前期试点', '覆盖仁川都市圈与机场入境客流的长期快闪（2026.10 启动，暂无确定结束日），10 月三场并行之一。', '覆盖仁川都市圈与机场入境客流，以长期快闪门店模式运营（2026.10.01 启动、暂无确定结束日）；与首尔汝矣岛、平村形成 10 月三场并行，验证「区域长期店 + 多场并行」的组合运营模型。'],
+          ['2610 · 더현대 서울（现代百货首尔）', '核心商圈 · 长期快闪', '本人第三次复用该场地（25.09 / 26.04–06 / 26.10），验证「场地品牌资产化」模型。', '10 月 28 天快闪，是本人第三次复用该场地（25.09 快闪 / 26.04–06 长期门店 / 26.10 快闪），验证「场地品牌资产化」模型——高频复用头部场地，沉淀场地合作与客流运营的长期关系。'],
+          ['2610 · 롯데백화점 평촌점（乐天百货平村店）', '渠道资源置换快闪', '覆盖首都圈西部新城客群，10 月三场并行之一。', '覆盖首都圈西部新城客群，10 月三场并行之一，与仁川、首尔形成京畿—仁川—首尔多城联动。']
+        ],
+        en: [
+          ['2506 · Lotte Jamsil World Mall', 'Strategic Pop-up · Benchmark', 'A flagship pop-up for the H1 2025 product launch combined a product debut, brand store tie-in, and running crew campaign. Unit sales exceeded channel expectations and led to further project opportunities.', 'Selected the main atrium of Lotte Jamsil World Mall, Korea’s No. 2 department store by sales, for the H1 2025 flagship pop-up. Combined the June product debut with a brand store tie-in and running crew campaign. Unit sales exceeded channel expectations; Hyundai and Lotte then proposed follow-up pop-ups, creating opportunities in August and September.'],
+          ['2508 · Lotte Jamsil World Mall Avenuel', 'Strategic Pop-up · Efficiency', 'Following the June results, Lotte proposed a second pop-up. Prepared it in 20 days and used KPIs to improve efficiency, reaching 134% of the sales target.', 'Lotte proposed the project after the June performance. Prepared and launched it within 20 days, setting SKU-level sales targets and a KPI to finalize in-store materials within three effective review rounds; preparation finished two days early. The project tested a repeatable model pairing a high-footfall site with strong in-store execution and led to a later brand store opportunity at Lotte Jamsil.'],
+          ['2509 · The Hyundai Seoul', 'Strategic Pop-up · Innovation', 'Used OKRs to plan people, product, and place; introduced trade-in offers, marketing channel partnerships, and gift-box A/B tests. The resulting methods and SOPs supported the 2026 expansion.', 'Designed an online-to-offline pop-up for younger customers around Chuseok. Used OKRs to shape the audience, product mix, and space, pairing the new pink TNK product with gift boxes and running crew activities. Introduced a trade-in offer, first paid partnerships with two marketing accounts, tiered gifts, and gift-box A/B testing. The data and methods informed 13 pop-ups in 2026.'],
+          ['2602 · Hyundai Department Store Pangyo', 'New Year Pop-up · Multi-month', 'A 35-day pop-up for IT and finance professionals in Pangyo Techno Valley tested customer acquisition in a technology district.', 'Used the 35-day run to reach IT and finance professionals in Pangyo Techno Valley and test both pop-up-led customer acquisition and the operating rhythm of a longer engagement.'],
+          ['2603 · Hyundai Department Store Trade Center', 'Early Product Launch Pop-up', 'Reached customers in central Gangnam while building resources and SOPs for three concurrent April projects.', 'Reached customers in central Gangnam while preparing three concurrent April projects and testing the SOPs needed for multi-site execution.'],
+          ['2604 · Hyundai Department Store Pangyo', 'Three Parallel Pop-ups · April', 'One of three April projects running in parallel; a second pop-up at Hyundai Pangyo tested annual reuse of a prime venue.', 'Returned to Hyundai Pangyo for a second pop-up that year as one of three parallel April projects, testing repeat use of a prime venue and multi-site coordination.'],
+          ['2604 · Shinsegae Department Store Gangnam', 'Three Parallel Pop-ups · April', 'Opened the first pop-up at Korea’s No. 1 department store by 2025 sales, alongside the Pangyo project, spanning both Shinsegae and Hyundai.', 'Opened a first pop-up at Korea’s top department store by sales while running the Pangyo project in parallel. Worked across Shinsegae and Hyundai to test how a larger activation could be delivered at leading retail venues.'],
+          ['2604 · Lotte Jamsil World Mall', 'Sports-themed Booth Pop-up', 'A booth pop-up alongside the April flagship pop-ups added exposure for another product category.', 'Ran a booth pop-up alongside the April Pangyo and Shinsegae Gangnam pop-ups to add product-category exposure and test a nimble, lower-cost format.'],
+          ['2604 · The Hyundai Seoul', 'Long-term Pop-up Store', 'Operated for 43 days at Hyundai’s Seoul flagship, extending the pop-up format into a store-like retail experience.', 'Opened a long-term pop-up on Hyundai’s sports floor, tailoring the product mix to its audience. Connected new products with running crew events to build community engagement and used the displays to give premium products more visibility. Tested whether an extended pop-up could work like a small authorized experience store.'],
+          ['2605 · Lotte Department Store Dongtan', 'Standard Pop-up', 'A 14-day pop-up for family shoppers in a new town near Seoul.', 'Reached family shoppers in a new town near Seoul, testing both the retail setting and family-focused content.'],
+          ['2606 · Hanam Starfield', 'Strategic New-product Pop-up', 'A pop-up centred on the new OpenDots 2 tested the format in a shopping mall outside a traditional department store.', 'Opened on the first floor of Starfield Hanam around OpenDots 2, creating hands-on product experiences and encouraging purchases on site. Tested the format with family shoppers in a multi-purpose mall rather than a traditional department store.'],
+          ['2607 · Shinsegae Department Store Centum City', 'New-product Pop-up · Beyond the Capital Region', 'Opened the first Busan pop-up at Shinsegae Centum City, Korea’s No. 3 department store by 2025 sales.', 'Opened the first Busan pop-up at Shinsegae Centum City, ranked No. 3 nationally by 2025 sales, testing whether the format could be repeated in a major regional market.'],
+          ['2607 · Lotte Jamsil World Mall', 'Strategic New-product Pop-up', 'A 21-day pop-up in Seocho reached both family shoppers and office workers.', 'A 21-day Seocho pop-up reached families and office workers. Together with the April booth pop-up, it tested two activation formats at the same venue: a light-touch event and a longer pop-up.'],
+          ['2610 · Lotte Department Store Incheon', 'Brand Store Pilot', 'A long-term Incheon pop-up planned for Oct 2026, targeting local shoppers and airport arrivals. No end date has been confirmed; it is one of three planned October projects.', 'Planned a long-term Incheon pop-up from 1 Oct 2026 for local shoppers and airport arrivals; the end date is open. Alongside planned projects at The Hyundai Seoul and Pyeongchon, it will test how a regional long-term store can be coordinated with two other sites.'],
+          ['2610 · The Hyundai Seoul', 'Key Retail Area · Long-term Pop-up', 'Planned a third use of the same venue after Sep 2025 and Apr–Jun 2026.', 'Planned a 28-day October pop-up as the third use of the venue after a Sep 2025 pop-up and an Apr–Jun 2026 long-term store. The project will test whether repeated use of a leading venue can build lasting partnerships and a stronger understanding of customer traffic.'],
+          ['2610 · Lotte Department Store Pyeongchon', 'Channel Resource Exchange Pop-up', 'One of three planned October projects, aimed at shoppers in a western Seoul-area new town.', 'Planned for shoppers in a western Seoul-area new town, this is one of three October projects linking venues across Gyeonggi, Incheon, and Seoul.']
+        ],
+        ko: [
+          ['2506 · 롯데 잠실월드몰', '전략형 팝업 · 대표 사례', '2025년 상반기 최대 규모 팝업에서 신제품 출시, 브랜드 단독 매장 연계, 러닝 크루 마케팅을 결합했습니다. 판매량이 채널의 예상치를 크게 웃돌아 후속 프로젝트 제안으로 이어졌습니다.', '매출 순위 2위인 롯데 잠실월드몰의 메인 아트리움을 선정해 2025년 상반기 최대 규모의 팝업을 기획했습니다. 6월 신제품 출시와 함께 신제품 첫선, 브랜드 단독 매장 연계, 러닝 크루 마케팅을 통합했습니다. 판매량이 채널 예상치를 크게 웃돌자 현대와 롯데백화점에서 후속 팝업을 먼저 제안했고, 이를 통해 8월과 9월 프로젝트 기회를 확보했습니다.'],
+          ['2508 · 롯데 잠실 월드몰 에비뉴엘', '전략형 팝업 · 효율 개선', '6월 성과를 바탕으로 롯데의 제안으로 성사된 프로젝트입니다. 20일 만에 준비하고 KPI로 운영 효율을 높여 목표 달성률 134%를 기록했습니다.', '6월 성과를 보고 롯데백화점이 먼저 제안한 프로젝트를 20일 안에 준비·실행했습니다. 판매 목표를 SKU별로 나누고 유효한 협의 3회 이내에 최종 홍보물을 확정한다는 KPI를 정해 준비를 2일 일찍 마쳤습니다. 유동인구가 많은 입지와 현장 판매 실행을 결합한 운영 모델을 검증했고, 이후 롯데 잠실 브랜드 단독 매장 기회로 이어졌습니다.'],
+          ['2509 · 더현대 서울', '전략형 팝업 · 혁신', 'OKR로 고객·상품·공간을 나눠 설계하고 보상판매, 마케팅 채널 협업, 기프트 박스 A/B 테스트를 처음 도입했습니다. 이 과정에서 만든 운영 방식과 SOP가 2026년 프로젝트 확대의 기반이 됐습니다.', '젊은 고객층과 추석 시즌을 겨냥해 현대백화점의 온·오프라인 연계 팝업을 기획했습니다. OKR로 고객·상품·공간을 나눠 TNK 핑크 신제품, 기프트 박스, 러닝 크루 활동에 추석 프로모션을 더했습니다. 보상판매 정책, 마케팅 채널 2곳과의 첫 유료 협업, 사은품 차등 구성, 기프트 박스 A/B 테스트를 도입했습니다. 축적한 데이터와 운영 방법은 2026년 13건의 팝업 확대를 위한 기반이 됐습니다.'],
+          ['2602 · 현대백화점 판교점', '새해 장기 팝업 · 두 달 운영', '판교 테크노밸리의 IT·금융 직장인을 대상으로 35일간 운영하며 기술 산업 상권에서 팝업을 통한 신규 고객 유입 가능성을 검증했습니다.', '35일간 판교 테크노밸리의 IT·금융 직장인에게 집중적으로 다가갔습니다. 이 운영을 통해 기술 산업 상권에서 팝업을 통한 신규 고객 유입과 장기 운영의 가능성을 검증했습니다.'],
+          ['2603 · 현대백화점 무역센터점', '신제품 선출시 팝업', '강남 핵심 상권에서 운영하면서 4월의 3개 동시 프로젝트에 필요한 자원과 SOP를 축적했습니다.', '강남 핵심 상권의 유동인구를 대상으로 운영하고 4월의 3개 프로젝트를 동시에 준비했습니다. 그 과정에서 여러 현장을 병행할 때 필요한 자원과 실행 SOP를 점검했습니다.'],
+          ['2604 · 현대백화점 판교점', '3개 팝업 동시 운영 · 4월', '4월 동시 운영한 3개 프로젝트 중 하나입니다. 현대 판교점에 두 번째로 팝업을 열어 주요 입지의 연간 재방문 모델을 검증했습니다.', '4월 동시 운영한 3개 프로젝트 중 하나로, 현대 판교점에 같은 해 두 번째로 팝업을 열었습니다. 주요 입지의 연간 재방문 모델과 여러 현장을 동시에 조율하는 운영 역량을 검증했습니다.'],
+          ['2604 · 신세계백화점 강남점', '3개 팝업 동시 운영 · 4월', '2025년 매출 1위 백화점에 처음 팝업을 열었습니다. 판교점 프로젝트와 같은 달에 병행하며 신세계와 현대 두 백화점 채널을 함께 운영했습니다.', '국내 매출 1위 백화점에 처음으로 팝업을 열고 판교점 프로젝트와 동시에 운영했습니다. 신세계와 현대 두 주요 백화점 채널을 함께 다루며 상위권 매장에서의 대형 팝업 운영 방식을 검증했습니다.'],
+          ['2604 · 롯데 잠실월드몰', '스포츠 테마 부스 팝업', '4월의 주요 팝업과 연계한 부스형 팝업으로 제품군의 추가 노출을 확보했습니다.', '4월 판교점과 신세계 강남점의 주요 팝업을 보완하는 부스형 팝업을 운영했습니다. 제품군을 추가로 노출하고 비용과 준비 부담이 낮은 기동형 부스 운영 방식을 시험했습니다.'],
+          ['2604 · 더현대 서울', '장기 팝업 매장', '현대백화점 서울 플래그십에서 43일간 운영하며 단기 팝업에서 매장형 운영으로 확장했습니다.', '현대백화점 스포츠 층에 장기 운영 팝업 매장을 열고 층의 고객층에 맞춰 상품을 구성했습니다. 신제품과 연계한 러닝 크루 행사를 열고 커뮤니티 운영으로 고객 참여를 높였습니다. 진열 디자인을 통해 프리미엄 제품의 노출을 강화하며 장기 팝업을 소형 브랜드 체험 매장처럼 운영할 수 있는지 검증했습니다.'],
+          ['2605 · 롯데백화점 동탄점', '일반 팝업', '수도권 신도시의 가족 고객을 겨냥한 14일 팝업입니다.', '수도권 신도시의 가족 고객에게 집중적으로 다가가며 신도시 상권의 팝업 적합성과 가족 대상 콘텐츠 운영 방식을 검증했습니다.'],
+          ['2606 · 하남 스타필드', '신제품 전략형 팝업', 'OpenDots 2 신제품을 중심으로 복합쇼핑몰에서 진행하며 백화점 외 리테일 공간에서의 팝업 적합성을 검증했습니다.', '경기도 하남 스타필드 1층에서 OpenDots 2 신제품 체험과 현장 구매를 유도했습니다. 복합쇼핑몰의 다양한 시설과 가족 고객층을 활용해 백화점 외 리테일 공간에서의 팝업 적합성을 검증했습니다.'],
+          ['2607 · 신세계백화점 센텀시티점', '신제품 팝업 · 수도권 외 지역', '신세계 센텀시티에서 부산 첫 팝업을 열어 부산권 시장으로 확장했습니다.', '전국 백화점 매출 3위인 신세계 센텀시티에서 부산권 첫 팝업을 열었습니다. 이를 통해 수도권 밖 주요 지역 상권으로 운영 방식을 확장할 수 있는지 검증했습니다.'],
+          ['2607 · 롯데 잠실월드몰', '신제품 전략형 팝업', '서초 핵심 상권에서 21일간 운영하며 가족과 직장인 고객층에 함께 다가갔습니다.', '서초 상권에서 21일간 가족과 직장인 고객을 대상으로 운영했습니다. 4월의 부스형 팝업와 함께, 가벼운 단기 행사와 본격적인 장기 팝업을 같은 입지에서 병행하는 방식을 시험했습니다.'],
+          ['2610 · 롯데백화점 인천점', '브랜드 단독 매장 사전 테스트', '2026년 10월 시작 예정인 인천권 장기 팝업입니다. 공항 입국객까지 대상으로 하며, 종료일은 아직 정해지지 않았습니다. 10월에 계획된 3개 프로젝트 중 하나입니다.', '2026.10.01 시작 예정인 장기 팝업 매장으로 인천권 고객과 공항 입국객을 대상으로 기획했습니다. 종료일은 미정입니다. 더현대 서울·평촌점 프로젝트와 함께 10월의 3개 병행 프로젝트를 계획하며 지역 장기 매장과 여러 현장 운영을 결합하는 방식을 시험할 예정입니다.'],
+          ['2610 · 더현대 서울', '핵심 상권 · 장기 팝업', '2025년 9월과 2026년 4~6월에 이어 같은 입지를 세 번째로 활용할 계획입니다.', '2025년 9월 팝업과 2026년 4~6월 장기 매장에 이어 10월에 28일간 세 번째로 운영할 계획입니다. 주요 입지를 반복 활용해 장소 협업과 고객 유입 운영에 관한 장기 관계를 쌓는 모델을 시험할 예정입니다.'],
+          ['2610 · 롯데백화점 평촌점', '채널 자원 교환형 팝업', '수도권 서부 신도시의 가족 고객을 대상으로 기획한 10월의 3개 프로젝트 중 하나입니다.', '수도권 서부 신도시 고객을 대상으로 기획한 10월의 3개 프로젝트 중 하나입니다. 인천과 서울 프로젝트와 함께 경기·인천·서울의 세 지역을 연계할 예정입니다.']
+        ]
+      };
+
+      const CASE_COPY = {
+        zh: {
+          ka: [
+            ['Costco 新品进店全案', 'KA 大客户进店', '主导 Costco 新品进店从定价到开售的全链路，以日本 Costco / 美国山姆为对标，推动门店高价值曝光资源落地。', '主导 Costco 等 KA 大客户新品进店全链路——定价区间策划与渠道利润把控（保分销合理利润的设计）、线下物料设计与打样并确保按期发货至分销商仓库、产品 listing 整理、对分销商开展新品参数教育保障卖点一致；以日本 Costco、美国 Sam’s Club 进店为对标优化策略；推动门店广告位等高价值曝光资源落地，实现按期进店、开售上量。', ['Costco（KA 大客户）', '2025–2026', '日本 Costco、美国 Sam’s Club（山姆会员店）', '定价区间策划 / 渠道利润把控 / 线下物料设计与打样 / listing 整理 / 分销商新品参数教育']],
+            ['himart 户外广告定向曝光', '渠道曝光资源', '新品期争取 himart 户外广告资源，2025–2026 两年累计投放约 90 家门店，在多品牌竞争下占据新品上市核心曝光窗口。', '以 1000×1000、1000×1800、1800×1000mm 三种规格物料覆盖 himart 门店户外点位；2025 年完成首批实拍落地，2026 年延续投放并更新刊例内容，形成新品期的稳定曝光资源。', ['himart（韩国主要家电 / 3C 连锁）', '2025–2026', '户外媒体资源整合', '三种规格物料设计与投放 / 门店定向曝光']]
+          ],
+          display: [
+            ['영등포 교보문고 展陈升级', '门店陈列升级', '以 2 张改善前记录和 3 张改善后实拍，完整呈现原陈列与品牌展示完成态。', '将阶段 1–2 归入改善前、阶段 3–5 归入改善后；两侧均可切换对应阶段照片，并保持原图完整，不补写未经确认的施工叙事。', ['교보문고（教保文库）', '영등포 교보문고', '改善前 2 张 + 改善后 3 张', '双侧分组切换 + 并排对比']],
+            ['하이마트월드타워 展陈升级', '门店陈列升级', '以 1 张改善前与 2 张改善后实拍，展示门店展台与产品体验区的完成效果。', '对比原始开放式展台与改善后的品牌陈列方案；改善后可在两个完成视角间切换，完整呈现展台、灯光与产品体验区。', ['himart', '하이마트월드타워', '改善前 1 张 + 改善后 2 张', '双侧分组切换 + 并排对比']]
+          ],
+          airline: [['大韩航空机内广告', '品牌曝光 / 广告投放', '参与大韩航空机内杂志广告投放，将品牌曝光从快闪与门店延伸至机舱场景。面向商务及旅行乘客，突出旗舰耳机的舒适佩戴体验与出行适用性，增加从产品认知到购买转化的触点。', '通过供应商渠道获得大韩航空机内广告赞助机会，将机内杂志广告与大韩航空线上购物平台打通，围绕真实出行场景细化内容产出，实现品牌内容在渠道内的曝光与转化衔接。', ['大韩航空（Korean Air）', '机内杂志广告', '1 年；大韩航空所有出境航线；预计月均曝光约 10 万次']]]
+        },
+        en: {
+          ka: [
+            ['Costco Product Launch in Key Accounts', 'Key Account Product Launch', 'Led Costco’s new-product onboarding from pricing strategy through launch, using Costco Japan and Sam’s Club US as benchmarks and securing prominent in-store placements.', 'Led new-product onboarding for key accounts including Costco, from pricing bands and distributor economics to launch. Designed and proofed POP displays, light panels, and replacement packs, then shipped them to distributor warehouses on time. Prepared product listings and trained distributors to keep product messaging consistent. Used Costco Japan and Sam’s Club US as benchmarks and secured in-store ad placements, supporting an on-schedule launch and sales ramp-up.', ['Costco (key account)', '2025–2026', 'Costco Japan, Sam’s Club (US)', 'Pricing bands / channel economics / in-store material design and proofs / product listings / distributor training']],
+            ['himart Outdoor Advertising', 'Channel Exposure', 'Secured himart outdoor advertising during product launches, placing materials in approximately 90 stores across 2025–2026 and gaining a prominent visibility window amid competing brands.', 'Covered himart outdoor positions with materials in three sizes (1000×1000, 1000×1800, and 1800×1000mm). Completed the first on-site rollout in 2025 and continued placements in 2026 with refreshed creative, establishing a reliable launch-period exposure asset.', ['himart (major Korean electronics and 3C retailer)', '2025–2026', 'Outdoor media consolidation', 'Three material sizes designed and placed / targeted store exposure']]
+          ],
+          display: [
+            ['Yeongdeungpo Kyobo Display Upgrade', 'Retail Display Upgrade', 'Two before images and three completed views document the change from the original fixture to the branded display.', 'Stages 1–2 are grouped as before and stages 3–5 as after. Both sides can cycle through their corresponding photos while preserving the full source images; no unverified construction narrative has been added.', ['Kyobo Book Centre', 'Yeongdeungpo Kyobo', '2 before + 3 after images', 'Dual grouped galleries + side-by-side comparison']],
+            ['himart World Tower Display Upgrade', 'Retail Display Upgrade', 'One before image and two completed views show the upgraded fixture and product experience area.', 'The original open fixture is compared with the upgraded branded display. The after side can cycle between two completed views of the fixture, lighting, and product experience area without cropping.', ['himart', 'himart World Tower', '1 before + 2 after images', 'Dual grouped galleries + side-by-side comparison']]
+          ],
+          airline: [['Korean Air In-flight Advertising', 'Brand Exposure / Advertising', 'Contributed to a Korean Air in-flight magazine ad, extending brand visibility beyond pop-ups and stores. The placement presented the flagship earphones’ comfort and travel-friendly fit to business and leisure passengers, adding a touchpoint from awareness to purchase.', 'Secured a Korean Air in-flight advertising sponsorship through a vendor channel, linking the in-flight magazine ad with Korean Air’s online shopping platform. Refined the content around real travel scenarios to connect brand exposure with conversion within the channel.', ['Korean Air', 'In-flight magazine advertising', '1 year; all Korean Air outbound routes; estimated monthly impressions: approximately 100,000']]]
+        },
+        ko: {
+          ka: [
+            ['Costco 신제품 입점 프로젝트', '주요 거래처 신제품 입점', 'Costco 신제품 입점을 가격 기획부터 판매 개시까지 주도했습니다. 일본 Costco와 미국 Sam’s Club 사례를 참고하고 매장 내 주요 광고 지면을 확보했습니다.', 'Costco 등 주요 거래처의 신제품 입점 과정을 주도했습니다. 유통사에 적정 수익이 돌아가도록 가격대와 채널 구조를 기획하고 POP·조명 패널·교체용 패키지 등 매장 홍보물을 디자인·시안 제작해 유통사 창고로 제때 발송했습니다. 제품 리스팅을 정리하고 유통사에 신제품 사양을 교육해 판매 메시지를 일치시켰습니다. 일본 Costco와 미국 Sam’s Club 사례를 참고해 전략을 개선하고 매장 광고 지면을 확보해 예정대로 입점·판매를 시작했습니다.', ['Costco(KA 주요 거래처)', '2025–2026', '일본 Costco, 미국 Sam’s Club', '가격대 기획 / 유통 채널 수익 구조 / 매장 홍보물 디자인·시안 / 제품 리스팅 / 유통사 대상 신제품 교육']],
+            ['하이마트 옥외 광고 노출', '채널 노출 자원', '신제품 출시 기간에 하이마트 옥외 광고 지면을 확보해 2025–2026년 두 해에 걸쳐 약 90개 매장에 집행하고, 경쟁 브랜드가 많은 환경에서 핵심 노출 구간을 선점했습니다.', '1000×1000, 1000×1800, 1800×1000mm 세 가지 규격의 소재로 하이마트 매장 옥외 지점을 커버했습니다. 2025년 첫 현장 적용을 마치고 2026년에도 게재를 이어가며 신제품 출시기의 안정적인 노출 자원을 확보했습니다.', ['하이마트(한국 주요 가전·3C 유통)', '2025–2026', '옥외 매체 자원 통합', '3가지 규격 소재 디자인·집행 / 매장 타깃 노출']]
+          ],
+          display: [
+            ['영등포 교보문고 진열 업그레이드', '매장 진열 업그레이드', '개선 전 2장과 개선 후 3장의 실사로 기존 진열에서 브랜드 전시 완료 상태까지의 변화를 기록했습니다.', '1–2단계는 개선 전, 3–5단계는 개선 후로 구분했습니다. 양쪽에서 해당 단계 사진을 각각 전환해 볼 수 있으며 원본 이미지를 자르지 않고, 확인되지 않은 시공 설명도 추가하지 않았습니다.', ['교보문고', '영등포 교보문고', '개선 전 2장 + 개선 후 3장', '양쪽 그룹 전환 + 나란히 비교']],
+            ['하이마트 월드타워 진열 업그레이드', '매장 진열 업그레이드', '개선 전 1장과 개선 후 2장의 실사로 진열대와 제품 체험 구역의 완료 상태를 보여 줍니다.', '기존 오픈형 진열대와 개선된 브랜드 진열을 비교합니다. 개선 후 영역에서 서로 다른 각도의 완료 사진 2장을 전환해 진열대, 조명, 제품 체험 구역을 확인할 수 있습니다.', ['하이마트', '하이마트 월드타워', '개선 전 1장 + 개선 후 2장', '양쪽 그룹 전환 + 나란히 비교']]
+          ],
+          airline: [['대한항공 기내 광고', '브랜드 노출 / 광고 집행', '대한항공 기내 잡지 광고 게재에 참여해 브랜드 노출을 팝업과 매장에서 기내까지 확장했습니다. 출장·여행 승객을 대상으로 플래그십 이어폰의 편안한 착용감과 이동 중 사용 경험을 강조해 제품 인지부터 구매 전환까지의 접점을 늘렸습니다.', '벤더 채널을 통해 대한항공 기내 광고 협찬 기회를 확보하고, 기내 잡지 광고와 대한항공 온라인 쇼핑 플랫폼을 연계했습니다. 실제 여행 상황에 맞춰 콘텐츠를 세분화해 채널 내 브랜드 노출과 구매 전환을 연결했습니다.', ['대한항공(Korean Air)', '기내 잡지 광고', '1년; 대한항공의 모든 출국 노선; 예상 월평균 노출 약 10만 회']]]
+        }
+      };
+
+      const TAB_SUMMARY = {
+        zh: {
+          popup: { title: '快闪项目总览', lead: '2025 年以 3 场战略级快闪建立标杆；2026 年已推进 10 场，并追加规划 3 场，合计 13 场。项目覆盖乐天、现代、新世界、Starfield 等体系，并沉淀从选址调研到数据复盘的完整 SOP。', note: '公开结果仅限现有记录中口径明确、适合对外披露的项目；其他案例重点呈现运营范围与执行方法。', stats: [['13', '2026 年总规划'], ['10', '已推进项目'], ['4', '主要零售集团'], ['3', '单月最高并行']] },
+          ka: { title: 'KA 渠道维护总览', lead: '面向 Costco、himart 等 KA 大客户推进新品进店与渠道推广：Costco 覆盖定价、渠道结构、物料、listing 与培训链路；himart 户外广告与 Costco 门店内广告累计覆盖 100+ 家门店。', note: '广告投放门店数为 himart 户外广告（2025–2026 累计）与 Costco 门店内广告之和。仅展示已确认的渠道覆盖与公开交付范围；价格、利润结构及其他内部商业数据不对外披露。', stats: [['2', 'KA 大客户'], ['100+', '广告投放门店'], ['4', '核心交付领域']] },
+          display: { title: '展陈升级总览', lead: '累计推进 22+ 家门店展陈与品牌专区升级，覆盖 himart、교보문고、electromart、乐天等渠道；升级后 3 个月月均销量环比提升 74%，并沉淀门店分级策略与展桌规格标准。', note: '页面以经核验的现场照片和整体指标说明成果，不披露单店销量等内部经营数据。', stats: [['4', '覆盖渠道'], ['2', '本页门店案例'], ['8', '案例实拍图片']] },
+          airline: { title: '大韩航空机内广告总览', lead: '通过供应商渠道获得大韩航空机内广告赞助机会，将机内杂志广告与线上购物平台衔接，并围绕真实出行场景细化内容。曝光数字为现有投放材料中的估算口径。', note: '投放范围与曝光量依据现有材料呈现，其中月均曝光为估算值；内部商业数据不对外披露。', stats: [['1 年', '投放周期'], ['全部', '出境航线覆盖'], ['约 10 万次', '预计月均曝光']] }
+        },
+        en: {
+          popup: { title: 'Pop-up Projects Overview', lead: 'Three flagship pop-ups established the model in 2025. Ten projects were advanced in 2026, with three more planned, for a total of 13. The work spans Lotte, Hyundai, Shinsegae, and Starfield, supported by an end-to-end operating SOP.', note: 'Public results are limited to projects with clearly defined, externally suitable records; other cases focus on operating scope and execution methods.', stats: [['13', '2026 total planned'], ['10', 'Projects advanced'], ['4', 'Major retail groups'], ['3', 'Max concurrent']] },
+          ka: { title: 'Key Account Overview', lead: 'New-product onboarding and channel promotion for Costco and himart. Costco work covered pricing, channel structure, materials, listings, and training; himart outdoor advertising and Costco in-store advertising together reached 100+ stores.', note: 'The store count for advertising combines himart outdoor placements (cumulative for 2025–2026) with Costco in-store advertising. Only confirmed channel coverage and public deliverables are shown; pricing, margin structures, and other internal commercial data are excluded.', stats: [['2', 'Key accounts'], ['100+', 'Stores with ad placements'], ['4', 'Core workstreams']] },
+          display: { title: 'Display Upgrade Overview', lead: 'Upgraded displays and brand zones in 22+ stores across himart, Kyobo Book Centre, electromart, and Lotte. Average monthly unit sales rose 74% month on month over the following three months, while the work established store-tiered rollout and fixture standards.', note: 'Verified site photos and aggregate outcomes are shown; store-level unit sales and other internal operating data are not disclosed.', stats: [['4', 'Retail channels'], ['2', 'Store cases shown'], ['8', 'Case photos']] },
+          airline: { title: 'Korean Air Advertising Overview', lead: 'Secured an in-flight advertising sponsorship through a vendor channel, linking the magazine placement with Korean Air’s online shopping platform and refining the creative around real travel scenarios. Impression figures remain estimates from the current placement materials.', note: 'Placement scope and impressions follow the available materials; monthly impressions are estimates, and internal commercial data are excluded.', stats: [['1 year', 'Placement period'], ['All', 'Outbound routes'], ['~100K', 'Estimated monthly impressions']] }
+        },
+        ko: {
+          popup: { title: '팝업 프로젝트 개요', lead: '2025년 전략형 대형 팝업 3건으로 기준을 세웠습니다. 2026년에는 10건을 추진했고 3건을 추가로 계획해 총 13건입니다. 롯데·현대·신세계·스타필드의 주요 리테일 그룹을 아우르며 운영 SOP를 정립했습니다.', note: '공개 성과는 기준이 명확하고 외부 공개에 적합한 프로젝트에 한해 제공합니다. 그 외 사례는 운영 범위와 실행 방식 중심으로 소개합니다.', stats: [['13건', '2026년 총 계획'], ['10건', '진행 프로젝트'], ['4대', '주요 리테일 그룹'], ['3건', '월 최대 동시 운영']] },
+          ka: { title: 'KA 채널 관리 개요', lead: 'Costco와 하이마트의 신제품 입점 및 채널 프로모션을 진행했습니다. Costco는 가격, 채널 구조, 제작물, 리스팅, 교육을 아우르며, 하이마트 옥외 광고와 Costco 매장 내 광고를 합쳐 100곳 이상 매장에 노출했습니다.', note: '광고 집행 매장 수는 하이마트 옥외 광고(2025–2026 누적)와 Costco 매장 내 광고를 합산한 값입니다. 확인된 채널 범위와 공개 가능한 결과만 표시하며 가격, 마진 구조 등 내부 영업 데이터는 공개하지 않습니다.', stats: [['2개사', '주요 거래처'], ['100곳+', '광고 집행 매장'], ['4개', '핵심 업무 영역']] },
+          display: { title: '매장 진열 업그레이드 개요', lead: '하이마트·교보문고·일렉트로마트·롯데 등 22곳 이상 매장의 진열과 브랜드 존을 개선했습니다. 개선 후 3개월간 월평균 판매량이 전월 대비 74% 늘었고, 매장 등급별 전략과 진열대 사양 기준을 정립했습니다.', note: '확인된 현장 사진과 전체 성과 지표를 중심으로 소개하며 매장별 판매량 등 내부 운영 데이터는 공개하지 않습니다.', stats: [['4개', '대상 채널'], ['2곳', '수록 매장 사례'], ['8장', '사례 실사 이미지']] },
+          airline: { title: '대한항공 기내 광고 개요', lead: '벤더 채널을 통해 대한항공 기내 광고 협찬 기회를 확보하고 기내 잡지와 온라인 쇼핑 플랫폼을 연계했습니다. 실제 여행 상황에 맞춰 콘텐츠를 구성했으며 노출 수치는 현재 집행 자료의 예상치입니다.', note: '게재 범위와 노출 수치는 현재 자료를 기준으로 하며, 월평균 노출은 예상치입니다. 내부 영업 데이터는 공개하지 않습니다.', stats: [['1년', '게재 기간'], ['전체', '출국 노선'], ['약 10만 회', '예상 월평균 노출']] }
+        }
+      };
+
+      const VENUES = {
+        zh: [
+          ['롯데 잠실월드몰（乐天蚕室 World Mall）', '韩国百货 TOP2（2025 年 #2）', '首尔蚕室 · 乐天世界大厦', '地铁 2·8 号线蚕室站直连，辐射全国客源', '高（高端品牌新品首发首选场地之一）', '2025.06、2025.08（共 2 场）'],
+          ['롯데 잠실 월드몰 에비뉴엘（乐天蚕室 Avenuel 高奢区）', '韩国百货 TOP2（与 F-01 同属 롯데 잠실综合体）', '蚕室 World Mall 内 Avenuel 高奢楼层', '地铁 2·8 号线蚕室站直连', '高', '2025.08（1 场）'],
+          ['더현대 서울（现代百货首尔 · 汝矣岛店）', '韩国百货 TOP10（2025 年 #7），现代百货旗舰店', '首尔永登浦区汝矣岛，商务中心与高端住宅密集', '地铁 5·9 号线汝矣岛站、国会议事堂站直连', '高（本人最高频复用场地）', '2025.09、2026.04–06、2026.10（共 3 场）'],
+          ['현대백화점 판교점（现代百货板桥店）', '现代百货体系内靠前位置', '板桥科技园，高端 IT / 金融从业人群聚集', '新盆唐线板桥站步行可达，紧邻高速巴士客运站', '中（本人 2 次落地）', '2026.02、2026.04（共 2 场）'],
+          ['현대백화점 무역센터점（现代百货贸易中心店）', '首尔江南区三成洞核心百货之一', 'COEX 会议中心综合体，江南核心办公区', '地铁 2 号线·盆唐线三成站直连', '中-高', '2026.03（1 场）'],
+          ['신세계백화점 강남점（新世界百货江南店）', '韩国百货 #1（2025 年）', '首尔江南核心商圈', '公共交通密集，连接江南主要交通节点', '中', '2026.04（1 场）'],
+          ['롯데 월드몰（乐天 World Mall，瑞草店商圈）', '瑞草站商圈核心百货', '金融 / 写字楼 / 家庭客流密集区', '地铁 2 号线瑞草站商圈', '中-高（本人年内 2 次落地）', '2026.04（booth）、2026.07（共 2 场）'],
+          ['롯데백화점 동탄점（乐天百货东滩店）', '京畿道华城市核心商圈', '东滩新城，主打家庭客群', '东滩站商圈，公共交通与自驾便利', '中', '2026.05（1 场）'],
+          ['하남 스타필드（河南 Starfield 复合购物中心）', '韩国代表性大型复合购物中心之一', '辐射首都圈家庭客群的综合业态商业体', '地铁与接驳交通覆盖，临近河南 IC', '中', '2026.06–07（1 场）'],
+          ['신세계백화점 센텀시티점（新世界百货 Centum City 釜山店）', '韩国百货 TOP3（2025 年 #3）', '釜山海云台区 Centum City，釜山都市圈地标', '釜山地铁 2 号线 Centum City 站直连', '中', '2026.07（1 场）'],
+          ['롯데백화점 인천점（乐天百货仁川店）', '韩国百货 #14（2025 年），仁川都市圈核心百货', '仁川港城核心区，邻近国际机场与港城', '仁川地铁 1 号线与机场铁路覆盖', '中', '2026.10 起（长期）'],
+          ['롯데백화점 평촌점（乐天百货平村店）', '首都圈西部新城核心百货', '首都圈西部新城，家庭客群为主', '地铁 4 号线平村站及接驳交通', '中', '2026.10（1 场）']
+        ],
+        en: [
+          ['Lotte Jamsil World Mall', 'Korea’s No. 2 department store by 2025 sales', 'Jamsil, Seoul · Lotte World Tower', 'Direct access to Jamsil Station (Lines 2 and 8)', 'High', 'Jun 2025, Aug 2025 (2 sessions)'],
+          ['Lotte Jamsil World Mall Avenuel', 'Part of Korea’s No. 2 Lotte Jamsil complex', 'Avenuel premium floor within Jamsil World Mall', 'Directly connected to Jamsil Station', 'High', 'Aug 2025 (1 session)'],
+          ['The Hyundai Seoul (Yeouido)', 'Korea’s No. 7 department store by 2025 sales; a Hyundai flagship', 'Yeouido business hub with dense upscale housing', 'Connected to Yeouido and National Assembly Stations', 'High; most frequently reused venue', 'Sep 2025, Apr–Jun 2026, Oct 2026 (3 sessions)'],
+          ['Hyundai Department Store Pangyo', 'Among Hyundai’s stronger-performing stores', 'Pangyo Techno Valley; IT and finance professionals', 'Walking distance from Pangyo Station and the express bus terminal', 'Medium', 'Feb 2026, Apr 2026 (2 sessions)'],
+          ['Hyundai Department Store Trade Center', 'Core department store in Samseong-dong, Gangnam', 'COEX convention complex and core office district', 'Direct access to Samseong Station', 'Medium–High', 'Mar 2026 (1 session)'],
+          ['Shinsegae Department Store Gangnam', 'Korea’s No. 1 department store by 2025 sales', 'Prime Gangnam retail district', 'Dense public-transit access across Gangnam', 'Medium', 'Apr 2026 (1 session)'],
+          ['Lotte World Mall (Seocho)', 'Core store in the Seocho Station trade area', 'Mix of finance, office and family footfall', 'Seocho Station trade area', 'Medium–High', 'Apr 2026 booth, Jul 2026 (2 sessions)'],
+          ['Lotte Department Store Dongtan', 'Core retail landmark in Hwaseong, Gyeonggi-do', 'Dongtan new town; family-oriented shoppers', 'Convenient transit and car access around Dongtan Station', 'Medium', 'May 2026 (1 session)'],
+          ['Hanam Starfield', 'Landmark large-scale mixed-use mall', 'Capital-region family destination', 'Transit, shuttle and road access near Hanam IC', 'Medium', 'Jun–Jul 2026 (1 session)'],
+          ['Shinsegae Department Store Centum City (Busan)', 'Korea’s No. 3 department store by 2025 sales', 'Centum City, Haeundae-gu; a Busan landmark', 'Direct access to Centum City Station', 'Medium', 'Jul 2026 (1 session)'],
+          ['Lotte Department Store Incheon', 'Korea’s No. 14 department store by 2025 sales', 'Core Incheon port-city district near the airport', 'Incheon metro and airport-rail access', 'Medium', 'Planned from Oct 2026 (long-term)'],
+          ['Lotte Department Store Pyeongchon', 'Core store in a western capital-region new town', 'Family-oriented new-town trade area', 'Pyeongchon Station and local connections', 'Medium', 'Oct 2026 (1 session)']
+        ],
+        ko: [
+          ['롯데 잠실월드몰', '2025년 한국 백화점 매출 2위', '서울 잠실 · 롯데월드타워', '잠실역 지하철 2·8호선 직결', '높음', '2025.06, 2025.08 (총 2회)'],
+          ['롯데 잠실 월드몰 에비뉴엘', '롯데 잠실 복합단지 매출 2위', '잠실 월드몰 내 에비뉴엘 프리미엄 층', '잠실역 지하철 2·8호선 직결', '높음', '2025.08 (1회)'],
+          ['더현대 서울', '2025년 한국 백화점 매출 7위; 현대백화점 플래그십', '서울 여의도 업무지구와 고급 주거 상권', '여의도역·국회의사당역 연결', '높음; 가장 자주 재이용한 거점', '2025.09, 2026.04–06, 2026.10 (총 3회)'],
+          ['현대백화점 판교점', '현대백화점 체계 내 상위 매출', '판교 테크노밸리 IT·금융 종사자 상권', '판교역 도보권, 고속버스터미널 인접', '중', '2026.02, 2026.04 (총 2회)'],
+          ['현대백화점 무역센터점', '강남 삼성동 핵심 백화점', 'COEX 복합단지와 핵심 업무지구', '삼성역 직결', '중상', '2026.03 (1회)'],
+          ['신세계백화점 강남점', '2025년 한국 백화점 매출 1위', '서울 강남 핵심 상권', '강남 주요 대중교통 접근', '중', '2026.04 (1회)'],
+          ['롯데 월드몰', '서초역 상권 핵심 백화점', '금융·오피스·가족 고객 밀집 지역', '서초역 상권', '중상', '2026.04 부스, 2026.07 (총 2회)'],
+          ['롯데백화점 동탄점', '경기도 화성시 핵심 상권', '동탄 신도시 가족 고객 중심', '동탄역 주변 대중교통 및 차량 접근', '중', '2026.05 (1회)'],
+          ['하남 스타필드', '한국 대표 대형 복합쇼핑몰', '수도권 가족 고객 중심 복합 상업시설', '연계 교통과 하남 IC 접근', '중', '2026.06–07 (1회)'],
+          ['신세계백화점 센텀시티점', '2025년 한국 백화점 매출 3위', '부산 해운대구 센텀시티 랜드마크', '부산 지하철 2호선 센텀시티역 직결', '중', '2026.07 (1회)'],
+          ['롯데백화점 인천점', '2025년 한국 백화점 매출 14위', '인천 항만도시 핵심구역과 공항 인접', '인천 지하철과 공항철도 접근', '중', '2026.10부터 장기 운영 예정'],
+          ['롯데백화점 평촌점', '수도권 서부 신도시 핵심 백화점', '가족 고객 중심 신도시 상권', '평촌역과 연계 교통', '중', '2026.10 (1회)']
+        ]
+      };
+
+      const NAV_ITEMS = [
+        { key: 'home', hash: 'home' }, { key: 'experience', hash: 'experience' }, { key: 'projects', hash: 'projects' },
+        { key: 'skills', hash: 'skills' }, { key: 'contact', hash: 'contact' }
+      ];
+      const VIEWS = [
+        { id: 'home', hashes: ['home', 'hero', 'highlights'], nav: 'home' },
+        { id: 'experience', hashes: ['experience'], nav: 'experience' },
+        { id: 'projects', hashes: ['projects'], nav: 'projects' },
+        { id: 'skills', hashes: ['skills', 'languages'], nav: 'skills' },
+        { id: 'contact', hashes: ['contact'], nav: 'contact' }
+      ];
+      const PROJECT_TYPES = ['popup', 'ka', 'display', 'airline'];
+      const LANG_TAGS = { zh: 'zh-CN', en: 'en', ko: 'ko' };
+      const MOTION = { fast: 160, base: 260, slow: 420, count: 900, autoplay: 5600, easeOut: 'cubic-bezier(.22,.61,.36,1)', easeInOut: 'cubic-bezier(.65,0,.35,1)' };
+      const storage = {
+        get(key) { try { return localStorage.getItem(key); } catch (_) { return null; } },
+        set(key, value) { try { localStorage.setItem(key, value); } catch (_) {} }
+      };
+      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+      let currentLang = 'zh';
+      let currentProject = 'popup';
+      let currentView = 'home';
+      let tabBusy = false;
+      let viewBusy = false;
+      let dialogState = null;
+      let swipeStartX = null;
+      let revealObserver = null;
+      let highlightObserver = null;
+      let highlightCountPlayed = false;
+      let introPlayed = false;
+      let autoplayTimer = 0;
+
+      const icon = {
+        image: '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.75"/><circle cx="8" cy="9" r="1.5" fill="currentColor"/><path d="m5 17 4-4 3 3 3-3 4 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+        arrow: '<svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m9 18 6-6-6-6" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+        mail: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.75"/><path d="m4 7 8 6 8-6" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+        location: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z" stroke="currentColor" stroke-width="1.75"/><circle cx="12" cy="10" r="2.5" stroke="currentColor" stroke-width="1.75"/></svg>',
+        phone: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 3H4.5A1.5 1.5 0 0 0 3 4.5C3 13.6 10.4 21 19.5 21a1.5 1.5 0 0 0 1.5-1.5V17l-4-1-1.2 2c-4.5-1.7-8.1-5.3-9.8-9.8L8 7 7 3Z" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+        travel: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 16.5 21 12 3 7.5v3l12 1.5L3 13.5v3Z" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/></svg>',
+        skills: [
+          '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 9h16l-1-4H5L4 9Zm1 0v10h14V9M9 19v-6h6v6" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/></svg>',
+          '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="6" cy="6" r="2" stroke="currentColor" stroke-width="1.75"/><circle cx="18" cy="12" r="2" stroke="currentColor" stroke-width="1.75"/><circle cx="6" cy="18" r="2" stroke="currentColor" stroke-width="1.75"/><path d="m8 7 8 4M8 17l8-4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>',
+          '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 8h16M6 4h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/><path d="M8 12h3m-3 4h6" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>',
+          '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.75"/><path d="M3 9h18M9 9v11" stroke="currentColor" stroke-width="1.75"/></svg>',
+          '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 19V9m5 10V5m5 14v-7m5 7V3" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>',
+          '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m4 13 11-5v8L4 13Zm0 0v5h4l1-4" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/><path d="M18 8.5 20 7m-2 9.5 2 1.5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>'
+        ],
+        theme(theme) { return theme === 'dark' ? '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.75"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>' : '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20.2 15.2A8.2 8.2 0 0 1 8.8 3.8 8.2 8.2 0 1 0 20.2 15.2Z" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>'; },
+        autoplay(active) { return active ? '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 6v12M16 6v12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>' : '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m9 6 9 6-9 6V6Z" fill="currentColor"/></svg>'; }
+      };
+
+      const get = (path, source = I18N[currentLang]) => path.split('.').reduce((value, key) => value && value[key], source);
+
+      function playHomeIntro() {
+        if (introPlayed || reducedMotion.matches) return;
+        const home = document.querySelector('.view-home');
+        if (!home || home.hidden) return;
+        introPlayed = true;
+        home.classList.add('play-intro');
+        window.setTimeout(() => home.classList.remove('play-intro'), MOTION.slow + 720);
+      }
+
+      function initRevealMotion() {
+        const selectors = '.section-heading, .experience-head, .timeline-item, .tab-summary, .project-card, .skill-card, .language-chip, .contact-item';
+        const nodes = [...document.querySelectorAll(selectors)];
+        nodes.forEach(node => {
+          node.classList.add('reveal');
+          const group = node.closest('.timeline, .project-grid, .skills-grid, .language-list, .contact-list');
+          const localIndex = group ? [...group.children].indexOf(node) : 0;
+          node.style.setProperty('--reveal-delay', `${Math.max(0, localIndex % 4) * 70}ms`);
+        });
+        if (reducedMotion.matches || !('IntersectionObserver' in window)) {
+          nodes.forEach(node => node.classList.add('is-revealed'));
+          return;
+        }
+        document.documentElement.classList.add('motion-ready');
+        revealObserver = new IntersectionObserver(entries => {
+          const visibleEntries = entries.filter(entry => entry.isIntersecting);
+          const isMobile = window.matchMedia('(max-width: 767px)').matches;
+          visibleEntries.forEach((entry, visibleIndex) => {
+            const step = isMobile ? Math.min(visibleIndex, 3) * 50 : Math.min(visibleIndex, 5) * 60;
+            entry.target.style.setProperty('--reveal-delay', `${step}ms`);
+            entry.target.classList.add('is-revealed');
+            revealObserver.unobserve(entry.target);
+          });
+        }, { threshold: .12, rootMargin: '0px 0px -8% 0px' });
+        nodes.forEach(node => revealObserver.observe(node));
+      }
+
+      function animateHighlightNumbers() {
+        if (highlightCountPlayed) return;
+        highlightCountPlayed = true;
+        const targets = I18N[currentLang].highlights.map(item => Number(item.num));
+        const nodes = [...document.querySelectorAll('[data-hl-num]')];
+        if (reducedMotion.matches || nodes.length !== targets.length) {
+          nodes.forEach((node, index) => { node.textContent = String(targets[index] ?? ''); });
+          return;
+        }
+        const started = performance.now();
+        const frame = now => {
+          if (reducedMotion.matches) {
+            nodes.forEach((node, index) => { node.textContent = String(targets[index] ?? ''); });
+            return;
+          }
+          const progress = Math.min(1, (now - started) / MOTION.count);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          nodes.forEach((node, index) => { node.textContent = String(Math.round((targets[index] || 0) * eased)); });
+          if (progress < 1) window.requestAnimationFrame(frame);
+        };
+        nodes.forEach(node => { node.textContent = '0'; });
+        window.requestAnimationFrame(frame);
+      }
+
+      function initHighlightMotion() {
+        const strip = document.querySelector('.highlight-strip');
+        if (!strip) return;
+        if (reducedMotion.matches || !('IntersectionObserver' in window)) {
+          animateHighlightNumbers();
+          return;
+        }
+        highlightObserver = new IntersectionObserver(entries => {
+          if (!entries.some(entry => entry.isIntersecting)) return;
+          animateHighlightNumbers();
+          highlightObserver.disconnect();
+        }, { threshold: .35 });
+        highlightObserver.observe(strip);
+      }
+
+      function animateMedia(element, direction = 1) {
+        if (!element || reducedMotion.matches) return;
+        const animations = typeof element.getAnimations === 'function' ? element.getAnimations() : [];
+        animations.forEach(animation => {
+          try { animation.finish(); } catch (_) { animation.cancel(); }
+        });
+        if (typeof element.animate !== 'function') return;
+        element.animate(
+          [{ opacity: .72, transform: `translateX(${direction > 0 ? 18 : -18}px)` }, { opacity: 1, transform: 'translateX(0)' }],
+          { duration: MOTION.slow, easing: MOTION.easeOut, fill: 'none' }
+        );
+      }
+
+      function clearProjectAutoplay() {
+        window.clearInterval(autoplayTimer);
+        autoplayTimer = 0;
+      }
+
+      function syncAutoplayButton() {
+        const button = document.querySelector('[data-pd-autoplay]');
+        if (!button) return;
+        const meta = dialogState ? PROJECT_META[dialogState.type][dialogState.index] : null;
+        const canPlay = Boolean(meta && (meta.images || []).length > 1 && !reducedMotion.matches);
+        const active = Boolean(autoplayTimer);
+        button.hidden = !canPlay;
+        button.setAttribute('aria-pressed', String(active));
+        button.setAttribute('aria-label', active ? I18N[currentLang].projects.autoplayStop : I18N[currentLang].projects.autoplayStart);
+        button.querySelector('[data-pd-autoplay-icon]').innerHTML = icon.autoplay(active);
+      }
+
+      function advanceProjectAutoplay() {
+        if (!dialogState) return;
+        const meta = PROJECT_META[dialogState.type][dialogState.index];
+        if (meta.compare && dialogState.compareMode === 'compare') {
+          const after = meta.compare.after || [];
+          const before = Array.isArray(meta.compare.before) ? meta.compare.before : [meta.compare.before];
+          if (after.length > 1) {
+            dialogState.afterIndex = (dialogState.afterIndex + 1) % after.length;
+            renderCompare();
+            animateMedia(document.querySelector('[data-compare-after]'), 1);
+          } else if (before.length > 1) {
+            dialogState.beforeIndex = (dialogState.beforeIndex + 1) % before.length;
+            renderCompare();
+            animateMedia(document.querySelector('[data-compare-before]'), 1);
+          }
+          return;
+        }
+        const images = meta.images || [];
+        if (images.length < 2) return;
+        dialogState.imageIndex = (dialogState.imageIndex + 1) % images.length;
+        renderCompare();
+        animateMedia(document.querySelector('[data-pd-image]'), 1);
+      }
+
+      function startProjectAutoplay() {
+        clearProjectAutoplay();
+        if (!dialogState || dialogState.autoplayPaused || reducedMotion.matches || document.hidden) {
+          syncAutoplayButton();
+          return;
+        }
+        const meta = PROJECT_META[dialogState.type][dialogState.index];
+        if ((meta.images || []).length < 2) {
+          syncAutoplayButton();
+          return;
+        }
+        autoplayTimer = window.setInterval(advanceProjectAutoplay, MOTION.autoplay);
+        syncAutoplayButton();
+      }
+
+      function stopProjectAutoplay(userPaused = false) {
+        clearProjectAutoplay();
+        if (dialogState && userPaused) dialogState.autoplayPaused = true;
+        syncAutoplayButton();
+      }
+
+      function buildNavigation() {
+        const desktop = document.querySelector('[data-nav-links]');
+        const drawer = document.querySelector('[data-drawer-nav]');
+        desktop.innerHTML = NAV_ITEMS.map(item => `<a class="nav-link" href="#${item.hash}" data-nav="${item.key}" data-nav-key="${item.key}"></a>`).join('');
+        drawer.innerHTML = NAV_ITEMS.map(item => `<a href="#${item.hash}" data-nav="${item.key}" data-nav-key="${item.key}"></a>`).join('');
+      }
+
+      function findView(hash = window.location.hash) {
+        const key = String(hash).replace(/^#/, '').trim().toLowerCase();
+        if (!key) return VIEWS[0];
+        return VIEWS.find(view => view.hashes.includes(key)) || null;
+      }
+
+      function setActiveNav(viewId) {
+        document.querySelectorAll('[data-nav]').forEach(link => {
+          const active = link.dataset.nav === viewId;
+          link.classList.toggle('is-active', active);
+          active ? link.setAttribute('aria-current', 'page') : link.removeAttribute('aria-current');
+        });
+      }
+
+      function finalizeView(viewId, focusHeading, announce) {
+        currentView = viewId;
+        setActiveNav(viewId);
+        document.querySelector('.skip-link').href = `#view-${viewId}`;
+        document.querySelector('.nav-shell').classList.remove('is-switching');
+        viewBusy = false;
+        if (focusHeading) {
+          const view = document.querySelector(`#view-${viewId}`);
+          document.getElementById(view?.getAttribute('aria-labelledby'))?.focus({ preventScroll: true });
+        }
+        if (announce) document.querySelector('[data-view-announcer]').textContent = I18N[currentLang].views[viewId];
+        if (viewId === 'projects') requestAnimationFrame(updateIndicator);
+        if (viewId === 'home') playHomeIntro();
+      }
+
+      async function setView(viewId, options = {}) {
+        const { animate = true, focusHeading = true, announce = true, anchor = '' } = options;
+        const target = VIEWS.find(view => view.id === viewId) || VIEWS[0];
+        const current = document.querySelector(`[data-view="${currentView}"]`);
+        const next = document.querySelector(`[data-view="${target.id}"]`);
+        if (!next || viewBusy) return false;
+
+        if (target.id === currentView && !next.hidden) {
+          const sameViewTarget = animate && anchor === 'languages' ? document.getElementById(anchor) : null;
+          sameViewTarget?.scrollIntoView({ behavior: reducedMotion.matches ? 'auto' : 'smooth', block: 'start' });
+          if (!sameViewTarget) window.scrollTo({ top: 0, behavior: 'auto' });
+          setActiveNav(target.nav);
+          return true;
+        }
+
+        viewBusy = true;
+        document.querySelector('.nav-shell').classList.add('is-switching');
+        const shouldAnimate = animate && !reducedMotion.matches && current && !current.hidden;
+        if (shouldAnimate) {
+          await current.animate(
+            [{ opacity: 1, transform: 'translateY(0)' }, { opacity: 0, transform: 'translateY(-8px)' }],
+            { duration: MOTION.fast, easing: MOTION.easeInOut, fill: 'forwards' }
+          ).finished.catch(() => {});
+        }
+
+        document.querySelectorAll('[data-view]').forEach(view => {
+          const active = view === next;
+          view.hidden = !active;
+          view.classList.toggle('is-active', active);
+          view.getAnimations().forEach(animation => animation.cancel());
+          view.style.opacity = '';
+          view.style.transform = '';
+        });
+        window.scrollTo({ top: 0, behavior: 'auto' });
+
+        if (shouldAnimate) {
+          await next.animate(
+            [{ opacity: 0, transform: 'translateY(8px)' }, { opacity: 1, transform: 'translateY(0)' }],
+            { duration: MOTION.base, easing: MOTION.easeOut }
+          ).finished.catch(() => {});
+        }
+
+        finalizeView(target.id, focusHeading, announce);
+        if (anchor === 'languages') document.getElementById('languages')?.scrollIntoView({ behavior: 'auto', block: 'start' });
+        return true;
+      }
+
+      function routeFromLocation(animate = true) {
+        const rawHash = window.location.hash.replace(/^#/, '').toLowerCase();
+        const view = findView(rawHash) || VIEWS[0];
+        return setView(view.id, { animate, focusHeading: animate, announce: animate, anchor: rawHash });
+      }
+
+      function buildFramework() {
+        document.querySelector('[data-highlights]').innerHTML = Array.from({ length: 6 }, (_, index) => `<div class="highlight-item"><dt class="highlight-value"><span aria-hidden="true" data-hl-visual="${index}"></span><span class="sr-only" data-hl-alt="${index}"></span></dt><dd class="highlight-label" data-highlight-label="${index}"></dd></div>`).join('');
+        document.querySelector('[data-timeline]').innerHTML = Array.from({ length: 6 }, (_, index) => `<article class="timeline-item"><h3 data-exp-title="${index}"></h3><ol class="experience-points" data-exp-points="${index}"></ol></article>`).join('');
+
+        document.querySelector('[data-tabs]').innerHTML = PROJECT_TYPES.map((type, index) => `<button class="tab" type="button" role="tab" id="tab-${type}" aria-controls="panel-${type}" aria-selected="${index === 0}" tabindex="${index === 0 ? 0 : -1}" data-project-tab="${type}"></button>`).join('') + '<span class="tabs-indicator" aria-hidden="true"></span>';
+        const factCounts = { popup: 6, ka: 4, display: 4, airline: 3 };
+        document.querySelector('[data-tab-panels]').innerHTML = PROJECT_TYPES.map((type, typeIndex) => `<div class="panel" id="panel-${type}" role="tabpanel" aria-labelledby="tab-${type}" data-project-panel="${type}" ${typeIndex === 0 ? '' : 'hidden'}><section class="tab-summary" aria-labelledby="tab-summary-${type}-title"><h3 id="tab-summary-${type}-title" data-tab-summary-title="${type}"></h3><p class="tab-summary__lead" data-tab-summary-lead="${type}"></p><p class="tab-summary__note" data-tab-summary-note="${type}"></p><dl class="tab-summary__stats" data-tab-summary-stats="${type}"></dl></section><div class="project-grid">${PROJECT_META[type].map((meta, index) => {
+          const featured = Boolean(meta.images?.length);
+          const coverImage = featured ? meta.images[meta.coverIndex || 0] : null;
+          const cover = featured
+            ? `<div class="project-cover has-media"><span class="project-badge" data-project-badge ${meta.strategic || meta.planned ? '' : 'hidden'}></span><div class="project-media-stage"><div class="project-media-track"><figure class="project-media-slide"><img src="${coverImage.src.replace('.webp', '-thumb.webp')}" alt="" loading="lazy" decoding="async" data-project-image></figure></div></div></div>`
+            : `<div class="project-cover"><span class="project-badge" data-project-badge ${meta.strategic || meta.planned ? '' : 'hidden'}></span><div class="project-placeholder">${icon.image}<span data-project-image></span></div></div>`;
+          return `<article class="project-card ${featured ? 'project-card--featured' : 'project-card--compact'}" data-project-card="${type}" data-project-index="${index}">${cover}<div class="project-body"><div class="project-meta"><span class="chip chip--date" data-project-date></span><span class="chip" data-project-type></span><span class="project-media-count" data-project-image-count ${featured ? '' : 'hidden'}></span></div><h3 data-project-title></h3><p data-project-summary></p><button class="project-action" type="button" aria-haspopup="dialog" aria-controls="project-dialog"><span data-project-action></span>${icon.arrow}</button></div><div class="project-detail"><div class="project-detail-inner"><section class="detail-section"><h4 data-project-context></h4><dl class="fact-grid">${Array.from({ length: factCounts[type] }, (_, factIndex) => `<div class="fact"><dt data-fact-label="${factIndex}"></dt><dd data-fact-value="${factIndex}"></dd></div>`).join('')}</dl></section><section class="detail-section"><h4 data-project-narrative></h4><p class="project-detail-copy" data-project-detail-copy></p></section><section class="detail-section" data-results-section><h4 data-project-outcomes></h4><div class="result-row" data-results></div><p class="result-note" data-result-note></p></section></div></div></article>`;
+        }).join('')}</div></div>`).join('');
+
+        document.querySelector('[data-skills]').innerHTML = Array.from({ length: 6 }, (_, index) => `<article class="skill-card"><div class="skill-head"><span class="skill-icon">${icon.skills[index]}</span><h3 data-skill-title="${index}"></h3></div><div class="tag-row" data-skill-tags="${index}"></div></article>`).join('');
+        document.querySelector('[data-language-list]').innerHTML = Array.from({ length: 3 }, (_, index) => `<div class="language-chip"><strong data-language-item="${index}"></strong></div>`).join('');
+        const contactIcons = [icon.mail, icon.location, icon.phone];
+        document.querySelector('[data-contact-list]').innerHTML = Array.from({ length: 3 }, (_, index) => `<div class="contact-item"><span class="contact-icon">${contactIcons[index]}</span><span class="contact-copy"><small data-contact-label="${index}"></small><strong data-contact-value="${index}"></strong></span></div>`).join('') + `<div class="contact-item contact-travel"><span class="contact-icon">${icon.travel}</span><span class="contact-copy"><strong data-contact-travel></strong></span></div>`;
+      }
+
+      function projectCopy(type, index) {
+        return type === 'popup' ? POPUP_COPY[currentLang][index] : CASE_COPY[currentLang][type][index];
+      }
+
+      function formatProjectDate(value) {
+        const parts = value.split(' · ');
+        if (parts.length < 2) return value;
+        const suffix = currentLang === 'zh' ? ' 天' : currentLang === 'ko' ? '일' : Number(parts[1]) === 1 ? ' day' : ' days';
+        return `${parts[0]} · ${parts[1]}${suffix}`;
+      }
+
+      function formatMediaCount(count) {
+        if (currentLang === 'ko') return `${count}${I18N[currentLang].projects.imageUnit}`;
+        return `${count} ${I18N[currentLang].projects.imageUnit}`;
+      }
+
+      function renderProjects() {
+        const t = I18N[currentLang];
+        PROJECT_TYPES.forEach(type => {
+          const summary = TAB_SUMMARY[currentLang][type];
+          document.querySelector(`[data-tab-summary-title="${type}"]`).textContent = summary.title;
+          document.querySelector(`[data-tab-summary-lead="${type}"]`).textContent = summary.lead;
+          document.querySelector(`[data-tab-summary-note="${type}"]`).textContent = summary.note;
+          document.querySelector(`[data-tab-summary-stats="${type}"]`).innerHTML = summary.stats.map(([value, label]) => `<div><dd>${value}</dd><dt>${label}</dt></div>`).join('');
+        });
+        document.querySelectorAll('[data-project-card]').forEach(card => {
+          const type = card.dataset.projectCard;
+          const index = Number(card.dataset.projectIndex);
+          const meta = PROJECT_META[type][index];
+          const copy = projectCopy(type, index);
+          const factValues = type === 'popup' ? VENUES[currentLang][meta.venue] : copy[4];
+          card.querySelector('[data-project-date]').textContent = formatProjectDate(meta.date);
+          card.querySelector('[data-project-type]').textContent = copy[1];
+          card.querySelector('[data-project-title]').textContent = copy[0];
+          card.querySelector('[data-project-summary]').textContent = copy[2];
+          card.querySelector('[data-project-detail-copy]').textContent = copy[3];
+          const imageNode = card.querySelector('[data-project-image]');
+          if (imageNode instanceof HTMLImageElement) {
+            imageNode.alt = formatImageAlt(copy[0], type, (meta.coverIndex || 0) + 1);
+            card.querySelector('[data-project-image-count]').textContent = formatMediaCount(meta.images.length);
+          } else {
+            imageNode.textContent = meta.planned ? t.projects.imagePlanned : t.projects.image;
+          }
+          card.querySelector('[data-project-context]').textContent = t.projects.context;
+          card.querySelector('[data-project-narrative]').textContent = t.projects.narrative;
+          card.querySelector('[data-project-outcomes]').textContent = t.projects.outcomes;
+          card.querySelector('[data-project-action]').textContent = t.projects.view;
+          const badge = card.querySelector('[data-project-badge]');
+          badge.hidden = !meta.strategic && !meta.planned;
+          badge.textContent = meta.planned ? t.projects.planned : t.projects.strategic;
+          const labels = t.projects.factLabels[type];
+          card.querySelectorAll('[data-fact-label]').forEach((node, factIndex) => { node.textContent = labels[factIndex] || ''; });
+          card.querySelectorAll('[data-fact-value]').forEach((node, factIndex) => { node.textContent = factValues[factIndex] || ''; });
+          const results = card.querySelector('[data-results]');
+          const resultItems = (meta.results || []).map(([value, key]) => `<span class="chip chip--accent">${value} · ${RESULT_LABELS[currentLang][key]}</span>`);
+          results.innerHTML = resultItems.join('');
+          card.querySelector('[data-result-note]').textContent = t.projects.resultNote;
+          card.querySelector('[data-results-section]').hidden = resultItems.length === 0;
+        });
+        if (dialogState) renderProjectDialog();
+      }
+
+      function formatImageAlt(title, type, index) {
+        if (currentLang === 'en') return `${title} · ${MEDIA_ALTS.en[type]} · Image ${index}`;
+        if (currentLang === 'ko') return `${title} · ${MEDIA_ALTS.ko[type]} · ${index}번째 이미지`;
+        return `${title} · ${MEDIA_ALTS.zh[type]} · 第 ${index} 张`;
+      }
+
+      function projectFacts(type, index) {
+        const meta = PROJECT_META[type][index];
+        const copy = projectCopy(type, index);
+        return type === 'popup' ? VENUES[currentLang][meta.venue] : copy[4];
+      }
+
+      function resultMarkup(meta) {
+        const items = (meta.results || []).map(([value, key]) => `<span class="chip chip--accent">${value} · ${RESULT_LABELS[currentLang][key]}</span>`);
+        return items.join('');
+      }
+
+      function renderGallery() {
+        if (!dialogState) return;
+        const { type, index } = dialogState;
+        const meta = PROJECT_META[type][index];
+        const copy = projectCopy(type, index);
+        const images = meta.images || [];
+        const image = document.querySelector('[data-pd-image]');
+        const main = document.querySelector('[data-pd-main]');
+        const placeholder = document.querySelector('[data-pd-placeholder]');
+        const prev = document.querySelector('[data-pd-prev]');
+        const next = document.querySelector('[data-pd-next]');
+        const counter = document.querySelector('[data-pd-counter]');
+        const thumbs = document.querySelector('[data-pd-thumbs]');
+        if (!images.length) {
+          main.classList.remove('is-portrait');
+          image.hidden = true;
+          image.removeAttribute('src');
+          placeholder.hidden = false;
+          placeholder.innerHTML = `${icon.image}<span>${I18N[currentLang].projects.image}</span>`;
+          prev.disabled = true;
+          next.disabled = true;
+          counter.textContent = '0 / 0';
+          thumbs.innerHTML = '';
+          thumbs.hidden = true;
+          return;
+        }
+        dialogState.imageIndex = Math.max(0, Math.min(dialogState.imageIndex, images.length - 1));
+        const current = images[dialogState.imageIndex];
+        image.hidden = false;
+        placeholder.hidden = true;
+        main.classList.remove('is-portrait');
+        const syncOrientation = () => {
+          if (!image.currentSrc.endsWith(current.src)) return;
+          main.classList.toggle('is-portrait', image.naturalHeight > image.naturalWidth * 1.15);
+        };
+        image.addEventListener('load', syncOrientation, { once: true });
+        image.src = current.src;
+        if (image.complete) syncOrientation();
+        image.alt = formatImageAlt(copy[0], type, dialogState.imageIndex + 1);
+        prev.disabled = dialogState.imageIndex === 0;
+        next.disabled = dialogState.imageIndex === images.length - 1;
+        counter.textContent = `${dialogState.imageIndex + 1} / ${images.length}`;
+        thumbs.hidden = images.length < 2;
+        thumbs.innerHTML = images.map((item, imageIndex) => `<li><button type="button" data-pd-thumb="${imageIndex}" aria-current="${imageIndex === dialogState.imageIndex}" aria-label="${formatImageAlt(copy[0], type, imageIndex + 1)}"><img src="${item.src.replace('.webp', '-thumb.webp')}" alt="" loading="lazy" decoding="async"></button></li>`).join('');
+        [dialogState.imageIndex - 1, dialogState.imageIndex + 1].filter(i => images[i]).forEach(i => { const preload = new Image(); preload.src = images[i].src; });
+        thumbs.querySelector('[aria-current="true"]')?.scrollIntoView({ inline: 'nearest', block: 'nearest' });
+      }
+
+      function renderCompare() {
+        if (!dialogState) return;
+        const { type, index } = dialogState;
+        const meta = PROJECT_META[type][index];
+        const copy = projectCopy(type, index);
+        const compare = meta.compare;
+        const t = I18N[currentLang].projects;
+        const compareView = document.querySelector('[data-pd-compare]');
+        const gallery = document.querySelector('[data-pd-gallery]');
+        const showCompare = Boolean(compare && dialogState.compareMode === 'compare');
+        compareView.hidden = !compare;
+        compareView.classList.toggle('is-switch-only', Boolean(compare && !showCompare));
+        gallery.hidden = showCompare;
+        document.querySelectorAll('[data-compare-mode]').forEach(button => {
+          button.textContent = button.dataset.compareMode === 'compare' ? t.compare : t.allImages;
+          button.setAttribute('aria-pressed', String(button.dataset.compareMode === dialogState.compareMode));
+        });
+        const comparePane = compareView.querySelector('.compare-pane');
+        const process = document.querySelector('[data-compare-process]');
+        const note = document.querySelector('[data-compare-note]');
+        comparePane.hidden = !showCompare;
+        process.hidden = !showCompare || !compare?.process?.length;
+        note.hidden = !showCompare;
+        if (!showCompare) { renderGallery(); return; }
+        const beforeImages = Array.isArray(compare.before) ? compare.before : [compare.before];
+        const afterImages = compare.after;
+        dialogState.beforeIndex = Math.max(0, Math.min(dialogState.beforeIndex, beforeImages.length - 1));
+        dialogState.afterIndex = Math.max(0, Math.min(dialogState.afterIndex, afterImages.length - 1));
+        const beforeIndex = beforeImages[dialogState.beforeIndex];
+        const afterIndex = afterImages[dialogState.afterIndex];
+        const beforeImage = document.querySelector('[data-compare-before]');
+        const afterImage = document.querySelector('[data-compare-after]');
+        beforeImage.src = meta.images[beforeIndex].src;
+        beforeImage.alt = formatImageAlt(copy[0], type, beforeIndex + 1);
+        afterImage.src = meta.images[afterIndex].src;
+        afterImage.alt = formatImageAlt(copy[0], type, afterIndex + 1);
+        document.querySelector('[data-compare-before-label]').textContent = t.before;
+        document.querySelector('[data-compare-after-label]').textContent = t.after;
+        document.querySelector('[data-compare-before-caption]').textContent = `${t.before} · ${dialogState.beforeIndex + 1} / ${beforeImages.length}`;
+        document.querySelector('[data-compare-after-caption]').textContent = `${t.after} · ${dialogState.afterIndex + 1} / ${afterImages.length}`;
+        document.querySelector('[data-compare-note]').textContent = t.compareNote;
+        const beforeNav = document.querySelector('[data-compare-before-nav]');
+        beforeNav.hidden = beforeImages.length < 2;
+        document.querySelector('[data-compare-before-counter]').textContent = `${dialogState.beforeIndex + 1} / ${beforeImages.length}`;
+        document.querySelector('[data-compare-before-prev]').disabled = dialogState.beforeIndex === 0;
+        document.querySelector('[data-compare-before-next]').disabled = dialogState.beforeIndex === beforeImages.length - 1;
+        const afterNav = document.querySelector('[data-compare-after-nav]');
+        afterNav.hidden = afterImages.length < 2;
+        document.querySelector('[data-compare-counter]').textContent = `${dialogState.afterIndex + 1} / ${afterImages.length}`;
+        document.querySelector('[data-compare-prev]').disabled = dialogState.afterIndex === 0;
+        document.querySelector('[data-compare-next]').disabled = dialogState.afterIndex === afterImages.length - 1;
+        document.querySelector('[data-compare-process-label]').textContent = t.process;
+        document.querySelector('[data-compare-process-list]').innerHTML = (compare.process || []).map(imageIndex => `<li><button type="button" data-process-image="${imageIndex}" aria-label="${formatImageAlt(copy[0], type, imageIndex + 1)}"><img src="${meta.images[imageIndex].src.replace('.webp', '-thumb.webp')}" alt="" loading="lazy" decoding="async"></button></li>`).join('');
+      }
+
+      function renderProjectDialog() {
+        if (!dialogState) return;
+        const { type, index } = dialogState;
+        const meta = PROJECT_META[type][index];
+        const copy = projectCopy(type, index);
+        const t = I18N[currentLang].projects;
+        document.querySelector('[data-pd-date]').textContent = formatProjectDate(meta.date);
+        document.querySelector('[data-pd-type]').textContent = copy[1];
+        document.querySelector('[data-pd-title]').textContent = copy[0];
+        document.querySelector('[data-pd-context]').textContent = t.context;
+        document.querySelector('[data-pd-narrative-label]').textContent = t.narrative;
+        document.querySelector('[data-pd-outcomes-label]').textContent = t.outcomes;
+        document.querySelector('[data-pd-narrative]').textContent = copy[3];
+        const labels = t.factLabels[type];
+        document.querySelector('[data-pd-facts]').innerHTML = projectFacts(type, index).map((value, factIndex) => `<div class="fact"><dt>${labels[factIndex] || ''}</dt><dd>${value}</dd></div>`).join('');
+        const results = resultMarkup(meta);
+        document.querySelector('[data-pd-results]').innerHTML = results;
+        document.querySelector('[data-pd-result-note]').textContent = t.resultNote;
+        document.querySelector('[data-pd-results-section]').hidden = !results;
+        renderCompare();
+        syncAutoplayButton();
+      }
+
+      function openProjectDialog(button) {
+        const card = button.closest('[data-project-card]');
+        const type = card.dataset.projectCard;
+        const index = Number(card.dataset.projectIndex);
+        const meta = PROJECT_META[type][index];
+        dialogState = { type, index, imageIndex: meta.coverIndex || 0, compareMode: meta.compare ? 'compare' : 'all', beforeIndex: 0, afterIndex: 0, autoplayPaused: false, opener: button };
+        renderProjectDialog();
+        const dialog = document.querySelector('[data-project-dialog]');
+        dialog.classList.remove('is-closing');
+        document.body.classList.add('dialog-open');
+        dialog.showModal();
+        dialog.scrollTop = 0;
+        dialog.focus({ preventScroll: true });
+        startProjectAutoplay();
+      }
+
+      function closeProjectDialog() {
+        const dialog = document.querySelector('[data-project-dialog]');
+        if (!dialog.open || dialog.classList.contains('is-closing')) return;
+        stopProjectAutoplay();
+        if (reducedMotion.matches) { dialog.close(); return; }
+        dialog.classList.add('is-closing');
+        window.setTimeout(() => dialog.open && dialog.close(), MOTION.fast);
+      }
+
+      function stepGallery(delta) {
+        if (!dialogState) return;
+        const images = PROJECT_META[dialogState.type][dialogState.index].images || [];
+        if (!images.length) return;
+        dialogState.compareMode = 'all';
+        dialogState.imageIndex = Math.max(0, Math.min(dialogState.imageIndex + delta, images.length - 1));
+        renderCompare();
+        animateMedia(document.querySelector('[data-pd-image]'), delta);
+      }
+
+      function renderHighlights() {
+        const highlights = I18N[currentLang].highlights;
+        document.querySelectorAll('[data-hl-visual]').forEach(node => {
+          const item = highlights[Number(node.dataset.hlVisual)];
+          node.innerHTML = `${item.sign ? `<span class="hl-mark hl-mark--sign">${item.sign}</span>` : ''}<span class="hl-num" data-hl-num>${item.num}</span>${item.suffix ? `<span class="hl-mark hl-mark--suffix">${item.suffix}</span>` : ''}`;
+        });
+        document.querySelectorAll('[data-hl-alt]').forEach(node => { node.textContent = highlights[Number(node.dataset.hlAlt)].alt; });
+        document.querySelectorAll('[data-highlight-label]').forEach(node => { node.textContent = highlights[Number(node.dataset.highlightLabel)].label; });
+      }
+
+      function renderLanguage() {
+        const t = I18N[currentLang];
+        document.documentElement.lang = LANG_TAGS[currentLang];
+        document.title = t.meta.title;
+        document.querySelector('meta[name="description"]').content = t.meta.description;
+        document.querySelector('meta[property="og:title"]').content = t.meta.title;
+        document.querySelector('meta[property="og:description"]').content = t.meta.description;
+
+        document.querySelectorAll('[data-i18n]').forEach(node => { const value = get(node.dataset.i18n, t); if (typeof value === 'string') node.textContent = value; });
+        document.querySelectorAll('[data-i18n-aria]').forEach(node => { const value = get(node.dataset.i18nAria, t); if (typeof value === 'string') node.setAttribute('aria-label', value); });
+        document.querySelectorAll('[data-nav-key]').forEach(node => { node.textContent = t.nav[node.dataset.navKey]; });
+        document.querySelectorAll('[data-lang]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.lang === currentLang)));
+        renderHighlights();
+        document.querySelectorAll('[data-exp-title]').forEach(node => { node.textContent = t.experience.items[Number(node.dataset.expTitle)].title; });
+        document.querySelectorAll('[data-exp-points]').forEach(node => {
+          const item = t.experience.items[Number(node.dataset.expPoints)];
+          node.innerHTML = item.points.map(point => `<li><span>${point}</span></li>`).join('');
+        });
+        document.querySelectorAll('[data-project-tab]').forEach(node => { node.textContent = t.projects.tabs[node.dataset.projectTab]; });
+        renderProjects();
+        document.querySelectorAll('[data-skill-title]').forEach(node => { node.textContent = t.skills.items[Number(node.dataset.skillTitle)].title; });
+        document.querySelectorAll('[data-skill-tags]').forEach(node => { node.innerHTML = t.skills.items[Number(node.dataset.skillTags)].tags.map(tag => `<span class="skill-tag">${tag}</span>`).join(''); });
+        document.querySelectorAll('[data-language-item]').forEach(node => { node.textContent = t.languages.items[Number(node.dataset.languageItem)]; });
+        document.querySelectorAll('[data-contact-label]').forEach(node => { node.textContent = t.contact.items[Number(node.dataset.contactLabel)].label; });
+        document.querySelectorAll('[data-contact-value]').forEach(node => {
+          const item = t.contact.items[Number(node.dataset.contactValue)];
+          if (item.key === 'email') node.innerHTML = `<a href="mailto:${item.value}">${item.value}</a>`;
+          else node.textContent = item.value;
+        });
+        document.querySelector('[data-contact-travel]').textContent = t.contact.travel;
+        const printEmail = t.contact.items.find(item => item.key === 'email')?.value || '';
+        const printLocation = t.contact.items.find(item => item.key === 'location')?.value || '';
+        document.querySelector('[data-print-name]').textContent = `${t.brand.name} · Jumpson`;
+        document.querySelector('[data-print-contact]').textContent = `${printEmail} · ${printLocation}`;
+        document.querySelector('[data-view-announcer]').textContent = t.views[currentView];
+        syncAutoplayButton();
+        setActiveNav(currentView);
+        updateIndicator();
+      }
+
+      function setLanguage(lang, animate = true) {
+        if (!I18N[lang] || lang === currentLang) return;
+        const apply = () => {
+          currentLang = lang;
+          storage.set('resume-lang', lang);
+          const url = new URL(window.location.href);
+          lang === 'zh' ? url.searchParams.delete('lang') : url.searchParams.set('lang', lang);
+          history.replaceState(null, '', url);
+          renderLanguage();
+        };
+        if (!animate || reducedMotion.matches) { apply(); return; }
+        apply();
+        document.body.classList.add('lang-enter');
+        window.setTimeout(() => document.body.classList.remove('lang-enter'), MOTION.fast + 30);
+      }
+
+      function setTheme(theme) {
+        document.documentElement.dataset.theme = theme;
+        storage.set('resume-theme', theme);
+        document.querySelector('meta[name="theme-color"]').content = theme === 'dark' ? '#0F1215' : '#F7F8FA';
+        document.querySelectorAll('.theme-toggle').forEach((button, index) => {
+          if (index === 0) button.innerHTML = icon.theme(theme);
+          button.setAttribute('aria-label', I18N[currentLang].actions.theme);
+        });
+      }
+
+      function updateIndicator() {
+        const active = document.querySelector(`[data-project-tab="${currentProject}"]`);
+        const indicator = document.querySelector('.tabs-indicator');
+        const first = document.querySelector('[data-project-tab]');
+        if (!active || !indicator || !first?.offsetWidth) return;
+        indicator.style.width = `${first.offsetWidth}px`;
+        indicator.style.transform = `translateX(${active.offsetLeft}px) scaleX(${active.offsetWidth / first.offsetWidth})`;
+      }
+
+      function setProject(type, focus = false) {
+        if (!PROJECT_TYPES.includes(type) || type === currentProject || tabBusy) return;
+        const oldPanel = document.querySelector(`[data-project-panel="${currentProject}"]`);
+        const newPanel = document.querySelector(`[data-project-panel="${type}"]`);
+        tabBusy = true;
+        document.querySelectorAll('[data-project-tab]').forEach(tab => {
+          const selected = tab.dataset.projectTab === type;
+          tab.setAttribute('aria-selected', String(selected));
+          tab.tabIndex = selected ? 0 : -1;
+          if (selected && focus) tab.focus();
+        });
+        currentProject = type;
+        updateIndicator();
+        const finish = () => {
+          oldPanel.hidden = true;
+          newPanel.hidden = false;
+          newPanel.style.animation = 'none';
+          void newPanel.offsetWidth;
+          newPanel.style.animation = '';
+          window.setTimeout(() => { tabBusy = false; }, reducedMotion.matches ? 10 : MOTION.base + 10);
+        };
+        if (reducedMotion.matches) { finish(); return; }
+        oldPanel.animate([{ opacity: 1, transform: 'translateY(0)' }, { opacity: 0, transform: 'translateY(-8px)' }], { duration: MOTION.fast, easing: MOTION.easeOut, fill: 'forwards' }).finished.then(finish);
+      }
+
+      function openDrawer() {
+        const drawer = document.querySelector('.drawer');
+        drawer.inert = false;
+        drawer.classList.add('is-open');
+        document.querySelector('[data-drawer-backdrop]').classList.add('is-open');
+        drawer.setAttribute('aria-hidden', 'false');
+        document.querySelector('.menu-button').setAttribute('aria-expanded', 'true');
+        document.body.classList.add('drawer-open');
+        document.querySelectorAll('.nav-shell, main, footer').forEach(node => { node.inert = true; });
+        document.querySelector('.drawer-close').focus();
+      }
+      function closeDrawer(returnFocus = false) {
+        const drawer = document.querySelector('.drawer');
+        drawer.classList.remove('is-open');
+        document.querySelector('[data-drawer-backdrop]').classList.remove('is-open');
+        drawer.setAttribute('aria-hidden', 'true');
+        drawer.inert = true;
+        document.querySelector('.menu-button').setAttribute('aria-expanded', 'false');
+        document.body.classList.remove('drawer-open');
+        document.querySelectorAll('.nav-shell, main, footer').forEach(node => { node.inert = false; });
+        if (returnFocus) document.querySelector('.menu-button').focus();
+      }
+
+      function bindEvents() {
+        document.querySelectorAll('[data-lang]').forEach(button => button.addEventListener('click', () => setLanguage(button.dataset.lang)));
+        document.querySelectorAll('.theme-toggle').forEach(button => button.addEventListener('click', () => setTheme(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark')));
+        document.querySelectorAll('.print-button').forEach(button => button.addEventListener('click', () => window.print()));
+        document.querySelector('.menu-button').addEventListener('click', openDrawer);
+        document.querySelector('.drawer-close').addEventListener('click', () => closeDrawer(true));
+        document.querySelector('[data-drawer-backdrop]').addEventListener('click', () => closeDrawer(false));
+        document.querySelector('.back-to-top').addEventListener('click', () => window.scrollTo({ top: 0, behavior: reducedMotion.matches ? 'auto' : 'smooth' }));
+        document.addEventListener('click', event => {
+          const link = event.target.closest('a[href^="#"]');
+          if (!link) return;
+          const hash = link.getAttribute('href').slice(1).toLowerCase();
+          const targetView = findView(hash);
+          if (!targetView) return;
+          event.preventDefault();
+          if (viewBusy) return;
+          if (document.querySelector('.drawer').classList.contains('is-open')) closeDrawer(false);
+          history.pushState(null, '', `#${hash || targetView.id}`);
+          setView(targetView.id, { animate: true, focusHeading: true, announce: true, anchor: hash });
+        });
+        document.querySelectorAll('[data-project-tab]').forEach(tab => {
+          tab.addEventListener('click', () => setProject(tab.dataset.projectTab));
+          tab.addEventListener('keydown', event => {
+            if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
+            event.preventDefault();
+            const current = PROJECT_TYPES.indexOf(tab.dataset.projectTab);
+            const next = event.key === 'Home' ? 0 : event.key === 'End' ? PROJECT_TYPES.length - 1 : (current + (event.key === 'ArrowRight' ? 1 : -1) + PROJECT_TYPES.length) % PROJECT_TYPES.length;
+            setProject(PROJECT_TYPES[next], true);
+          });
+        });
+        document.querySelectorAll('.project-action').forEach(button => {
+          button.addEventListener('click', () => openProjectDialog(button));
+        });
+        const dialog = document.querySelector('[data-project-dialog]');
+        document.querySelector('[data-pd-close]').addEventListener('click', closeProjectDialog);
+        document.querySelector('[data-pd-prev]').addEventListener('click', () => { stopProjectAutoplay(true); stepGallery(-1); });
+        document.querySelector('[data-pd-next]').addEventListener('click', () => { stopProjectAutoplay(true); stepGallery(1); });
+        document.querySelector('[data-compare-before-prev]').addEventListener('click', () => { if (dialogState) { stopProjectAutoplay(true); dialogState.beforeIndex -= 1; renderCompare(); animateMedia(document.querySelector('[data-compare-before]'), -1); } });
+        document.querySelector('[data-compare-before-next]').addEventListener('click', () => { if (dialogState) { stopProjectAutoplay(true); dialogState.beforeIndex += 1; renderCompare(); animateMedia(document.querySelector('[data-compare-before]'), 1); } });
+        document.querySelector('[data-compare-prev]').addEventListener('click', () => { if (dialogState) { stopProjectAutoplay(true); dialogState.afterIndex -= 1; renderCompare(); animateMedia(document.querySelector('[data-compare-after]'), -1); } });
+        document.querySelector('[data-compare-next]').addEventListener('click', () => { if (dialogState) { stopProjectAutoplay(true); dialogState.afterIndex += 1; renderCompare(); animateMedia(document.querySelector('[data-compare-after]'), 1); } });
+        document.querySelector('[data-pd-autoplay]').addEventListener('click', () => {
+          if (!dialogState) return;
+          if (autoplayTimer) stopProjectAutoplay(true);
+          else { dialogState.autoplayPaused = false; startProjectAutoplay(); }
+        });
+        dialog.addEventListener('click', event => { if (event.target === dialog) closeProjectDialog(); });
+        dialog.addEventListener('cancel', event => { event.preventDefault(); closeProjectDialog(); });
+        dialog.addEventListener('close', () => {
+          clearProjectAutoplay();
+          document.body.classList.remove('dialog-open');
+          dialog.classList.remove('is-closing');
+          const opener = dialogState?.opener;
+          dialogState = null;
+          opener?.focus({ preventScroll: true });
+        });
+        dialog.addEventListener('click', event => {
+          const thumb = event.target.closest('[data-pd-thumb]');
+          if (thumb && dialogState) { const previous = dialogState.imageIndex; stopProjectAutoplay(true); dialogState.imageIndex = Number(thumb.dataset.pdThumb); renderGallery(); animateMedia(document.querySelector('[data-pd-image]'), dialogState.imageIndex >= previous ? 1 : -1); return; }
+          const mode = event.target.closest('[data-compare-mode]');
+          if (mode && dialogState) { stopProjectAutoplay(true); dialogState.compareMode = mode.dataset.compareMode; renderCompare(); return; }
+          const process = event.target.closest('[data-process-image]');
+          if (process && dialogState) { stopProjectAutoplay(true); dialogState.compareMode = 'all'; dialogState.imageIndex = Number(process.dataset.processImage); renderCompare(); animateMedia(document.querySelector('[data-pd-image]'), 1); }
+        });
+        dialog.addEventListener('keydown', event => {
+          if (!dialogState || !['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
+          event.preventDefault();
+          const images = PROJECT_META[dialogState.type][dialogState.index].images || [];
+          stopProjectAutoplay(true);
+          dialogState.compareMode = 'all';
+          if (event.key === 'Home') dialogState.imageIndex = 0;
+          else if (event.key === 'End') dialogState.imageIndex = Math.max(0, images.length - 1);
+          else dialogState.imageIndex += event.key === 'ArrowRight' ? 1 : -1;
+          dialogState.imageIndex = Math.max(0, Math.min(dialogState.imageIndex, Math.max(0, images.length - 1)));
+          renderCompare();
+          animateMedia(document.querySelector('[data-pd-image]'), event.key === 'ArrowLeft' ? -1 : 1);
+        });
+        document.querySelector('[data-pd-main]').addEventListener('pointerdown', event => { swipeStartX = event.clientX; });
+        document.querySelector('[data-pd-main]').addEventListener('pointerup', event => {
+          if (swipeStartX === null) return;
+          const distance = event.clientX - swipeStartX;
+          swipeStartX = null;
+          if (Math.abs(distance) >= 48) { stopProjectAutoplay(true); stepGallery(distance < 0 ? 1 : -1); }
+        });
+        document.addEventListener('keydown', event => { if (event.key === 'Escape' && document.querySelector('.drawer').classList.contains('is-open')) closeDrawer(true); });
+        window.addEventListener('popstate', () => routeFromLocation(true));
+        document.addEventListener('visibilitychange', () => {
+          if (document.hidden) { clearProjectAutoplay(); syncAutoplayButton(); }
+          else if (dialogState) startProjectAutoplay();
+        });
+        reducedMotion.addEventListener?.('change', () => {
+          if (reducedMotion.matches) stopProjectAutoplay();
+          else if (dialogState) startProjectAutoplay();
+        });
+        let resizeFrame = 0;
+        window.addEventListener('resize', () => {
+          window.cancelAnimationFrame(resizeFrame);
+          resizeFrame = window.requestAnimationFrame(updateIndicator);
+        });
+        window.addEventListener('scroll', () => {
+          const y = window.scrollY;
+          document.querySelector('.nav-shell').classList.toggle('is-scrolled', y > 80);
+          document.querySelector('.back-to-top').classList.toggle('is-visible', y > 600);
+        }, { passive: true });
+      }
+
+      async function init() {
+        buildNavigation();
+        buildFramework();
+        const params = new URL(window.location.href).searchParams;
+        const requested = params.get('lang');
+        currentLang = I18N[requested] ? requested : (I18N[storage.get('resume-lang')] ? storage.get('resume-lang') : 'zh');
+        const savedTheme = storage.get('resume-theme');
+        setTheme(savedTheme === 'dark' || savedTheme === 'light' ? savedTheme : (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));
+        renderLanguage();
+        initRevealMotion();
+        bindEvents();
+        await routeFromLocation(false);
+        initHighlightMotion();
+        playHomeIntro();
+        requestAnimationFrame(updateIndicator);
+      }
+
+      init();
+    })();
+  </script>
+</body>
+</html>

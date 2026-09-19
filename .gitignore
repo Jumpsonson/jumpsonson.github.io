@@ -1,0 +1,11 @@
+_site/
+.env
+.env.*
+*.log
+*.tmp
+*.bak
+.DS_Store
+Thumbs.db
+desktop.ini
+assets/**/README.txt
+
