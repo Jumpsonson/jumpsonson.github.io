@@ -62,3 +62,11 @@ node scripts/build-pages.mjs --check
 ```
 
 检查覆盖内联 JavaScript 语法和当前结构中的静态图片、imageSeries/imageList 图片及缩略图路径。原生分支发布不会运行本地检查脚本，较大修改后请主动检查，再推送。脚本不带 `--check` 时生成 `_site`；此目录不提交，也不参与 Pages 分支发布。脚本要求该输出目录不存在，本地重复生成前需清理此前的生成目录。
+
+部署成功后，可验证公网首页及所有图片是否与本地版本一致：
+
+```powershell
+node scripts/verify-live.mjs
+```
+
+验证会读取正式网站，比较首页正文及图片 SHA-256；它不替代浏览器中的语言切换、弹窗和手机布局检查。
