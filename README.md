@@ -6,6 +6,8 @@
 
 发布状态：https://github.com/Jumpsonson/jumpsonson.github.io/actions
 
+新电脑或新 Codex 会话开始前，请先完整阅读 [`AGENTS.md`](AGENTS.md)。它记录了部署状态、隐私边界、标准更新流程、验证方式和历史决策。
+
 这个仓库仅保存网站及其发布配置。使用 GitHub Pages 原生分支发布，每次成功推送到 `main` 后，GitHub 自动更新同一个网站地址，无需当前电脑持续开机或额外授予账户 workflow 权限。
 
 ## 首次发布
