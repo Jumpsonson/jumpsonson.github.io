@@ -330,7 +330,9 @@
     .project-dialog::backdrop { background: rgba(0, 0, 0, .48); -webkit-backdrop-filter: saturate(120%) blur(8px); backdrop-filter: saturate(120%) blur(8px); }
     .pd-shell { display: grid; grid-template-columns: minmax(0, 1.75fr) minmax(320px, 1fr); height: 100%; }
     .pd-media { position: relative; min-width: 0; min-height: 0; display: grid; grid-template-rows: minmax(0, 1fr) auto; background: var(--media-stage); }
-    .pd-gallery { min-height: 0; display: grid; grid-template-rows: minmax(0, 1fr) auto; }
+    .pd-gallery { min-height: 0; display: grid; grid-template-rows: auto minmax(0, 1fr) auto; }
+    .airline-period-filter { margin: 12px 12px 0; }
+    .airline-period-filter[hidden] { display: none; }
     .pd-media-main { position: relative; min-height: 0; display: grid; place-items: center; padding: var(--media-frame); overflow: hidden; }
     .pd-media-main img { position: absolute; inset: var(--media-frame); width: calc(100% - var(--media-frame) * 2); height: calc(100% - var(--media-frame) * 2); display: block; object-fit: contain; object-position: center center; }
     .pd-placeholder { display: grid; place-items: center; gap: 10px; color: var(--text-2); text-align: center; }
@@ -678,6 +680,10 @@
     <div class="pd-shell">
       <div class="pd-media">
         <div class="pd-gallery" data-pd-gallery>
+          <div class="compare-switch airline-period-filter" role="group" data-airline-period-filter data-i18n-aria="projects.airlinePeriodLabel" hidden>
+            <button class="compare-switch__btn" type="button" aria-pressed="true" data-airline-period="h1" data-i18n="projects.airlinePeriod.h1"></button>
+            <button class="compare-switch__btn" type="button" aria-pressed="false" data-airline-period="h2" data-i18n="projects.airlinePeriod.h2"></button>
+          </div>
           <div class="pd-media-main" data-pd-main>
             <button class="pd-nav pd-nav--prev" type="button" data-pd-prev data-i18n-aria="projects.prev" aria-label="Previous image">‹</button>
             <img data-pd-image alt="" decoding="async">
@@ -779,7 +785,7 @@
             { title: '渠道门店店员激励', points: ['制定并定期迭代门店店员激励政策，与分销商协商激励费用分摊机制。', '通过优化激励条件，促使店员熟悉并主动推荐品牌产品，提升渠道门店销售团队的参与度。'] },
             { title: '活动与内容运营', points: ['统筹韩国代言人素材，主导品牌快闪官方账号（INS）从 0 到 1 运营，并参与大韩航空机内广告。', '策划并落地中秋、家庭月、12 月、黑五等多档促销活动。'] }
           ] },
-          projects: { tabs: { popup: '快闪项目', ka: 'KA 渠道维护', display: '展陈升级项目', airline: '大韩航空机内广告' }, view: '查看详情', image: '暂无公开图片', imagePlanned: '项目尚未运营 · 实拍待更新', imageUnit: '张图片', planned: '已规划 · 待运营', strategic: '战略级', context: '项目信息', narrative: '项目介绍', outcomes: '结果数据', resultNote: '结果按现有项目记录的运营期口径呈现；达成率表示对应项目销售目标的完成情况。', close: '关闭项目详情', prev: '上一张图片', next: '下一张图片', autoplayStart: '播放图片', autoplayStop: '暂停图片', compare: '前后对比', allImages: '全部图片', before: '升级前', after: '升级后', process: '过程记录', compareSwitch: '切换前后对比与全部图片', compareNote: '升级前为原始陈列状态，升级后为完成态实拍。', factLabels: { popup: ['百货店', '年度销售额地位', '商圈定位', '交通便利度', '快闪承接频率', '本人在该店场次'], ka: ['渠道覆盖', '项目周期', '对标', '交付范围'], display: ['渠道', '门店', '记录范围', '展示方式'], airline: ['合作方', '投放形式', '投放周期与覆盖范围'] } },
+          projects: { tabs: { popup: '快闪项目', ka: 'KA 渠道维护', display: '展陈升级项目', airline: '大韩航空机内广告' }, view: '查看详情', image: '暂无公开图片', imagePlanned: '项目尚未运营 · 实拍待更新', imageUnit: '张图片', planned: '已规划 · 待运营', strategic: '战略级', context: '项目信息', narrative: '项目介绍', outcomes: '结果数据', resultNote: '结果按现有项目记录的运营期口径呈现；达成率表示对应项目销售目标的完成情况。', close: '关闭项目详情', prev: '上一张图片', next: '下一张图片', autoplayStart: '播放图片', autoplayStop: '暂停图片', compare: '前后对比', allImages: '全部图片', airlinePeriodLabel: '筛选机内广告图片期间', airlinePeriod: { h1: '2026 年上半年', h2: '2026 年下半年' }, before: '升级前', after: '升级后', process: '过程记录', compareSwitch: '切换前后对比与全部图片', compareNote: '升级前为原始陈列状态，升级后为完成态实拍。', factLabels: { popup: ['百货店', '年度销售额地位', '商圈定位', '交通便利度', '快闪承接频率', '本人在该店场次'], ka: ['渠道覆盖', '项目周期', '对标', '交付范围'], display: ['渠道', '门店', '记录范围', '展示方式'], airline: ['合作方', '投放形式', '投放周期与覆盖范围'] } },
           skills: { items: [
             { title: '快闪项目全流程管理', tags: ['快闪与专卖店全流程', '选址调研', '现场执行', '多门店并行操盘', '数据复盘'] },
             { title: '渠道管理', tags: ['KA 进店全链路', '定价区间策划', '渠道结构规划', '分销商新品培训', '门店广告位获取'] },
@@ -814,7 +820,7 @@
             { title: 'Retail Staff Incentives', points: ['Designed and regularly updated retail staff incentive policies and negotiated cost sharing with distributors.', 'Refined incentive terms to help staff understand and actively recommend the products, improving engagement among in-store sales teams.'] },
             { title: 'Campaign and Content Operations', points: ['Coordinated Korean ambassador assets, launched and ran the brand pop-up Instagram account, and contributed to Korean Air in-flight advertising.', 'Planned and executed campaigns for Chuseok, Family Month, December, and Black Friday.'] }
           ] },
-          projects: { tabs: { popup: 'Pop-up Projects', ka: 'Key Account Management', display: 'Retail Display Upgrades', airline: 'Korean Air In-flight Advertising' }, view: 'View details', image: 'No public image available', imagePlanned: 'Not yet launched · On-site photos to follow', imageUnit: 'photos', planned: 'Planned · Not yet launched', strategic: 'Strategic Project', context: 'Project context', narrative: 'Project narrative', outcomes: 'Results', resultNote: 'Results follow the operating-period definitions in the available project records; attainment indicates performance against the project sales target.', close: 'Close project details', prev: 'Previous image', next: 'Next image', autoplayStart: 'Play images', autoplayStop: 'Pause images', compare: 'Before & after', allImages: 'All images', before: 'Before upgrade', after: 'After upgrade', process: 'Process record', compareSwitch: 'Switch between comparison and all images', compareNote: 'Before shows the original display; after shows the completed upgrade.', factLabels: { popup: ['Department store', 'Annual Sales Ranking', 'Trade Area Profile', 'Accessibility', 'Pop-up Frequency', 'Projects at This Venue'], ka: ['Channel coverage', 'Project period', 'Benchmark', 'Scope of Work'], display: ['Channel', 'Store', 'Record', 'Presentation'], airline: ['Partner', 'Placement format', 'Placement period and coverage'] } },
+          projects: { tabs: { popup: 'Pop-up Projects', ka: 'Key Account Management', display: 'Retail Display Upgrades', airline: 'Korean Air In-flight Advertising' }, view: 'View details', image: 'No public image available', imagePlanned: 'Not yet launched · On-site photos to follow', imageUnit: 'photos', planned: 'Planned · Not yet launched', strategic: 'Strategic Project', context: 'Project context', narrative: 'Project narrative', outcomes: 'Results', resultNote: 'Results follow the operating-period definitions in the available project records; attainment indicates performance against the project sales target.', close: 'Close project details', prev: 'Previous image', next: 'Next image', autoplayStart: 'Play images', autoplayStop: 'Pause images', compare: 'Before & after', allImages: 'All images', airlinePeriodLabel: 'Filter in-flight ad image period', airlinePeriod: { h1: 'First half of 2026', h2: 'Second half of 2026' }, before: 'Before upgrade', after: 'After upgrade', process: 'Process record', compareSwitch: 'Switch between comparison and all images', compareNote: 'Before shows the original display; after shows the completed upgrade.', factLabels: { popup: ['Department store', 'Annual Sales Ranking', 'Trade Area Profile', 'Accessibility', 'Pop-up Frequency', 'Projects at This Venue'], ka: ['Channel coverage', 'Project period', 'Benchmark', 'Scope of Work'], display: ['Channel', 'Store', 'Record', 'Presentation'], airline: ['Partner', 'Placement format', 'Placement period and coverage'] } },
           skills: { items: [
             { title: 'End-to-end Pop-up Project Management', tags: ['End-to-end Pop-up and Brand Store Operations', 'Site and Trade Area Research', 'On-site execution', 'Concurrent Multi-site Operations', 'Performance Review'] },
             { title: 'Channel Management', tags: ['End-to-end Key Account Onboarding', 'Pricing bands', 'Channel structure planning', 'Distributor product training', 'In-store ad placement acquisition'] },
@@ -849,7 +855,7 @@
             { title: '유통 채널 매장 직원 인센티브', points: ['매장 직원 인센티브 정책을 수립하고 정기적으로 개선했으며 유통사와 비용 분담 방식을 협의했습니다.', '인센티브 조건을 조정해 직원들이 브랜드 제품을 이해하고 적극적으로 추천하도록 유도하고, 매장 판매팀의 참여도를 높였습니다.'] },
             { title: '프로모션 및 콘텐츠 운영', points: ['한국 앰버서더 콘텐츠를 총괄하고 브랜드 팝업 공식 인스타그램 계정을 처음부터 구축·운영했으며 대한항공 기내 광고에 참여했습니다.', '추석, 가정의 달, 12월, 블랙프라이데이 프로모션을 기획·실행했습니다.'] }
           ] },
-          projects: { tabs: { popup: '팝업 프로젝트', ka: 'KA 채널 관리', display: '매장 진열 업그레이드 프로젝트', airline: '대한항공 기내 광고 프로젝트' }, view: '자세히 보기', image: '공개 이미지 없음', imagePlanned: '운영 예정 · 현장 실사 추후 업데이트', imageUnit: '장', planned: '기획 완료 · 운영 예정', strategic: '전략 프로젝트', context: '프로젝트 정보', narrative: '프로젝트 내용', outcomes: '성과', resultNote: '성과는 현재 프로젝트 기록의 운영 기간 기준으로 표시했으며, 달성률은 해당 프로젝트 판매 목표 대비 실적을 뜻합니다.', close: '프로젝트 상세 닫기', prev: '이전 이미지', next: '다음 이미지', autoplayStart: '이미지 재생', autoplayStop: '이미지 일시 정지', compare: '개선 전후 비교', allImages: '전체 이미지', before: '개선 전', after: '개선 후', process: '진행 과정', compareSwitch: '전후 비교와 전체 이미지 전환', compareNote: '개선 전은 기존 진열 상태이며, 개선 후는 완료 후 실사입니다.', factLabels: { popup: ['백화점', '연간 매출 순위', '상권 특성', '교통 접근성', '팝업 진행 빈도', '해당 매장에서 진행한 프로젝트'], ka: ['채널 범위', '프로젝트 기간', '벤치마크', '담당 업무'], display: ['채널', '매장', '기록 범위', '표시 방식'], airline: ['협업 대상', '게재 형태', '게재 기간 및 노출 범위'] } },
+          projects: { tabs: { popup: '팝업 프로젝트', ka: 'KA 채널 관리', display: '매장 진열 업그레이드 프로젝트', airline: '대한항공 기내 광고 프로젝트' }, view: '자세히 보기', image: '공개 이미지 없음', imagePlanned: '운영 예정 · 현장 실사 추후 업데이트', imageUnit: '장', planned: '기획 완료 · 운영 예정', strategic: '전략 프로젝트', context: '프로젝트 정보', narrative: '프로젝트 내용', outcomes: '성과', resultNote: '성과는 현재 프로젝트 기록의 운영 기간 기준으로 표시했으며, 달성률은 해당 프로젝트 판매 목표 대비 실적을 뜻합니다.', close: '프로젝트 상세 닫기', prev: '이전 이미지', next: '다음 이미지', autoplayStart: '이미지 재생', autoplayStop: '이미지 일시 정지', compare: '개선 전후 비교', allImages: '전체 이미지', airlinePeriodLabel: '기내 광고 이미지 기간 선택', airlinePeriod: { h1: '2026년 상반기', h2: '2026년 하반기' }, before: '개선 전', after: '개선 후', process: '진행 과정', compareSwitch: '전후 비교와 전체 이미지 전환', compareNote: '개선 전은 기존 진열 상태이며, 개선 후는 완료 후 실사입니다.', factLabels: { popup: ['백화점', '연간 매출 순위', '상권 특성', '교통 접근성', '팝업 진행 빈도', '해당 매장에서 진행한 프로젝트'], ka: ['채널 범위', '프로젝트 기간', '벤치마크', '담당 업무'], display: ['채널', '매장', '기록 범위', '표시 방식'], airline: ['협업 대상', '게재 형태', '게재 기간 및 노출 범위'] } },
           skills: { items: [
             { title: '팝업 프로젝트 전 과정 관리', tags: ['팝업·브랜드 단독 매장 전 과정 운영', '입지 및 상권 조사', '현장 실행', '여러 매장 동시 운영', '운영 성과 분석'] },
             { title: '채널 관리', tags: ['주요 거래처 신제품 입점 전 과정', '가격대 기획', '유통 채널 구조 기획', '유통사 대상 신제품 교육', '매장 광고 지면 확보'] },
@@ -894,7 +900,10 @@
           { id: 'D-01', date: '2024.11–', coverIndex: 4, images: imageSeries('display', 'display-yeongdeungpo-kyobo-stage', 5), compare: { before: [0, 1], after: [2, 3, 4] } },
           { id: 'D-02', date: '2024.11–', coverIndex: 2, images: imageList('display', ['display-himart-worldtower-before-01', 'display-himart-worldtower-after-01', 'display-himart-worldtower-after-02']), compare: { before: [0], after: [1, 2] } }
         ],
-        airline: [{ id: 'A-01', date: '2026', images: imageList('airline', ['airline-koreanair-ad-2026h1-01', 'airline-koreanair-ad-2026h1-02', 'airline-koreanair-ad-2026h2-01']) }]
+        airline: [{ id: 'A-01', date: '2026', images: [
+          ...imageList('airline', ['airline-koreanair-ad-2026h1-01', 'airline-koreanair-ad-2026h1-02']).map(image => ({ ...image, period: 'h1' })),
+          ...imageList('airline', ['airline-koreanair-ad-2026h2-01', 'airline-koreanair-ad-2026h2-02', 'airline-koreanair-ad-2026h2-03']).map(image => ({ ...image, period: 'h2' }))
+        ] }]
       };
 
       const MEDIA_ALTS = {
@@ -1214,11 +1223,19 @@
         autoplayTimer = 0;
       }
 
+      function dialogGalleryImages() {
+        if (!dialogState) return [];
+        const meta = PROJECT_META[dialogState.type][dialogState.index];
+        const images = meta.images || [];
+        return dialogState.type === 'airline'
+          ? images.filter(image => image.period === dialogState.airlinePeriod)
+          : images;
+      }
+
       function syncAutoplayButton() {
         const button = document.querySelector('[data-pd-autoplay]');
         if (!button) return;
-        const meta = dialogState ? PROJECT_META[dialogState.type][dialogState.index] : null;
-        const canPlay = Boolean(meta && (meta.images || []).length > 1 && !reducedMotion.matches);
+        const canPlay = Boolean(dialogState && dialogGalleryImages().length > 1 && !reducedMotion.matches);
         const active = Boolean(autoplayTimer);
         button.hidden = !canPlay;
         button.setAttribute('aria-pressed', String(active));
@@ -1243,7 +1260,7 @@
           }
           return;
         }
-        const images = meta.images || [];
+        const images = dialogGalleryImages();
         if (images.length < 2) return;
         dialogState.imageIndex = (dialogState.imageIndex + 1) % images.length;
         renderCompare();
@@ -1257,7 +1274,7 @@
           return;
         }
         const meta = PROJECT_META[dialogState.type][dialogState.index];
-        if ((meta.images || []).length < 2) {
+        if (dialogGalleryImages().length < 2) {
           syncAutoplayButton();
           return;
         }
@@ -1465,7 +1482,12 @@
         const { type, index } = dialogState;
         const meta = PROJECT_META[type][index];
         const copy = projectCopy(type, index);
-        const images = meta.images || [];
+        const images = dialogGalleryImages();
+        const periodFilter = document.querySelector('[data-airline-period-filter]');
+        periodFilter.hidden = type !== 'airline';
+        periodFilter.querySelectorAll('[data-airline-period]').forEach(button => {
+          button.setAttribute('aria-pressed', String(button.dataset.airlinePeriod === dialogState.airlinePeriod));
+        });
         const image = document.querySelector('[data-pd-image]');
         const main = document.querySelector('[data-pd-main]');
         const placeholder = document.querySelector('[data-pd-placeholder]');
@@ -1591,7 +1613,7 @@
         const type = card.dataset.projectCard;
         const index = Number(card.dataset.projectIndex);
         const meta = PROJECT_META[type][index];
-        dialogState = { type, index, imageIndex: meta.coverIndex || 0, compareMode: meta.compare ? 'compare' : 'all', beforeIndex: 0, afterIndex: 0, autoplayPaused: false, opener: button };
+        dialogState = { type, index, imageIndex: meta.coverIndex || 0, compareMode: meta.compare ? 'compare' : 'all', beforeIndex: 0, afterIndex: 0, airlinePeriod: 'h1', autoplayPaused: false, opener: button };
         renderProjectDialog();
         const dialog = document.querySelector('[data-project-dialog]');
         dialog.classList.remove('is-closing');
@@ -1613,7 +1635,7 @@
 
       function stepGallery(delta) {
         if (!dialogState) return;
-        const images = PROJECT_META[dialogState.type][dialogState.index].images || [];
+        const images = dialogGalleryImages();
         if (!images.length) return;
         dialogState.compareMode = 'all';
         dialogState.imageIndex = Math.max(0, Math.min(dialogState.imageIndex + delta, images.length - 1));
@@ -1810,6 +1832,17 @@
           opener?.focus({ preventScroll: true });
         });
         dialog.addEventListener('click', event => {
+          const period = event.target.closest('[data-airline-period]');
+          if (period && dialogState?.type === 'airline') {
+            if (period.dataset.airlinePeriod !== dialogState.airlinePeriod) {
+              stopProjectAutoplay(true);
+              dialogState.airlinePeriod = period.dataset.airlinePeriod;
+              dialogState.imageIndex = 0;
+              renderGallery();
+              animateMedia(document.querySelector('[data-pd-image]'), 1);
+            }
+            return;
+          }
           const thumb = event.target.closest('[data-pd-thumb]');
           if (thumb && dialogState) { const previous = dialogState.imageIndex; stopProjectAutoplay(true); dialogState.imageIndex = Number(thumb.dataset.pdThumb); renderGallery(); animateMedia(document.querySelector('[data-pd-image]'), dialogState.imageIndex >= previous ? 1 : -1); return; }
           const mode = event.target.closest('[data-compare-mode]');
@@ -1820,7 +1853,7 @@
         dialog.addEventListener('keydown', event => {
           if (!dialogState || !['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
           event.preventDefault();
-          const images = PROJECT_META[dialogState.type][dialogState.index].images || [];
+          const images = dialogGalleryImages();
           stopProjectAutoplay(true);
           dialogState.compareMode = 'all';
           if (event.key === 'Home') dialogState.imageIndex = 0;
